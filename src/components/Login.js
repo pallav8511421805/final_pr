@@ -11,7 +11,10 @@ function Login(props) {
       <div className="row">
         <div className="col-md-12">
           <div className="full">
-            <h3>Login</h3>
+        {
+          reset ? <h3>Forget password</h3> : usertype === "login" ? <h3>Log in</h3> :
+          <h3>Sign up</h3>
+        }
           </div>
         </div>
       </div>
@@ -26,9 +29,22 @@ function Login(props) {
           <div className="full">
             <form action="index.html">
               <fieldset>
-                <input type="text" placeholder="Enter your full name" name="name" />
+                {
+                    usertype === 'login' ? null : 
+                    <>
+                    <input type="text" placeholder="Enter your full name" name="name" />
                 <input type="email" placeholder="Enter your email address" name="email" />
-                <input type="Password" placeholder="Enter Password" name="Password"/>
+                <input type="Password" placeholder="Enter your Password" name="Password"/>
+                    </>
+                }
+                {
+                    reset ? 
+                    <input type="email" placeholder="Enter your email address" name="email" /> :
+                    usertype === 'login' ? <>
+                    <input type="email" placeholder="Enter your email address" name="email" />
+                <input type="Password" placeholder="Enter your Password" name="Password"/>
+                    </> : null
+                }
                 <div className='text-center'>
                 {
                     reset ? <button type='submit' className='product_login'>Change password</button> : usertype === 'login' ? <button type='submit' className='product_login'>Log in</button> : <button type='submit' className='product_login'>Sign up</button>
@@ -41,7 +57,6 @@ function Login(props) {
       </div>
     </div>
   </section>
-
   <section>
     <div className='container'>
     <div className='d-flex justify-content-center'>
@@ -58,32 +73,12 @@ function Login(props) {
     </div>
     </div>
   </section>
-  {/* end why section */}
-  {/* arrival section */}
-  <section className="arrival_section">
-    <div className="container">
-      <div className="box">
-        <div className="arrival_bg_box">
-          <img src="images/arrival-bg.png" alt />
-        </div>
-        <div className="row">
-          <div className="col-md-6 ml-auto">
-            <div className="heading_container remove_line_bt">
-              <h2>
-                #NewArrivals
-              </h2>
-            </div>
-            <p style={{marginTop: 20, marginBottom: 30}}>
-              Vitae fugiat laboriosam officia perferendis provident aliquid voluptatibus dolorem, fugit ullam sit earum id eaque nisi hic? Tenetur commodi, nisi rem vel, ea eaque ab ipsa, autem similique ex unde!
-            </p>
-            <a href>
-              Shop Now
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  {
+                reset ? null : usertype === "login" ? <div className="text-center my-3">
+                  <button className="product_login" onClick={() => {
+                    setReset(true);
+                  }}>Forgot password ?</button></div> : null
+    }
 </div>
 
         </>
