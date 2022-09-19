@@ -30,7 +30,9 @@ function Login(props) {
                 <input type="email" placeholder="Enter your email address" name="email" />
                 <input type="Password" placeholder="Enter Password" name="Password"/>
                 <div className='text-center'>
-                <button type='submit' className='product_login'>Log in</button>
+                {
+                    reset ? <button type='submit' className='product_login'>Change password</button> : usertype === 'login' ? <button type='submit' className='product_login'>Log in</button> : <button type='submit' className='product_login'>Sign up</button>
+                }
                 </div>
               </fieldset>
             </form>
