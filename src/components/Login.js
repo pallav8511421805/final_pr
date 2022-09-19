@@ -9,7 +9,7 @@ function Login(props) {
       <div className="row">
         <div className="col-md-12">
           <div className="full">
-            <h3>Contact us</h3>
+            <h3>Login</h3>
           </div>
         </div>
       </div>
@@ -26,14 +26,23 @@ function Login(props) {
               <fieldset>
                 <input type="text" placeholder="Enter your full name" name="name" required />
                 <input type="email" placeholder="Enter your email address" name="email" required />
-                <input type="text" placeholder="Enter subject" name="subject" required />
-                <textarea placeholder="Enter your message" required defaultValue={""} />
-                <input type="submit" defaultValue="Submit" />
+                <input type="Password" placeholder="Enter Password" name="Password" required />
+                <div className='text-center'>
+                <button type='submit' className='product_login'>Log in</button>
+                </div>
               </fieldset>
             </form>
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section>
+    <div className='container'>
+    <div className='d-flex'>
+    
+    </div>
     </div>
   </section>
   {/* end why section */}
