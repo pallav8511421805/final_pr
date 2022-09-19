@@ -24,9 +24,9 @@ function Login(props) {
           <div className="full">
             <form action="index.html">
               <fieldset>
-                <input type="text" placeholder="Enter your full name" name="name" required />
-                <input type="email" placeholder="Enter your email address" name="email" required />
-                <input type="Password" placeholder="Enter Password" name="Password" required />
+                <input type="text" placeholder="Enter your full name" name="name" />
+                <input type="email" placeholder="Enter your email address" name="email" />
+                <input type="Password" placeholder="Enter Password" name="Password"/>
                 <div className='text-center'>
                 <button type='submit' className='product_login'>Log in</button>
                 </div>
