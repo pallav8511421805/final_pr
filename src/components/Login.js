@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 function Login(props) {
+    let [usertype,setUsertype] = useState('login');
+    let [reset,setReset] = useState(false)
     return (
         <>
 <div>
@@ -40,8 +42,17 @@ function Login(props) {
 
   <section>
     <div className='container'>
-    <div className='d-flex'>
-    
+    <div className='d-flex justify-content-center'>
+    {
+                reset ? null : usertype === "Log in" ?
+                  <p>Create a new account <span>
+                    <a className="product_login" onClick={() => { setUsertype("Sign up"); setReset(false) }}>Log in</a>
+                  </span>
+                  </p>
+                  : <p>Already have an account? <span>
+                    <a className="product_login" onClick={() => { setUsertype("Log in"); setReset(false) }}>Sign up</a>
+                  </span></p>
+    }
     </div>
     </div>
   </section>

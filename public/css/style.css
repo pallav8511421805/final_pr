@@ -1136,7 +1136,7 @@ form input[type="submit"]:focus {
   padding: 10px 40px;
   background-color: #222;
   border: 1px solid #222;
-  color: #ffffff;
+  color: #ffffff !important;
   border-radius: 0;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
@@ -1144,7 +1144,7 @@ form input[type="submit"]:focus {
 
 .product_login:hover {
   background-color: transparent;
-  color: #222;
+  color: #222 !important;
 }
 
 /* http: //kute-themes.com/html/boutique/html/index.html
