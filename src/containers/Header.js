@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 function Header(props) {
     return (
@@ -13,23 +14,23 @@ function Header(props) {
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
         <ul className="navbar-nav">
           <li className="nav-item active">
-            <a className="nav-link" href="index.html">Home <span className="sr-only">(current)</span></a>
+            <NavLink className="nav-link" to='/' exact>Home <span className="sr-only">(current)</span></NavLink>
           </li>
           <li className="nav-item dropdown">
             <a className="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"> <span className="nav-label">Pages <span className="caret" /></span></a>
             <ul className="dropdown-menu">
-              <li><a href="about.html">About</a></li>
-              <li><a href="testimonial.html">Testimonial</a></li>
+              <li><NavLink to='/about' exact>About</NavLink></li>
+              <li><NavLink to='/terminal' exact>Testimonial</NavLink></li>
             </ul>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="product.html">Products</a>
+            <NavLink className="nav-link" to='/product'>Products</NavLink>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="blog_list.html">Blog</a>
+            <NavLink className="nav-link" to='/blog'>Blog</NavLink>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="contact.html">Contact</a>
+            <NavLink className="nav-link" to='/login'>Login</NavLink>
           </li>
           <li className="nav-item">
             <a className="nav-link" href="#">
