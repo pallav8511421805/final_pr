@@ -9,6 +9,7 @@ import Terminal from './components/Terminal';
 import Product from './components/Product';
 import Blog from './components/Blog';
 import Login from './components/Login';
+import Addtocart from './components/Addtocart';
 function App() {
   return (
     <>
@@ -20,6 +21,7 @@ function App() {
       <Route path='/product' exact component={Product}/>
       <Route path='/blog' exact component={Blog}/>
       <Route path='/login' exact component={Login}/>
+      <Route path='/addto' exact component={Addtocart}/>
     </Switch>
     <Footer/>
     </>
