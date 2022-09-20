@@ -30,7 +30,7 @@ function* signIn(action) {
     yield put(
       setalertaction({ text: "Login successfully.", color: "success" })
     );
-    History.push("/h");
+    History.push("/H");
   } catch (e) {
     yield put(setalertaction({ text: e.payload, color: "error" }));
   }
