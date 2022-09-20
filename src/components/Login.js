@@ -259,12 +259,14 @@ function Login(props) {
           </div>
         </section>
         <section>
-          <div className="d-flex justify-content-center my-3">
-            <button className="product_login">
-              <i class="fa fa-google my-1 mx-2" aria-hidden="true"></i>
-              Sign up with google
-            </button>
-          </div>
+          {usertype === "Log in" && reset === false ? (
+            <div className="d-flex justify-content-center my-3">
+              <button className="product_login">
+                <i class="fa fa-google my-1 mx-2" aria-hidden="true"></i>
+                Sign up with google
+              </button>
+            </div>
+          ) : null}
           <div className="d-flex justify-content-center">
             {reset ? null : usertype === "Log in" ? (
               <div className="text-center my-3">
