@@ -8,11 +8,7 @@ import {
 } from "../../apis/auth.api";
 import { History } from "../../History/history";
 import { setalertaction } from "../actions/alert.action";
-import {
-  forgetpasswordaction,
-  Logoutedaction,
-  signedinaction,
-} from "../actions/auth.action";
+import { Logoutedaction, signedinaction } from "../actions/auth.action";
 import * as ActionTypes from "../actiontypes";
 
 function* signUp(action) {
