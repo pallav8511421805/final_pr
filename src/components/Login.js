@@ -1,13 +1,21 @@
 import React, { useState } from "react";
 import * as yup from "yup";
 import { Form, Formik, useFormik } from "formik";
+import { useDispatch } from "react-redux";
+import {
+  forgetpasswordaction,
+  signinaction,
+  signingoogle,
+  signupaction,
+} from "../redux/actions/auth.action";
 function Login(props) {
   const [usertype, setusertype] = useState("Log in");
   const [reset, setreset] = useState(false);
+  const dispatch = useDispatch();
 
   let initialVal;
   let mainschema;
-  if (usertype == "Log in") {
+  if (usertype == "Log in" && reset === false) {
     initialVal = {
       password: "",
       email: "",
@@ -19,7 +27,7 @@ function Login(props) {
         .required("Please enter your email id."),
       password: yup.string().required("Please enter your password."),
     });
-  } else if (usertype == "Sign up") {
+  } else if (usertype == "Sign up" && reset === false) {
     initialVal = {
       name: "",
       password: "",
@@ -47,23 +55,29 @@ function Login(props) {
 
   let schema = mainschema;
 
-  const handlelogin = (values) => {
-    alert(JSON.stringify(values, null, 2));
+  const HandlePassword = (values) => {
+    dispatch(forgetpasswordaction(values));
   };
 
   const formik = useFormik({
     initialValues: initialVal,
     validationSchema: schema,
     onSubmit: (values) => {
-      if (usertype === "Log in") {
-        handlelogin(values);
-      } else {
-        alert(JSON.stringify(values, null, 2));
+      if (usertype === "Log in" && !reset) {
+        dispatch(signinaction(values));
+      } else if (reset) {
+        dispatch(HandlePassword(values));
+      } else if (usertype === "Sign up" && !reset) {
+        dispatch(signupaction(values));
       }
     },
   });
   let { errors, handleBlur, handleSubmit, touched, values, handleChange } =
     formik;
+
+  const handlegoogle = () => {
+    dispatch(signingoogle());
+  };
   return (
     <>
       <div>
@@ -261,7 +275,7 @@ function Login(props) {
         <section>
           {usertype === "Log in" && reset === false ? (
             <div className="d-flex justify-content-center my-3">
-              <button className="product_login">
+              <button className="product_login" onClick={() => handlegoogle()}>
                 <i class="fa fa-google my-1 mx-2" aria-hidden="true"></i>
                 Sign in with google
               </button>
