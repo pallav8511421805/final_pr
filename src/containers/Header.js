@@ -89,6 +89,7 @@ function Header(props) {
               </ul>
             </div>
           </nav>
+          <Alert />
         </div>
       </header>
     </>
