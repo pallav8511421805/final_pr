@@ -263,7 +263,7 @@ function Login(props) {
             <div className="d-flex justify-content-center my-3">
               <button className="product_login">
                 <i class="fa fa-google my-1 mx-2" aria-hidden="true"></i>
-                Sign up with google
+                Sign in with google
               </button>
             </div>
           ) : null}
