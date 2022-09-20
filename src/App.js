@@ -22,7 +22,7 @@ function App() {
           <Provider store={store}>
             <Header />
             <Switch>
-              <Route path="/" exact component={Home} />
+              <Route path="/h" exact component={Home} />
               <Route path="/about" exact component={About} />
               <Route path="/terminal" exact component={Terminal} />
               <Route path="/product" exact component={Product} />
