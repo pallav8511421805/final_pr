@@ -5,7 +5,7 @@ import {
   signingoogleapi,
   signoutapi,
   signUpapi,
-} from "../../comman/apis/auth.api";
+} from "../../apis/auth.api";
 import { historydata } from "../../History/history";
 import { setalertaction } from "../actions/alert.action";
 import {

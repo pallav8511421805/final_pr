@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useSnackbar } from "notistack";
 import { resetalertaction } from "../redux/actions/alert.action";
@@ -7,7 +7,6 @@ function Alert(props) {
   const { enqueueSnackbar } = useSnackbar();
   let alertdata = useSelector((state) => state.alert);
   let dispatch = useDispatch();
-
   useEffect(() => {
     if (alertdata.text !== "") {
       enqueueSnackbar(alertdata.text, {
