@@ -4,7 +4,7 @@ import { useSnackbar } from "notistack";
 import { resetalertaction } from "../redux/actions/alert.action";
 
 function Alert(props) {
-  const { enqueueSnackbar, closeSnackbar } = useSnackbar();
+  const { enqueueSnackbar } = useSnackbar();
   let alertdata = useSelector((state) => state.alert);
   let dispatch = useDispatch();
 
