@@ -1,8 +1,12 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import Alert from "../alert/Alert";
+import { useDispatch, useSelector } from "react-redux";
+import { Logoutaction } from "../redux/actions/auth.action";
 
 function Header(props) {
+  const auth = useSelector((state) => state.auth);
+  const dispatch = useDispatch();
   return (
     <>
       <header className="header_section">
@@ -70,9 +74,18 @@ function Header(props) {
                   </NavLink>
                 </li>
                 <li className="nav-item">
-                  <NavLink className="nav-link" to="/login">
-                    Login
-                  </NavLink>
+                  {auth.user === null ? (
+                    <NavLink className="nav-link" to="/login">
+                      Login
+                    </NavLink>
+                  ) : (
+                    <button
+                      className="logoutbtn"
+                      onClick={() => dispatch(Logoutaction())}
+                    >
+                      Log out
+                    </button>
+                  )}
                 </li>
                 <li className="nav-item">
                   <NavLink className="nav-link" to="/addto">
