@@ -11,25 +11,28 @@ import Blog from "./components/Blog";
 import Login from "./components/Login";
 import Addtocart from "./components/Addtocart";
 import { Provider } from "react-redux";
-import store from "./redux/store";
 import { SnackbarProvider } from "notistack";
+import { persistor, store } from "./redux/store";
+import { PersistGate } from "redux-persist/integration/react";
 function App() {
   return (
     <>
       <SnackbarProvider maxSnack={3}>
-        <Provider store={store}>
-          <Header />
-          <Switch>
-            <Route path="/" exact component={Home} />
-            <Route path="/about" exact component={About} />
-            <Route path="/terminal" exact component={Terminal} />
-            <Route path="/product" exact component={Product} />
-            <Route path="/blog" exact component={Blog} />
-            <Route path="/login" exact component={Login} />
-            <Route path="/addto" exact component={Addtocart} />
-          </Switch>
-          <Footer />
-        </Provider>
+        <PersistGate loading={null} persistor={persistor}>
+          <Provider store={store}>
+            <Header />
+            <Switch>
+              <Route path="/" exact component={Home} />
+              <Route path="/about" exact component={About} />
+              <Route path="/terminal" exact component={Terminal} />
+              <Route path="/product" exact component={Product} />
+              <Route path="/blog" exact component={Blog} />
+              <Route path="/login" exact component={Login} />
+              <Route path="/addto" exact component={Addtocart} />
+            </Switch>
+            <Footer />
+          </Provider>
+        </PersistGate>
       </SnackbarProvider>
     </>
   );
