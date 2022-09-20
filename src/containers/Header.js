@@ -75,7 +75,7 @@ function Header(props) {
                 </li>
                 <li className="nav-item">
                   {auth.user === null ? (
-                    <NavLink className="nav-link" to="/login">
+                    <NavLink className="logoutbtn" to="/login">
                       Login
                     </NavLink>
                   ) : (

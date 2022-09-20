@@ -10,7 +10,7 @@ import { History } from "../../History/history";
 import { setalertaction } from "../actions/alert.action";
 import { Logoutedaction, signedinaction } from "../actions/auth.action";
 import * as ActionTypes from "../actiontypes";
-
+console.log(History);
 function* signUp(action) {
   try {
     const user = yield call(signUpapi, action.payload);
