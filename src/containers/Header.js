@@ -76,14 +76,15 @@ function Header(props) {
                 <li className="nav-item">
                   {auth.user === null ? (
                     <NavLink className="nav-link" to="/login">
-                      Log in
+                      Log in <i class="fa fa-lock" aria-hidden="true"></i>
                     </NavLink>
                   ) : (
                     <div
                       className="logoutbtn"
                       onClick={() => dispatch(Logoutaction())}
                     >
-                      Log out
+                      Log out{" "}
+                      <i class="fa fa-unlock-alt" aria-hidden="true"></i>
                     </div>
                   )}
                 </li>
