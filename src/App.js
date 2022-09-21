@@ -14,12 +14,11 @@ import { Provider } from "react-redux";
 import { SnackbarProvider } from "notistack";
 import { persistor, store } from "./redux/store";
 import { PersistGate } from "redux-persist/integration/react";
-import { Zoom } from "./alert/Zoom";
 
 function App() {
   return (
     <>
-      <SnackbarProvider maxSnack={3} TransitionComponent={Zoom}>
+      <SnackbarProvider maxSnack={3}>
         <PersistGate loading={null} persistor={persistor}>
           <Provider store={store}>
             <Header />
