@@ -32,7 +32,7 @@ function Header(props) {
             >
               <ul className="navbar-nav">
                 <li className="nav-item active">
-                  <NavLink className="nav-link" to="/H" exact>
+                  <NavLink className="nav-link" to="/" exact>
                     Home
                   </NavLink>
                 </li>
