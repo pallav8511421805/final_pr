@@ -6,7 +6,7 @@ import {
   signoutapi,
   signUpapi,
 } from "../../apis/auth.api";
-import { History } from "../../History/history";
+import { switchhistory } from "../../History/history";
 import { setalertaction } from "../actions/alert.action";
 import { Logoutedaction, signedinaction } from "../actions/auth.action";
 import * as ActionTypes from "../actiontypes";
@@ -25,7 +25,7 @@ function* signIn(action) {
     yield put(
       setalertaction({ text: "Login successfully.", color: "success" })
     );
-    History.push("/");
+    switchhistory.push("/");
   } catch (e) {
     yield put(setalertaction({ text: e.payload, color: "error" }));
   }
@@ -36,7 +36,7 @@ function* signout() {
     const user = yield call(signoutapi);
     yield put(Logoutedaction());
     yield put(setalertaction({ text: user.payload, color: "success" }));
-    History.push("/login");
+    switchhistory.push("/login");
   } catch (e) {
     yield put(setalertaction({ text: e.payload, color: "error" }));
   }
@@ -46,7 +46,7 @@ function* signGoogle() {
   try {
     const user = yield call(signingoogleapi);
     yield put(signedinaction(user.payload));
-    History.push("/");
+    switchhistory.push("/");
     yield put(
       setalertaction({ text: "Login successfully.", color: "success" })
     );
@@ -58,7 +58,7 @@ function* signGoogle() {
 function* forgetpasswordsaga(action) {
   try {
     const user = yield call(forgetapi, action.payload);
-    History.push("/");
+    switchhistory.push("/");
     yield put(setalertaction({ text: user.payload, color: "success" }));
   } catch (e) {
     yield put(setalertaction({ text: e.payload, color: "error" }));

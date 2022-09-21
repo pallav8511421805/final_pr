@@ -1,2 +1,3 @@
 import { createBrowserHistory } from "history";
-export const History = createBrowserHistory();
+const switchhistory = createBrowserHistory();
+export { switchhistory };
