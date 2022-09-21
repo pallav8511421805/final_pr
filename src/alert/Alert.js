@@ -13,7 +13,7 @@ function Alert(props) {
         variant: Alert.color,
         anchorOrigin: {
           vertical: "bottom",
-          horizontal: "right",
+          horizontal: "left",
         },
       });
       setTimeout(() => {
