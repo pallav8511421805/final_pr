@@ -61,9 +61,11 @@ function Header(props) {
                         Testimonial
                       </NavLink>
                     </li>
-                    <NavLink to="/blog" exact>
-                      Blog
-                    </NavLink>
+                    <li>
+                      <NavLink to="/blog" exact>
+                        Blog
+                      </NavLink>
+                    </li>
                   </ul>
                 </li>
                 <li className="nav-item">
