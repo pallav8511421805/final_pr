@@ -12,7 +12,7 @@ function Alert(props) {
       enqueueSnackbar(Alert.text, {
         variant: Alert.color,
         anchorOrigin: {
-          vertical: "top",
+          vertical: "bottom",
           horizontal: "right",
         },
       });
