@@ -76,15 +76,15 @@ function Header(props) {
                 <li className="nav-item">
                   {auth.user === null ? (
                     <NavLink className="nav-link" to="/login">
-                      Login
+                      Log in
                     </NavLink>
                   ) : (
-                    <button
+                    <div
                       className="logoutbtn"
                       onClick={() => dispatch(Logoutaction())}
                     >
                       Log out
-                    </button>
+                    </div>
                   )}
                 </li>
                 <li className="nav-item">
