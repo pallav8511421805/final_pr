@@ -39,14 +39,14 @@ export const Adddata = (data) => (dispatch) => {
       const cateref = ref(storage, "categorys/" + filename);
       uploadBytes(cateref, data.cname).then(async (snapshot) => {
         getDownloadURL(snapshot.ref).then(async (url) => {
-          const docRef = await addDoc(collection(db, "categorys"), {
+          const Ref = await addDoc(collection(db, "categorys"), {
             ...data,
             cname: url,
             filename: filename,
           });
           dispatch({
             type: Actiontypes.Add_category,
-            payload: { ...data, id: docRef.id, cname: url, filename: filename },
+            payload: { ...data, id: Ref.id, cname: url, filename: filename },
           });
         });
       });
