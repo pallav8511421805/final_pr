@@ -17,6 +17,7 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import ShoppingBagIcon from "@mui/icons-material/ShoppingBag";
+import AdminPanelSettingsOutlinedIcon from "@mui/icons-material/AdminPanelSettingsOutlined";
 import CategoryIcon from "@mui/icons-material/Category";
 import { NavLink } from "react-router-dom";
 
@@ -124,7 +125,7 @@ export default function Lay_out({ children }) {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap component="div">
-            Layout
+            <AdminPanelSettingsOutlinedIcon /> Adminpanel
           </Typography>
         </Toolbar>
       </AppBar>
