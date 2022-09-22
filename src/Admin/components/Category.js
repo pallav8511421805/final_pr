@@ -21,7 +21,7 @@ import {
 
 function Category(props) {
   const Dispatch = useDispatch();
-  const get_categorydata = useSelector((state) => state.category);
+  const get_categorydata = useSelector((state) => state.categoryroot);
 
   const [open, setOpen] = React.useState(false);
   const [data, setdata] = useState([]);

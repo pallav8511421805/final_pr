@@ -19,12 +19,12 @@ export const getdata = () => (dispatch) => {
   try {
     dispatch(loaddata());
     setTimeout(async function () {
-      let data = [];
+      let catdata = [];
       const querySnapshot = await getDocs(collection(db, "categorys"));
       querySnapshot.forEach((doc) => {
-        data.push({ ...doc.data(), id: doc.id });
+        catdata.push({ ...doc.data(), id: doc.id });
       });
-      dispatch({ type: Actiontypes.getcategory, payload: data });
+      dispatch({ type: Actiontypes.getcategory, payload: catdata });
     }, 2000);
   } catch (error) {
     dispatch(errordata(error.message));

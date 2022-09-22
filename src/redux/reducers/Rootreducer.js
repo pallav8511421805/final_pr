@@ -6,5 +6,5 @@ import { categoryreducer } from "./category.reducer";
 export const Rootreducer = combineReducers({
   auth: authreducer,
   alert: alertreducer,
-  category: categoryreducer,
+  categoryroot: categoryreducer,
 });

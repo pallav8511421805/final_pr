@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 
 function Displaycategory(props) {
-  let displaydata = useSelector((state) => state.category);
+  let displaydata = useSelector((state) => state.categoryroot);
   return (
     <>
       <section className="product_section layout_padding">
