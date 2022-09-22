@@ -14,6 +14,7 @@ import { Provider } from "react-redux";
 import { SnackbarProvider } from "notistack";
 import { persistor, store } from "./redux/store";
 import { PersistGate } from "redux-persist/integration/react";
+import Lay_out from "./Admin/containers/Lay_out";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
               <Route path="/blog" exact component={Blog} />
               <Route path="/login" exact component={Login} />
               <Route path="/addto" exact component={Addtocart} />
+              <Lay_out></Lay_out>
             </Switch>
             <Footer />
           </Provider>
