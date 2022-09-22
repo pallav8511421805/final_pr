@@ -21,7 +21,7 @@ function Displaycategory(props) {
           <div className="row">
             {data.map((d, i) => {
               return (
-                <div className="box">
+                <div className="box m-2">
                   <div className="img-box">
                     <img src={d.cname} alt />
                   </div>
