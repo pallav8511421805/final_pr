@@ -113,3 +113,14 @@ export const loaddata = () => (dispatch) => {
 export const errordata = (error) => (dispatch) => {
   dispatch({ type: Actiontypes.Load_category, payload: error });
 };
+
+export const displaydata = () => (dispatch) => {
+  setTimeout(async function () {
+    let catdata = [];
+    const querySnapshot = await getDocs(collection(db, "categorys"));
+    querySnapshot.forEach((doc) => {
+      catdata.push({ ...doc.data(), id: doc.id });
+    });
+    dispatch({ type: Actiontypes.getcategory, payload: catdata });
+  }, 0);
+};

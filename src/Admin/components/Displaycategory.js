@@ -1,8 +1,13 @@
-import React from "react";
-import { useSelector } from "react-redux";
-
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { displaydata } from "../../redux/actions/category.action";
 function Displaycategory(props) {
+  const dispatch = useDispatch();
   const categorydata = useSelector((state) => state.categoryroot);
+  const data = categorydata.category;
+  useEffect(() => {
+    dispatch(displaydata());
+  }, []);
   return (
     <>
       <section className="product_section layout_padding">
@@ -13,7 +18,20 @@ function Displaycategory(props) {
             </h2>
           </div>
 
-          <div className="row">{console.log(categorydata.category)}</div>
+          <div className="row">
+            {data.map((d, i) => {
+              return (
+                <div className="box">
+                  <div className="img-box">
+                    <img src={d.cname} alt />
+                  </div>
+                  <div className="detail-box">
+                    <h5>{d.name}</h5>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </section>
     </>
