@@ -15,9 +15,9 @@ import { SnackbarProvider } from "notistack";
 import { PersistGate } from "redux-persist/integration/react";
 import Lay_out from "./Admin/containers/Lay_out";
 import Category from "./Admin/components/Category";
-import { store } from "./redux/store";
+import { configstore } from "./redux/store";
 function App() {
-  let { store, persistor } = store();
+  let { store, persistor } = configstore();
   return (
     <>
       <SnackbarProvider maxSnack={3}>
