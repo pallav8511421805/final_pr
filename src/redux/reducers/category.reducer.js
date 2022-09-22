@@ -1,4 +1,4 @@
-import * as Actiontypes from "../actions/Actiontype";
+import * as Actiontypes from "../actiontypes";
 
 const intval = {
   isload: false,

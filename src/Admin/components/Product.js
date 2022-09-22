@@ -17,7 +17,7 @@ import {
   Deletedata,
   Editdata,
   getproduct_data,
-} from "../Redux/actions/product.actions";
+} from "../../redux/actions/product.actions";
 
 function Product(props) {
   const Dispatch = useDispatch();

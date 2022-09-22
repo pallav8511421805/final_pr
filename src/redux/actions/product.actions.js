@@ -7,7 +7,7 @@ import {
   getDocs,
   updateDoc,
 } from "firebase/firestore";
-import * as Actiontypes from "../actions/Actiontype";
+import * as Actiontypes from "../actiontypes";
 import {
   deleteObject,
   getDownloadURL,

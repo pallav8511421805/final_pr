@@ -17,7 +17,7 @@ import {
   Deletedata,
   Editdata,
   getdata,
-} from "../Redux/actions/category.action";
+} from "../../redux/actions/category.action";
 
 function Category(props) {
   const Dispatch = useDispatch();
