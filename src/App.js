@@ -31,7 +31,7 @@ function App() {
               <Route path="/blog" exact component={Blog} />
               <Route path="/login" exact component={Login} />
               <Route path="/addto" exact component={Addtocart} />
-              <Route path="/admin" exact component={Admin} />
+              
             </Switch>
             <Footer />
           </Provider>

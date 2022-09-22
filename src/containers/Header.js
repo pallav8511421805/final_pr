@@ -101,11 +101,6 @@ function Header(props) {
                     <i className="fa fa-search" aria-hidden="true" />
                   </button>
                 </form>
-                <li className="nav-item">
-                  <NavLink className="nav-link" to="/admin">
-                    Admin
-                  </NavLink>
-                </li>
               </ul>
             </div>
           </nav>
