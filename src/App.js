@@ -12,11 +12,12 @@ import Login from "./components/Login";
 import Addtocart from "./components/Addtocart";
 import { Provider } from "react-redux";
 import { SnackbarProvider } from "notistack";
-import { persistor, store } from "./redux/store";
 import { PersistGate } from "redux-persist/integration/react";
 import Lay_out from "./Admin/containers/Lay_out";
 import Category from "./Admin/components/Category";
+import { store } from "./redux/store";
 function App() {
+  let { store, persistor } = store();
   return (
     <>
       <SnackbarProvider maxSnack={3}>

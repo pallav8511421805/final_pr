@@ -13,7 +13,7 @@ function Displaycategory(props) {
             </h2>
           </div>
 
-          <div className="row">{console.log(displaydata)}</div>
+          <div className="row">{console.log(displaydata.category)}</div>
         </div>
       </section>
     </>
