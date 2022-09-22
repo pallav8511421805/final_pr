@@ -16,7 +16,6 @@ import { persistor, store } from "./redux/store";
 import { PersistGate } from "redux-persist/integration/react";
 import Lay_out from "./Admin/containers/Lay_out";
 import Category from "./Admin/components/Category";
-import Product from "./Admin/components/Product";
 function App() {
   return (
     <>
@@ -33,7 +32,6 @@ function App() {
               <Route path="/login" exact component={Login} />
               <Route path="/addto" exact component={Addtocart} />
               <Lay_out>
-                <Route path={"/products"} exact component={Product} />
                 <Route path={"/Category"} exact component={Category} />
               </Lay_out>
             </Switch>

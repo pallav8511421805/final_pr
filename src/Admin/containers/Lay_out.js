@@ -100,11 +100,6 @@ export default function Lay_out({ children }) {
 
   const product_list = [
     {
-      label: "Products",
-      to: "/products",
-      icon: ShoppingBagIcon,
-    },
-    {
       label: "Category",
       to: "/Category",
       icon: CategoryIcon,
