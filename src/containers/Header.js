@@ -66,12 +66,12 @@ function Header(props) {
                         Blog
                       </NavLink>
                     </li>
+                    <li>
+                      <NavLink to="/product" exact>
+                        Products
+                      </NavLink>
+                    </li>
                   </ul>
-                </li>
-                <li className="nav-item">
-                  <NavLink className="nav-link" to="/product">
-                    Products
-                  </NavLink>
                 </li>
                 <li className="nav-item">
                   {auth.user === null ? (
@@ -101,6 +101,11 @@ function Header(props) {
                     <i className="fa fa-search" aria-hidden="true" />
                   </button>
                 </form>
+                <li className="nav-item">
+                  <NavLink className="nav-link" to="/admin">
+                    Admin
+                  </NavLink>
+                </li>
               </ul>
             </div>
           </nav>

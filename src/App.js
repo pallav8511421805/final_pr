@@ -14,6 +14,7 @@ import { Provider } from "react-redux";
 import { SnackbarProvider } from "notistack";
 import { persistor, store } from "./redux/store";
 import { PersistGate } from "redux-persist/integration/react";
+import Admin from "./Admin/Admin";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
               <Route path="/blog" exact component={Blog} />
               <Route path="/login" exact component={Login} />
               <Route path="/addto" exact component={Addtocart} />
+              <Route path="/admin" exact component={Admin} />
             </Switch>
             <Footer />
           </Provider>
