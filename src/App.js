@@ -6,7 +6,7 @@ import Home from "./components/Home";
 import { Switch, Route } from "react-router-dom";
 import About from "./components/About";
 import Terminal from "./components/Terminal";
-import Product from "./components/Product";
+import Products from "./components/Product";
 import Blog from "./components/Blog";
 import Login from "./components/Login";
 import Addtocart from "./components/Addtocart";
@@ -15,7 +15,8 @@ import { SnackbarProvider } from "notistack";
 import { persistor, store } from "./redux/store";
 import { PersistGate } from "redux-persist/integration/react";
 import Lay_out from "./Admin/containers/Lay_out";
-
+import Category from "./Admin/components/Category";
+import Product from "./Admin/components/Product";
 function App() {
   return (
     <>
@@ -27,11 +28,14 @@ function App() {
               <Route path="/" exact component={Home} />
               <Route path="/about" exact component={About} />
               <Route path="/terminal" exact component={Terminal} />
-              <Route path="/product" exact component={Product} />
+              <Route path="/product" exact component={Products} />
               <Route path="/blog" exact component={Blog} />
               <Route path="/login" exact component={Login} />
               <Route path="/addto" exact component={Addtocart} />
-              <Lay_out></Lay_out>
+              <Lay_out>
+                <Route path={"/products"} exact component={Product} />
+                <Route path={"/Category"} exact component={Category} />
+              </Lay_out>
             </Switch>
             <Footer />
           </Provider>
