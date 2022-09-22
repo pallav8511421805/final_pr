@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 
 function Displaycategory(props) {
-  let displaydata = useSelector((state) => state.categoryroot);
+  const categorydata = useSelector((state) => state.categoryroot);
   return (
     <>
       <section className="product_section layout_padding">
@@ -13,7 +13,7 @@ function Displaycategory(props) {
             </h2>
           </div>
 
-          <div className="row">{console.log(displaydata.category)}</div>
+          <div className="row">{console.log(categorydata.category)}</div>
         </div>
       </section>
     </>

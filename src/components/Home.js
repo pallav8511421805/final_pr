@@ -1,5 +1,5 @@
 import React from "react";
-import Displaycategory from "./Displaycategory";
+import Displaycategory from "../Admin/components/Displaycategory";
 
 function Home(props) {
   return (
