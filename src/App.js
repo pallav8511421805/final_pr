@@ -14,7 +14,6 @@ import { Provider } from "react-redux";
 import { SnackbarProvider } from "notistack";
 import { persistor, store } from "./redux/store";
 import { PersistGate } from "redux-persist/integration/react";
-import Admin from "./Admin/Admin";
 
 function App() {
   return (
