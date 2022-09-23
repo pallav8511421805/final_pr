@@ -62,7 +62,6 @@ export const Editdata = (data) => async (dispatch) => {
     const proRef = doc(db, "Products", data.id);
     if (typeof data.pname === "string") {
       await updateDoc(proRef, {
-        address: data.address,
         categoryselect: data.categoryselect,
         name: data.name,
         price: data.price,
@@ -77,7 +76,6 @@ export const Editdata = (data) => async (dispatch) => {
         uploadBytes(newimgRef, data.pname).then(async (snapshot) => {
           getDownloadURL(snapshot.ref).then(async (url) => {
             await updateDoc(proRef, {
-              address: data.address,
               categoryselect: data.categoryselect,
               name: data.name,
               price: data.price,

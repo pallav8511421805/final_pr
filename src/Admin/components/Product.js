@@ -59,9 +59,8 @@ function Product(props) {
     },
     { field: "name", headerName: "Product name", width: 130 },
     { field: "price", headerName: "Price", width: 130 },
-    { field: "description", headerName: "product description", width: 130 },
-    { field: "categoryselect", headerName: "Company name", width: 130 },
-    { field: "address", headerName: "Address", width: 130 },
+    { field: "description", headerName: "product description", width: 200 },
+    { field: "categoryselect", headerName: "Category", width: 130 },
     {
       field: "action",
       headerName: "Action",
@@ -131,7 +130,6 @@ function Product(props) {
     categoryselect: yup
       .string()
       .required("Please select your product category."),
-    address: yup.string().required("Please enter your address."),
     pname: yup.mixed().required("Please select your image."),
   });
 
@@ -141,7 +139,6 @@ function Product(props) {
       description: "",
       price: "",
       categoryselect: "",
-      address: "",
       pname: "",
     },
     validationSchema: schema,
@@ -261,19 +258,6 @@ function Product(props) {
                       <p style={{ color: "#1976d2" }}>
                         {errors.categoryselect}
                       </p>
-                    ) : null}
-                    <TextField
-                      value={values.address}
-                      margin="dense"
-                      name="address"
-                      label="Address"
-                      fullWidth
-                      variant="standard"
-                      onBlur={handleBlur}
-                      onChange={handleChange}
-                    />
-                    {errors.address && touched.address ? (
-                      <p style={{ color: "#1976d2" }}>{errors.address}</p>
                     ) : null}
                     <>
                       <p>Product image</p>
