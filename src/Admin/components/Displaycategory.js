@@ -1,12 +1,12 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { displaydata } from "../../redux/actions/category.action";
+import { getdata } from "../../redux/actions/category.action";
 function Displaycategory(props) {
   const dispatch = useDispatch();
   const categorydata = useSelector((state) => state.categoryroot);
   const data = categorydata.category;
   useEffect(() => {
-    dispatch(displaydata());
+    dispatch(getdata());
   }, []);
   return (
     <>
