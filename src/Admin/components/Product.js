@@ -21,12 +21,10 @@ import {
 
 function Product(props) {
   const Dispatch = useDispatch();
-  const getdata_product = useSelector((state) => state.product);
+  const getdata_product = useSelector((state) => state.productroot);
 
   const [open, setOpen] = React.useState(false);
   const [data, setdata] = useState([]);
-  const [sproduct, setsproduct] = useState([]);
-  const [data1, setdata1] = useState(0);
   const [update, setupdate] = useState(false);
   const [dopen, setdOpen] = React.useState(false);
 
@@ -42,24 +40,9 @@ function Product(props) {
     setOpen(false);
     setdOpen(false);
   };
-  const loadpdata = () => {
-    let local_data = JSON.parse(localStorage.getItem("Product"));
-
-    if (local_data !== null) {
-      setdata(local_data);
-    }
-  };
 
   const handleddelete = () => {
-    // let local_data = JSON.parse(localStorage.getItem("Product"))
-
-    // const filterdata = local_data.filter((l) => l.id !== data1);
-
-    // localStorage.setItem("Product", JSON.stringify(filterdata));
-
-    Dispatch(Deletedata(data1));
-
-    loadpdata();
+    Dispatch(Deletedata(data));
     handleClose();
   };
 
@@ -90,7 +73,7 @@ function Product(props) {
             color="primary"
             onClick={() => {
               handledClickOpen();
-              setdata1(params.row);
+              setdata(params.row);
             }}
           >
             <DeleteOutlineIcon />
@@ -118,45 +101,21 @@ function Product(props) {
   };
 
   const handleproduct = (values) => {
-    // let local_data = JSON.parse(localStorage.getItem("Product"))
-    // let product = local_data.map((p) => {
-    //   if (p.id === values.id) {
-    //     return values;
-    //   } else {
-    //     return p;
-    //   }
-    // })
-    // localStorage.setItem("Product", JSON.stringify(product));
     Dispatch(Editdata(values));
-
-    loadpdata();
     formik.resetForm();
     handleClose();
     setupdate(false);
   };
 
   const handleinsetdata = (values) => {
-    // let local_data = JSON.parse(localStorage.getItem("Product"))
-
     let Mid = Math.floor(Math.random() * 100);
-
     const data = {
       id: Mid,
       ...values,
     };
-
     Dispatch(Adddata(data));
-
-    // if (local_data === null) {
-    //   localStorage.setItem("Product", JSON.stringify([data]))
-    // } else {
-    //   local_data.push(data);
-    //   localStorage.setItem("Product", JSON.stringify(local_data))
-    // }
-
     handleClose();
     formik.resetForm();
-    loadpdata();
   };
 
   let schema = yup.object().shape({
@@ -191,24 +150,7 @@ function Product(props) {
     },
   });
 
-  const handlesearchproduct = (productval) => {
-    let local_data = JSON.parse(localStorage.getItem("Product"));
-
-    const filterproductdata = local_data.filter(
-      (fp) =>
-        fp.name.toLowerCase().includes(productval) ||
-        fp.productid.toString().includes(productval) ||
-        fp.price.toString().includes(productval) ||
-        fp.companyname.toString().includes(productval) ||
-        fp.address.toString().includes(productval)
-    );
-    setsproduct(filterproductdata);
-  };
-
-  const filter_product = sproduct.length > 0 ? sproduct : data;
-
   useEffect(() => {
-    // loadpdata()
     Dispatch(getproduct_data());
   }, []);
 
@@ -256,18 +198,6 @@ function Product(props) {
             <Button variant="outlined" onClick={handleClickOpen}>
               Add product details
             </Button>
-            <div style={{ textAlign: "center" }}>
-              <TextField
-                style={{ width: "80%" }}
-                margin="dense"
-                name="Search"
-                label="Search Product data"
-                type="text"
-                fullWidth
-                variant="standard"
-                onChange={(e) => handlesearchproduct(e.target.value)}
-              />
-            </div>
             <Dialog fullWidth open={open} onClose={handleClose}>
               <DialogTitle>Add product</DialogTitle>
               <Formik value={formik}>
