@@ -249,6 +249,7 @@ function Product(props) {
                     ) : null}
                     <h6 className="my-2">Category select</h6>
                     <select
+                      className="designclass"
                       name="cselect"
                       onChange={handleChange}
                       onBlur={handleBlur}
