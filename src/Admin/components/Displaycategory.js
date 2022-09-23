@@ -10,9 +10,11 @@ function Displaycategory(props) {
   }, []);
   return (
     <>
-      {data.isload ? (
-        <div>Loading....</div>
-      ) : data.error !== "" ? (
+      {categorydata.isload ? (
+        <div className="d-flex justify-content-center m-4">
+          <div className="c_loading"></div>
+        </div>
+      ) : categorydata.error !== "" ? (
         <div>{data.error}</div>
       ) : (
         <section className="product_section layout_padding">
