@@ -199,8 +199,8 @@ function Category(props) {
                     {errors.name && touched.name ? (
                       <p style={{ color: "#1976d2" }}>{errors.name}</p>
                     ) : null}
+                    <h6 className="my-2">Product image</h6>
                     <>
-                      <p>category image</p>
                       <input
                         type={"file"}
                         name="cname"

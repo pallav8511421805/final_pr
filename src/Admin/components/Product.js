@@ -18,10 +18,13 @@ import {
   Editdata,
   getproduct_data,
 } from "../../redux/actions/product.actions";
+import { getdata } from "../../redux/actions/category.action";
 
 function Product(props) {
   const Dispatch = useDispatch();
   const getdata_product = useSelector((state) => state.productroot);
+  const catdata = useSelector((state) => state.categoryroot);
+  const dispalycatdata = catdata.category;
 
   const [open, setOpen] = React.useState(false);
   const [data, setdata] = useState([]);
@@ -153,6 +156,7 @@ function Product(props) {
 
   useEffect(() => {
     Dispatch(getproduct_data());
+    Dispatch(getdata());
   }, []);
 
   let {
@@ -244,23 +248,26 @@ function Product(props) {
                     {errors.price && touched.price ? (
                       <p style={{ color: "#1976d2" }}>{errors.price}</p>
                     ) : null}
-                    <TextField
-                      value={values.categoryselect}
-                      margin="dense"
+                    <h6 className="my-2">Category select</h6>
+                    <select
                       name="categoryselect"
-                      label="categoryselect"
-                      fullWidth
-                      variant="standard"
-                      onBlur={handleBlur}
+                      id="categoryselect"
                       onChange={handleChange}
-                    />
+                      onBlur={handleBlur}
+                      value={values.categoryselect}
+                    >
+                      <option value="">Select Category</option>
+                      {dispalycatdata.map((c) => {
+                        return <option value={c.id}>{c.name}</option>;
+                      })}
+                    </select>
                     {errors.categoryselect && touched.categoryselect ? (
                       <p style={{ color: "#1976d2" }}>
                         {errors.categoryselect}
                       </p>
                     ) : null}
+                    <h6 className="my-2">Product image</h6>
                     <>
-                      <p>Product image</p>
                       <input
                         type={"file"}
                         name="pname"
