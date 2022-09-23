@@ -107,7 +107,7 @@ export default function Lay_out({ children }) {
     },
     {
       label: "Products",
-      to: "/product",
+      to: "/products",
       icon: ShoppingBagIcon,
     },
   ];
