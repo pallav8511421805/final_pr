@@ -255,7 +255,8 @@ function Product(props) {
                     >
                       <option value="">Select Category</option>
                       {dispalycatdata.map((c) => {
-                        return <option value={c.id}>{c.name}</option>;
+                        console.log(c);
+                        // return <option value={c.id}>{c.name}</option>;
                       })}
                     </select>
                     {errors.cselect && touched.cselect ? (
