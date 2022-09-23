@@ -66,7 +66,7 @@ export const Editdata = (data) => async (dispatch) => {
         companyname: data.companyname,
         name: data.name,
         price: data.price,
-        productid: data.productid,
+        description: data.description,
       });
       dispatch({ type: Actiontypes.Edit_product, payload: data });
     } else {
@@ -81,7 +81,7 @@ export const Editdata = (data) => async (dispatch) => {
               companyname: data.companyname,
               name: data.name,
               price: data.price,
-              productid: data.productid,
+              description: data.description,
               filename: filename,
               pname: url,
             });

@@ -47,11 +47,6 @@ function Product(props) {
   };
 
   const columns = [
-    { field: "name", headerName: "Product name", width: 130 },
-    { field: "productid", headerName: "Product id", width: 130 },
-    { field: "price", headerName: "Price", width: 130 },
-    { field: "companyname", headerName: "Company name", width: 130 },
-    { field: "address", headerName: "Address", width: 130 },
     {
       field: "pname",
       headerName: "Image",
@@ -62,6 +57,11 @@ function Product(props) {
         </>
       ),
     },
+    { field: "name", headerName: "Product name", width: 130 },
+    { field: "price", headerName: "Price", width: 130 },
+    { field: "description", headerName: "product description", width: 130 },
+    { field: "companyname", headerName: "Company name", width: 130 },
+    { field: "address", headerName: "Address", width: 130 },
     {
       field: "action",
       headerName: "Action",
@@ -120,7 +120,9 @@ function Product(props) {
 
   let schema = yup.object().shape({
     name: yup.string().required("Please enter your product name."),
-    productid: yup.string().required("Please enter your product id."),
+    description: yup
+      .string()
+      .required("Please enter your product description."),
     price: yup
       .number()
       .positive("Please enter your product valid price.")
@@ -134,7 +136,7 @@ function Product(props) {
   const formik = useFormik({
     initialValues: {
       name: "",
-      productid: "",
+      description: "",
       price: "",
       companyname: "",
       address: "",
@@ -218,17 +220,17 @@ function Product(props) {
                       <p style={{ color: "#1976d2" }}>{errors.name}</p>
                     ) : null}
                     <TextField
-                      value={values.productid}
+                      value={values.description}
                       margin="dense"
-                      name="productid"
-                      label="Product unique id"
+                      name="description"
+                      label="Product description"
                       fullWidth
                       variant="standard"
                       onBlur={handleBlur}
                       onChange={handleChange}
                     />
-                    {errors.productid && touched.productid ? (
-                      <p style={{ color: "#1976d2" }}>{errors.productid}</p>
+                    {errors.description && touched.description ? (
+                      <p style={{ color: "#1976d2" }}>{errors.description}</p>
                     ) : null}
                     <TextField
                       value={values.price}
