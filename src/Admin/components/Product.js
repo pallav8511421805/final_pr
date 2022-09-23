@@ -263,13 +263,19 @@ function Product(props) {
                     ) : null}
                     <h6 className="my-2">Product image</h6>
                     <>
-                      <input
-                        type={"file"}
-                        name="pname"
-                        onChange={(e) => {
-                          setFieldValue("pname", e.target.files[0]);
-                        }}
-                      />
+                      <div className="inputfilet">
+                        <input
+                          id="filetype"
+                          type={"file"}
+                          name="pname"
+                          onChange={(e) => {
+                            setFieldValue("pname", e.target.files[0]);
+                          }}
+                        />
+                        <label for="filetype" className="inputlabelfile">
+                          Product image
+                        </label>
+                      </div>
                       {errors.pname && touched.pname ? (
                         <p style={{ color: "#1976d2" }}>{errors.pname}</p>
                       ) : null}
