@@ -49,7 +49,7 @@ function Product(props) {
   const columns = [
     {
       field: "pname",
-      headerName: "Image",
+      headerName: "Product image",
       width: 130,
       renderCell: (params) => (
         <>
@@ -60,7 +60,7 @@ function Product(props) {
     { field: "name", headerName: "Product name", width: 130 },
     { field: "price", headerName: "Price", width: 130 },
     { field: "description", headerName: "product description", width: 130 },
-    { field: "companyname", headerName: "Company name", width: 130 },
+    { field: "categoryselect", headerName: "Company name", width: 130 },
     { field: "address", headerName: "Address", width: 130 },
     {
       field: "action",
@@ -128,7 +128,9 @@ function Product(props) {
       .positive("Please enter your product valid price.")
       .integer()
       .required("Please enter your product price."),
-    companyname: yup.string().required("Please enter your company name."),
+    categoryselect: yup
+      .string()
+      .required("Please select your product category."),
     address: yup.string().required("Please enter your address."),
     pname: yup.mixed().required("Please select your image."),
   });
@@ -138,7 +140,7 @@ function Product(props) {
       name: "",
       description: "",
       price: "",
-      companyname: "",
+      categoryselect: "",
       address: "",
       pname: "",
     },
@@ -246,17 +248,19 @@ function Product(props) {
                       <p style={{ color: "#1976d2" }}>{errors.price}</p>
                     ) : null}
                     <TextField
-                      value={values.companyname}
+                      value={values.categoryselect}
                       margin="dense"
-                      name="companyname"
-                      label="Company name"
+                      name="categoryselect"
+                      label="categoryselect"
                       fullWidth
                       variant="standard"
                       onBlur={handleBlur}
                       onChange={handleChange}
                     />
-                    {errors.companyname && touched.companyname ? (
-                      <p style={{ color: "#1976d2" }}>{errors.companyname}</p>
+                    {errors.categoryselect && touched.categoryselect ? (
+                      <p style={{ color: "#1976d2" }}>
+                        {errors.categoryselect}
+                      </p>
                     ) : null}
                     <TextField
                       value={values.address}
@@ -272,7 +276,7 @@ function Product(props) {
                       <p style={{ color: "#1976d2" }}>{errors.address}</p>
                     ) : null}
                     <>
-                      <p>Profile image</p>
+                      <p>Product image</p>
                       <input
                         type={"file"}
                         name="pname"

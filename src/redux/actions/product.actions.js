@@ -63,7 +63,7 @@ export const Editdata = (data) => async (dispatch) => {
     if (typeof data.pname === "string") {
       await updateDoc(proRef, {
         address: data.address,
-        companyname: data.companyname,
+        categoryselect: data.categoryselect,
         name: data.name,
         price: data.price,
         description: data.description,
@@ -78,7 +78,7 @@ export const Editdata = (data) => async (dispatch) => {
           getDownloadURL(snapshot.ref).then(async (url) => {
             await updateDoc(proRef, {
               address: data.address,
-              companyname: data.companyname,
+              categoryselect: data.categoryselect,
               name: data.name,
               price: data.price,
               description: data.description,
