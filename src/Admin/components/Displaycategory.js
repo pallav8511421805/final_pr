@@ -10,30 +10,36 @@ function Displaycategory(props) {
   }, []);
   return (
     <>
-      <section className="product_section layout_padding">
-        <div className="container">
-          <div className="heading_container heading_center">
-            <h2>
-              <span>category</span>
-            </h2>
-          </div>
+      {data.isload ? (
+        <div>Loading....</div>
+      ) : data.error !== "" ? (
+        <div>{data.error}</div>
+      ) : (
+        <section className="product_section layout_padding">
+          <div className="container">
+            <div className="heading_container heading_center">
+              <h2>
+                <span>category</span>
+              </h2>
+            </div>
 
-          <div className="row">
-            {data.map((d, i) => {
-              return (
-                <div className="box m-2">
-                  <div className="img-box">
-                    <img src={d.cname} alt />
+            <div className="row">
+              {data.map((d, i) => {
+                return (
+                  <div className="box m-2">
+                    <div className="img-box">
+                      <img src={d.cname} alt />
+                    </div>
+                    <div className="detail-box">
+                      <h5>{d.name}</h5>
+                    </div>
                   </div>
-                  <div className="detail-box">
-                    <h5>{d.name}</h5>
-                  </div>
-                </div>
-              );
-            })}
+                );
+              })}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
     </>
   );
 }
