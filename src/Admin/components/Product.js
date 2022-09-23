@@ -63,7 +63,7 @@ function Product(props) {
     { field: "name", headerName: "Product name", width: 130 },
     { field: "price", headerName: "Price", width: 130 },
     { field: "description", headerName: "product description", width: 200 },
-    { field: "categoryselect", headerName: "Category", width: 130 },
+    { field: "cselect", headerName: "Category", width: 130 },
     {
       field: "action",
       headerName: "Action",
@@ -130,9 +130,7 @@ function Product(props) {
       .positive("Please enter your product valid price.")
       .integer()
       .required("Please enter your product price."),
-    categoryselect: yup
-      .string()
-      .required("Please select your product category."),
+    cselect: yup.string().required("Please select your product category."),
     pname: yup.mixed().required("Please select your image."),
   });
 
@@ -141,7 +139,7 @@ function Product(props) {
       name: "",
       description: "",
       price: "",
-      categoryselect: "",
+      cselect: "",
       pname: "",
     },
     validationSchema: schema,
@@ -250,21 +248,18 @@ function Product(props) {
                     ) : null}
                     <h6 className="my-2">Category select</h6>
                     <select
-                      name="categoryselect"
-                      id="categoryselect"
+                      name="cselect"
                       onChange={handleChange}
                       onBlur={handleBlur}
-                      value={values.categoryselect}
+                      value={values.cselect}
                     >
                       <option value="">Select Category</option>
                       {dispalycatdata.map((c) => {
                         return <option value={c.id}>{c.name}</option>;
                       })}
                     </select>
-                    {errors.categoryselect && touched.categoryselect ? (
-                      <p style={{ color: "#1976d2" }}>
-                        {errors.categoryselect}
-                      </p>
+                    {errors.cselect && touched.cselect ? (
+                      <p style={{ color: "#1976d2" }}>{errors.cselect}</p>
                     ) : null}
                     <h6 className="my-2">Product image</h6>
                     <>
