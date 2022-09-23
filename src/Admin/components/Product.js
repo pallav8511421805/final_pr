@@ -10,6 +10,7 @@ import { Form, Formik, useFormik } from "formik";
 import IconButton from "@mui/material/IconButton";
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 import ModeEditOutlineOutlinedIcon from "@mui/icons-material/ModeEditOutlineOutlined";
+import ImageOutlinedIcon from "@mui/icons-material/ImageOutlined";
 import { DataGrid } from "@mui/x-data-grid";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -273,7 +274,7 @@ function Product(props) {
                           }}
                         />
                         <label for="filetype" className="inputlabelfile">
-                          Product image
+                          <ImageOutlinedIcon /> Product image
                         </label>
                       </div>
                       {errors.pname && touched.pname ? (

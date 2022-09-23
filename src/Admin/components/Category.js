@@ -10,6 +10,7 @@ import { Form, Formik, useFormik } from "formik";
 import IconButton from "@mui/material/IconButton";
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 import ModeEditOutlineOutlinedIcon from "@mui/icons-material/ModeEditOutlineOutlined";
+import ImageOutlinedIcon from "@mui/icons-material/ImageOutlined";
 import { DataGrid } from "@mui/x-data-grid";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -201,16 +202,24 @@ function Category(props) {
                     ) : null}
                     <h6 className="my-2">Product image</h6>
                     <>
-                      <input
-                        type={"file"}
-                        name="cname"
-                        onChange={(e) => {
-                          setFieldValue("cname", e.target.files[0]);
-                        }}
-                      />
-                      {errors.cname && touched.cname ? (
-                        <p style={{ color: "#1976d2" }}>{errors.cname}</p>
-                      ) : null}
+                      <>
+                        <div className="inputfilet">
+                          <input
+                            id="filetype"
+                            type={"file"}
+                            name="cname"
+                            onChange={(e) => {
+                              setFieldValue("cname", e.target.files[0]);
+                            }}
+                          />
+                          <label for="filetype" className="inputlabelfile1">
+                            <ImageOutlinedIcon /> Category image
+                          </label>
+                        </div>
+                        {errors.cname && touched.cname ? (
+                          <p style={{ color: "#1976d2" }}>{errors.cname}</p>
+                        ) : null}
+                      </>
                     </>
                   </DialogContent>
                   <DialogActions>
