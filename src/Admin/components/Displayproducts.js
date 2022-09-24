@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { NavLink } from "react-router-dom";
 import { getproduct_data } from "../../redux/actions/product.actions";
 
 function Displayproducts(props) {
@@ -19,9 +20,9 @@ function Displayproducts(props) {
                 <div className="box">
                   <div className="option_container">
                     <div className="options">
-                      <a href className="option1">
+                      <NavLink className="option1" exact to={"/productdetail"}>
                         View
-                      </a>
+                      </NavLink>
                       <a href className="option2">
                         Buy Now
                       </a>

@@ -17,6 +17,7 @@ import Lay_out from "./Admin/containers/Lay_out";
 import Category from "./Admin/components/Category";
 import { configstore } from "./redux/store";
 import Product from "./Admin/components/Product";
+import Productdetails from "./components/Productdetails";
 function App() {
   let { store, persistor } = configstore();
   return (
@@ -26,6 +27,7 @@ function App() {
           <Provider store={store}>
             <Header />
             <Switch>
+              <Route path="/productdetail" exact component={Productdetails} />
               <Route path="/" exact component={Home} />
               <Route path="/about" exact component={About} />
               <Route path="/terminal" exact component={Terminal} />
