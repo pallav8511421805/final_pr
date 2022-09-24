@@ -18,14 +18,14 @@ function Productdetails(props) {
       <section>
         <div className="container">
           <div className="row justify-content-between">
-            <div className="col-sm-6 col-md-4 col-lg-6">
+            <div className="col-sm-6 col-md-4 col-lg-6 align-self-center">
               <div className="pdbox m-3">
                 <div className="text-center">
                   <img src="images/p5.png" />
                 </div>
               </div>
             </div>
-            <div className="col-sm-6 col-md-4 col-lg-6">
+            <div className="col-sm-6 col-md-4 col-lg-6 align-self-center">
               <div className="text-center">
                 <h5 className="h1tagpd my-3">women's dress</h5>
                 <div className="h1tagpd1">PRICE : $75</div>
