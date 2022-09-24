@@ -71,6 +71,11 @@ function Header(props) {
                         Products
                       </NavLink>
                     </li>
+                    <li>
+                      <NavLink to="/check" exact>
+                        Checkout page
+                      </NavLink>
+                    </li>
                   </ul>
                 </li>
                 <li className="nav-item">
