@@ -14,6 +14,18 @@ function Productdetails(props) {
           </div>
         </div>
       </section>
+
+      <section>
+        <div className="container">
+          <div className="row">
+            <div className="col-sm-6 col-md-4 col-lg-4">
+              <div className="pdbox m-3">
+                <img src="images/p5.png" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 }
