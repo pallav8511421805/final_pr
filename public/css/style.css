@@ -1258,3 +1258,13 @@ form input[type="submit"]:focus {
   box-shadow: 5px 5px 5px -5px rgba(0, 0, 0, 0.2);
   border: solid #fff 10px;
 }
+
+.h1tagpd {
+  font-size: 36px !important;
+  color: #f7444e;
+}
+
+.h1tagpd1 {
+  font-size: 18px !important;
+  color: #222;
+}
