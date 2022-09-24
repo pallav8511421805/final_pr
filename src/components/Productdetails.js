@@ -33,7 +33,21 @@ function Productdetails(props) {
               <div className="text-start m-3">
                 <div className="h1tagpd1">Product Ratings</div>
                 <ul className="row m-0 p-0 pdull">
-                  <li></li>
+                  <li style={{ color: "#f7444e", padding: "0 5px" }}>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                  </li>
+                  <li style={{ color: "#f7444e", padding: "0 5px" }}>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                  </li>
+                  <li style={{ color: "#f7444e", padding: "0 5px" }}>
+                    <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                  </li>
+                  <li style={{ color: "#f7444e", padding: "0 5px" }}>
+                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                  </li>
+                  <li style={{ color: "#f7444e", padding: "0 5px" }}>
+                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                  </li>
                 </ul>
               </div>
               <div className="text-start m-3">
