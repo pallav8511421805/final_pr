@@ -32,6 +32,9 @@ function Productdetails(props) {
               </div>
               <div className="text-start m-3">
                 <div className="h1tagpd1">Product Ratings</div>
+                <ul className="row m-0 p-0 pdull">
+                  <li></li>
+                </ul>
               </div>
               <div className="text-start m-3">
                 <h6 className="h1tagpd1">Description : </h6>
