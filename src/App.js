@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import "./App.css";
 import Header from "./containers/Header";
 import Footer from "./containers/Footer";
@@ -13,12 +12,10 @@ import Addtocart from "./components/Addtocart";
 import { Provider } from "react-redux";
 import { SnackbarProvider } from "notistack";
 import { PersistGate } from "redux-persist/integration/react";
-import Lay_out from "./Admin/containers/Lay_out";
-import Category from "./Admin/components/Category";
 import { configstore } from "./redux/store";
-import Product from "./Admin/components/Product";
 import Productdetails from "./components/Productdetails";
 import Chackout from "./components/Chackout";
+import Admin from "./Admin/components/Admin";
 function App() {
   let { store, persistor } = configstore();
   return (
@@ -37,10 +34,7 @@ function App() {
               <Route path="/login" exact component={Login} />
               <Route path="/addto" exact component={Addtocart} />
               <Route path="/check" exact component={Chackout} />
-              <Lay_out>
-                <Route path={"/Category"} exact component={Category} />
-                <Route path={"/products"} exact component={Product} />
-              </Lay_out>
+              <Route path="/admin" exact component={Admin} />
             </Switch>
             <Footer />
           </Provider>
