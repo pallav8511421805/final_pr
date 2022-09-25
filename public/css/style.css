@@ -423,10 +423,8 @@ a:focus {
 }
 
 .product_section .box:hover .option_container {
-  opacity: 1;
-  visibility: visible;
-  -webkit-transform: translateY(0);
-  transform: translateY(0);
+  -webkit-transform: scale(1) rotate(360deg);
+  transform: scale(1) rotate(360deg);
 }
 
 .arrival_section {
@@ -435,9 +433,9 @@ a:focus {
 
 .product_section .option_container {
   position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
+  top: 0;
+  right: 0;
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -448,14 +446,12 @@ a:focus {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.2);
   z-index: 3;
-  opacity: 0;
-  visibility: hidden;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
-  -webkit-transform: translateY(100%);
-  transform: translateY(100%);
+  -webkit-transform: scale(0) rotate(0deg);
+  transform: scale(0) rotate(0deg);
 }
 
 .product_section .options {
