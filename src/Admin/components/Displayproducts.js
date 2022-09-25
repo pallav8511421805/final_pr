@@ -23,9 +23,12 @@ function Displayproducts(props) {
                       <NavLink className="option1" exact to={"/productdetail"}>
                         View
                       </NavLink>
-                      <a href className="option2">
-                        Buy Now
-                      </a>
+                      <div className="buybtn">
+                        <div className="my-1">
+                          <h6 className="font-weight-bold">Description : </h6>
+                          <div>{d.description}</div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                   <div className="img-box">
@@ -34,10 +37,6 @@ function Displayproducts(props) {
                   <div className="detail-box">
                     <h5>{d.name}</h5>
                     <h6>${d.price}</h6>
-                  </div>
-                  <div className="my-1">
-                    <h6 className="font-weight-bold">Description : </h6>
-                    <div>{d.description}</div>
                   </div>
                 </div>
               </div>
@@ -48,12 +47,12 @@ function Displayproducts(props) {
                 <div className="box">
                   <div className="option_container">
                     <div className="options">
-                      <a href className="option1">
-                        Add To Cart
-                      </a>
-                      <a href className="option2">
-                        Buy Now
-                      </a>
+                      <div className="buybtn">
+                        <div className="my-1">
+                          <h6 className="font-weight-bold">Description : </h6>
+                          <div>{d.description}</div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                   <div className="img-box">
@@ -62,10 +61,6 @@ function Displayproducts(props) {
                   <div className="detail-box">
                     <h5>{d.name}</h5>
                     <h6>${d.price}</h6>
-                  </div>
-                  <div className="my-1">
-                    <h6 className="font-weight-bold">Description : </h6>
-                    <div>{d.description}</div>
                   </div>
                 </div>
               </div>

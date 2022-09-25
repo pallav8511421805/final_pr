@@ -65,6 +65,7 @@ function Productdetails(props) {
                   like Aldus PageMaker including versions of Lorem Ipsum.
                 </div>
               </div>
+              <a className="buybtn">Buy Now</a>
             </div>
           </div>
         </div>
