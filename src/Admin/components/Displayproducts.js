@@ -39,6 +39,12 @@ function Displayproducts(props) {
                     <h6>${d.price}</h6>
                   </div>
                 </div>
+                <div className="text-center my-2">
+                  <a className="add_to_cart">
+                    Add to cart{" "}
+                    <i class="fa fa-cart-plus" aria-hidden="true"></i>
+                  </a>
+                </div>
               </div>
             );
           } else {
@@ -62,9 +68,12 @@ function Displayproducts(props) {
                     <h5>{d.name}</h5>
                     <h6>${d.price}</h6>
                   </div>
-                  <div>
-                    <a className="add_to_cart">Add to cart</a>
-                  </div>
+                </div>
+                <div className="text-center my-2">
+                  <a className="add_to_cart">
+                    Add to cart{" "}
+                    <i class="fa fa-cart-plus" aria-hidden="true"></i>
+                  </a>
                 </div>
               </div>
             );
