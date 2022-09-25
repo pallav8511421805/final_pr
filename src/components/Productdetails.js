@@ -30,7 +30,7 @@ function Productdetails(props) {
                 <h5 className="h1tagpd my-3">women's dress</h5>
                 <div className="h1tagpd1">PRICE : $75</div>
 
-                <div>
+                <div className="my-3">
                   <div className="h1tagpd1">Product Ratings</div>
                   <ul className="row m-0 p-0 pdull">
                     <li style={{ color: "#f7444e", padding: "0 5px" }}>
@@ -50,7 +50,7 @@ function Productdetails(props) {
                     </li>
                   </ul>
                 </div>
-                <div className="text-start">
+                <div className="my-3">
                   <h6 className="h1tagpd1">Description : </h6>
                   <div>
                     Lorem Ipsum is simply dummy text of the printing and
