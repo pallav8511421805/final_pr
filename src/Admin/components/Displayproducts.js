@@ -62,6 +62,9 @@ function Displayproducts(props) {
                     <h5>{d.name}</h5>
                     <h6>${d.price}</h6>
                   </div>
+                  <div>
+                    <a className="add_to_cart">Add to cart</a>
+                  </div>
                 </div>
               </div>
             );
