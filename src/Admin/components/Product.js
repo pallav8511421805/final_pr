@@ -64,7 +64,6 @@ function Product(props) {
     { field: "name", headerName: "Product name", width: 130 },
     { field: "price", headerName: "Price", width: 130 },
     { field: "description", headerName: "product description", width: 200 },
-    { field: "cselect", headerName: "Category", width: 130 },
     {
       field: "action",
       headerName: "Action",

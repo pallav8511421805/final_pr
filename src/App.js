@@ -18,6 +18,7 @@ import { configstore } from "./redux/store";
 import Product from "./Admin/components/Product";
 import Productdetails from "./components/Productdetails";
 import Chackout from "./components/Chackout";
+import Page404 from "./components/Page404";
 function App() {
   let { store, persistor } = configstore();
   return (
@@ -36,6 +37,7 @@ function App() {
               <Route path="/login" exact component={Login} />
               <Route path="/addto" exact component={Addtocart} />
               <Route path="/check" exact component={Chackout} />
+              <Route component={Page404} />
               <Lay_out>
                 <Route path={"/Category"} exact component={Category} />
                 <Route path={"/products"} exact component={Product} />
