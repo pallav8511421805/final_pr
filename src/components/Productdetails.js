@@ -1,6 +1,13 @@
-import React from "react";
-
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getproduct_data } from "../redux/actions/product.actions";
 function Productdetails(props) {
+  const dispatch = useDispatch();
+  const product = useSelector((state) => state.productroot);
+  const data = product.productdata;
+  useEffect(() => {
+    dispatch(getproduct_data());
+  }, []);
   return (
     <>
       <section className="inner_page_head">
@@ -15,7 +22,7 @@ function Productdetails(props) {
         </div>
       </section>
 
-      <section>
+      {/* <section>
         <div className="container">
           <div className="row justify-content-between">
             <div className="col-sm-6 col-md-4 col-lg-6 align-self-center">
@@ -70,7 +77,7 @@ function Productdetails(props) {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
     </>
   );
 }
