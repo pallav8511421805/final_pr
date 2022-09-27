@@ -32,12 +32,6 @@ function Displayproducts(props) {
                       >
                         View
                       </NavLink>
-                      <div className="buybtn">
-                        <div className="my-1">
-                          <h6 className="font-weight-bold">Description : </h6>
-                          <div>{d.description}</div>
-                        </div>
-                      </div>
                     </div>
                   </div>
                   <div className="img-box">
@@ -61,14 +55,7 @@ function Displayproducts(props) {
               <div className="col-sm-6 col-md-4 col-lg-4">
                 <div className="box">
                   <div className="option_container">
-                    <div className="options">
-                      <div className="buybtn">
-                        <div className="my-1">
-                          <h6 className="font-weight-bold">Description : </h6>
-                          <div>{d.description}</div>
-                        </div>
-                      </div>
-                    </div>
+                    <div className="options"></div>
                   </div>
                   <div className="img-box">
                     <img src={d.pname} alt />
