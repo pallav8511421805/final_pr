@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { getproduct_data } from "../../redux/actions/product.actions";
@@ -10,8 +10,9 @@ function Displayproducts(props) {
   useEffect(() => {
     dispatch(getproduct_data());
   }, []);
-  const handleview = (id_data) => {
-    const p_id = id_data;
+
+  const handleview = (id) => {
+    const P_id = id;
   };
 
   return (
