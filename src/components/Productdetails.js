@@ -24,7 +24,7 @@ function Productdetails(props) {
         </div>
       </section>
 
-      {/* <section>
+      <section>
         <div className="container">
           <div className="row justify-content-between">
             {fdata.map((d) => {
@@ -74,7 +74,7 @@ function Productdetails(props) {
             })}
           </div>
         </div>
-      </section> */}
+      </section>
     </>
   );
 }
