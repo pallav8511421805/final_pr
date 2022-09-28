@@ -28,11 +28,7 @@ function App() {
           <Provider store={store}>
             <Header />
             <Switch>
-              <Route
-                path="/productdetail/:id"
-                exact
-                component={Productdetails}
-              />
+              <Route path="/productdetail" exact component={Productdetails} />
               <Route path="/" exact component={Home} />
               <Route path="/about" exact component={About} />
               <Route path="/terminal" exact component={Terminal} />

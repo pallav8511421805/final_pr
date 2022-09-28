@@ -1,15 +1,20 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { NavLink } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { getproduct_data } from "../../redux/actions/product.actions";
 
 function Displayproducts(props) {
+  const history = useHistory();
   const dispatch = useDispatch();
   const product = useSelector((state) => state.productroot);
   const data = product.productdata;
   useEffect(() => {
     dispatch(getproduct_data());
   }, []);
+
+  const handleview = (id) => {
+    history.push("/productdetail", { id: id });
+  };
 
   return (
     <>
@@ -21,13 +26,9 @@ function Displayproducts(props) {
                 <div className="box">
                   <div className="option_container">
                     <div className="options">
-                      <NavLink
-                        className="option1"
-                        exact
-                        to={`/productdetail/${d.id}`}
-                      >
+                      <div className="option1" onClick={() => handleview(d.id)}>
                         View
-                      </NavLink>
+                      </div>
                     </div>
                   </div>
                   <div className="img-box">
