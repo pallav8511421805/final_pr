@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { getproduct_data } from "../../redux/actions/product.actions";
 
 function Displayproducts(props) {
@@ -26,9 +26,9 @@ function Displayproducts(props) {
                 <div className="box">
                   <div className="option_container">
                     <div className="options">
-                      <div className="option1" onClick={() => handleview(d.id)}>
+                      <a className="option1" onClick={() => handleview(d.id)}>
                         View
-                      </div>
+                      </a>
                     </div>
                   </div>
                   <div className="img-box">

@@ -5,10 +5,10 @@ function Productdetails(props) {
   const dispatch = useDispatch();
   const product = useSelector((state) => state.productroot);
   const data = product.productdata;
-  let id = props.location.state;
   useEffect(() => {
     dispatch(getproduct_data());
   }, []);
+  let id = props.location.state;
   const fdata = data.filter((d) => d.id === id.id);
   return (
     <>
@@ -24,7 +24,7 @@ function Productdetails(props) {
         </div>
       </section>
 
-      <section>
+      {/* <section>
         <div className="container">
           <div className="row justify-content-between">
             {fdata.map((d) => {
@@ -74,7 +74,7 @@ function Productdetails(props) {
             })}
           </div>
         </div>
-      </section>
+      </section> */}
     </>
   );
 }
