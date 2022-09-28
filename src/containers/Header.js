@@ -12,7 +12,7 @@ function Header(props) {
       <header className="header_section">
         <div className="container">
           <nav className="navbar navbar-expand-lg custom_nav-container ">
-            <a className="navbar-brand" href="index.html">
+            <a className="navbar-brand">
               <img width={250} src="images/logo.png" alt="#" />
             </a>
             <button
