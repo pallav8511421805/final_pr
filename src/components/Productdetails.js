@@ -1,7 +1,9 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
 import { getproduct_data } from "../redux/actions/product.actions";
 function Productdetails(props) {
+  // let { id } = useParams();
   const dispatch = useDispatch();
   const product = useSelector((state) => state.productroot);
   const data = product.productdata;
