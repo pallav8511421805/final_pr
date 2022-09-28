@@ -11,10 +11,6 @@ function Displayproducts(props) {
     dispatch(getproduct_data());
   }, []);
 
-  const handleview = (id) => {
-    const P_id = id;
-  };
-
   return (
     <>
       <div className="row">
@@ -26,10 +22,9 @@ function Displayproducts(props) {
                   <div className="option_container">
                     <div className="options">
                       <NavLink
-                        onClick={() => handleview(d.id)}
                         className="option1"
                         exact
-                        to={"/productdetail"}
+                        to={`/productdetail/${d.id}`}
                       >
                         View
                       </NavLink>
