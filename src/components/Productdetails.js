@@ -1,14 +1,16 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getproduct_data } from "../redux/actions/product.actions";
-function Productdetails() {
+function Productdetails(props) {
   const dispatch = useDispatch();
   const product = useSelector((state) => state.productroot);
   const data = product.productdata;
-  // let propsid = props.location.state;
+  let id = props.location.state;
+  console.log();
   useEffect(() => {
     dispatch(getproduct_data());
   }, []);
+  const fdata = data.filter((d) => d.id === id.id);
   return (
     <>
       <section className="inner_page_head">
@@ -23,7 +25,7 @@ function Productdetails() {
         </div>
       </section>
 
-      {/* <section>
+      <section>
         <div className="container">
           <div className="row justify-content-between">
             {fdata.map((d) => {
@@ -73,7 +75,7 @@ function Productdetails() {
             })}
           </div>
         </div>
-      </section> */}
+      </section>
     </>
   );
 }
