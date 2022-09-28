@@ -6,7 +6,6 @@ function Productdetails(props) {
   const product = useSelector((state) => state.productroot);
   const data = product.productdata;
   let id = props.location.state;
-  console.log();
   useEffect(() => {
     dispatch(getproduct_data());
   }, []);
