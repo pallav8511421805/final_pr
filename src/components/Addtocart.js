@@ -5,16 +5,20 @@ import { getcartaction } from "../redux/actions/cart.action";
 function Addtocart(props) {
   const dispatch = useDispatch();
   const cartdata = useSelector((state) => state.cartroot);
-  const cart_data = cartdata.cartdata;
-  console.log("cart_data", cart_data);
+  const data = cartdata.cartdata;
   useEffect(() => {
     dispatch(getcartaction());
   }, []);
-  return (
-    <div>
-      <h1 style={{ margin: "100px 0", textAlign: "center" }}>Add to cart</h1>
-    </div>
-  );
+  {
+    data.map((d) => {
+      return (
+        <div>
+          <div>{d.id}</div>
+          <div>{d.qty}</div>
+        </div>
+      );
+    });
+  }
 }
 
 export default Addtocart;
