@@ -1,18 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
-import { addcartaction, getcartaction } from "../../redux/actions/cart.action";
+import { addcartaction } from "../../redux/actions/cart.action";
 import { getproduct_data } from "../../redux/actions/product.actions";
 
 function Displayproducts(props) {
   const history = useHistory();
   const dispatch = useDispatch();
   const product = useSelector((state) => state.productroot);
-  const cartdata = useSelector((state) => state.cartroot);
   const data = product.productdata;
-  const cart_data = cartdata.cartdata;
   useEffect(() => {
-    dispatch(getcartaction());
     dispatch(getproduct_data());
   }, []);
 
