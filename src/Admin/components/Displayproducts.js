@@ -17,12 +17,10 @@ function Displayproducts(props) {
   }, []);
 
   const handleadd = (id) => {
-    console.log(id);
     const values = {
       id: id,
       qty: 1,
     };
-    history.push("/addto");
     dispatch(addcartaction(values));
   };
 
