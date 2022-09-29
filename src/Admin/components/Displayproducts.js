@@ -26,7 +26,7 @@ function Displayproducts(props) {
                 <div className="option_container">
                   <div className="options">
                     <a className="option1" onClick={() => handleview(d.id)}>
-                      View
+                      View more
                     </a>
                   </div>
                 </div>
