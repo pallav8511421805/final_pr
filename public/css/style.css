@@ -485,8 +485,8 @@ a:focus {
 }
 
 .product_section .options .option1:hover {
-  background-color: #000000;
-  border: 1px solid #000000;
+  background-color: transparent;
+  color: #f7444e;
 }
 
 .product_section .options .option2 {
