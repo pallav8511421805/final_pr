@@ -22,6 +22,7 @@ function Displayproducts(props) {
       id: id,
       qty: 1,
     };
+    history.push("/addto");
     dispatch(addcartaction(values));
   };
 
