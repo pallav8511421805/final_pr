@@ -22,3 +22,5 @@ export const Delete_category = "Delete_category";
 export const Edit_category = "Edit_category";
 export const Load_category = "Load_category";
 export const Error_category = "Error_category";
+
+export const Add_cart = "Add_cart";

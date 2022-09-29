@@ -1,16 +1,32 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useHistory } from "react-router-dom";
+import { addcartaction } from "../../redux/actions/cart.action";
 import { getproduct_data } from "../../redux/actions/product.actions";
 
 function Displayproducts(props) {
   const history = useHistory();
   const dispatch = useDispatch();
   const product = useSelector((state) => state.productroot);
+  const cartdata = useSelector((state) => state.cartroot);
   const data = product.productdata;
+  const cart_data = cartdata.cartdata;
   useEffect(() => {
     dispatch(getproduct_data());
   }, []);
+
+  const handleadd = (id) => {
+    const values = {
+      id: id,
+      qty: 1,
+    };
+    if (cart_data === null) {
+      cart_data.push(values);
+    } else {
+      cart_data.push(values);
+    }
+    dispatch(addcartaction(values));
+  };
 
   const handleview = (id) => {
     history.push("/productdetail", { id: id });
@@ -37,7 +53,14 @@ function Displayproducts(props) {
                   <a className="option1" onClick={() => handleview(d.id)}>
                     View
                   </a>
-                  <a className="add_to_cart">+ Add to cart</a>
+                  <a
+                    className="add_to_cart"
+                    onClick={() => {
+                      handleadd(d.id);
+                    }}
+                  >
+                    + Add to cart
+                  </a>
                 </div>
               </div>
             </div>
