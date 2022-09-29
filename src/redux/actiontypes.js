@@ -24,4 +24,3 @@ export const Load_category = "Load_category";
 export const Error_category = "Error_category";
 
 export const Add_cart = "Add_cart";
-export const Get_cart = "Get_cart";

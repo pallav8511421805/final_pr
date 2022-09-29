@@ -4,7 +4,6 @@ const intval = {
   cartdata: [],
 };
 export const cartreducer = (state = intval, action) => {
-  console.log(state.cartdata);
   switch (action.type) {
     case Actiontypes.Add_cart:
       return {

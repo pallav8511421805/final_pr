@@ -2,8 +2,8 @@ import React from "react";
 import { useSelector } from "react-redux";
 
 function Addtocart(props) {
-  const cartdata = useSelector((state) => state.cartroot);
-  const data = cartdata.cartdata;
+  const cart = useSelector((state) => state.cartroot);
+  const data = cart.cartdata;
   {
     data.map((d) => {
       return (
