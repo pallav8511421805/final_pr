@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useHistory } from "react-router-dom";
-import { addcartaction } from "../../redux/actions/cart.action";
+import { useHistory } from "react-router-dom";
+import { addcartaction, getcartaction } from "../../redux/actions/cart.action";
 import { getproduct_data } from "../../redux/actions/product.actions";
 
 function Displayproducts(props) {
@@ -12,19 +12,16 @@ function Displayproducts(props) {
   const data = product.productdata;
   const cart_data = cartdata.cartdata;
   useEffect(() => {
+    dispatch(getcartaction());
     dispatch(getproduct_data());
   }, []);
 
   const handleadd = (id) => {
+    console.log(id);
     const values = {
       id: id,
       qty: 1,
     };
-    if (cart_data === null) {
-      cart_data.push(values);
-    } else {
-      cart_data.push(values);
-    }
     dispatch(addcartaction(values));
   };
 
