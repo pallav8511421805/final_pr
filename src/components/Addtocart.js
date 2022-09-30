@@ -25,7 +25,6 @@ function Addtocart(props) {
   useEffect(() => {
     dispatch(getproduct_data());
   }, []);
-  console.log(CartData);
   return (
     <>
       <section className="product_section layout_padding">
@@ -34,14 +33,17 @@ function Addtocart(props) {
             <div className="col-12">
               <div className="text-center">
                 <div className="row justify-context-between">
-                  <div className="col-4">
+                  <div className="col-3">
                     <div className="add_to_data">Product</div>
                   </div>
-                  <div className="col-4">
+                  <div className="col-3">
                     <div className="add_to_data">Quantity</div>
                   </div>
-                  <div className="col-4">
+                  <div className="col-3">
                     <div className="add_to_data">Total</div>
+                  </div>
+                  <div className="col-3">
+                    <div className="add_to_data">Remove item</div>
                   </div>
                 </div>
               </div>
@@ -51,18 +53,25 @@ function Addtocart(props) {
                 <div className="col-12">
                   <div className="box text-center">
                     <div className="row justify-context-between">
-                      <div className="col-4 align-self-center">
+                      <div className="col-3 align-self-center">
                         <img src={c.pname} width="50px" />
                       </div>
-                      <div className="col-4 align-self-center">
+                      <div className="col-3 align-self-center">
                         <div className="row justify-content-center">
                           <div className="addqty mx-1">+</div>
                           <div className="mx-3">{c.qty}</div>
                           <div className="addqty mx-1">-</div>
                         </div>
                       </div>
-                      <div className="col-4 align-self-center">
+                      <div className="col-3 align-self-center">
                         <div>${c.price}</div>
+                      </div>
+                      <div className="col-3 align-self-center">
+                        <div className="row justify-content-center">
+                          <div className="deleteqty">
+                            <i class="fa fa-trash-o" aria-hidden="true"></i>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
