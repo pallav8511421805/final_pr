@@ -11,13 +11,21 @@ function Addtocart(props) {
   product.productdata.map((p) => {
     cart.cartdata.map((c) => {
       if (p.id === c.id) {
-        CartData.push(p);
+        const q = {
+          qty: c.qty,
+        };
+        const data = {
+          ...p,
+          ...q,
+        };
+        CartData.push(data);
       }
     });
   });
   useEffect(() => {
     dispatch(getproduct_data());
   }, []);
+  console.log(CartData);
   return (
     <>
       <section className="product_section layout_padding">
