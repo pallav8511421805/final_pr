@@ -1301,3 +1301,40 @@ form input[type="submit"]:focus {
   width: 500px;
   height: auto;
 }
+
+.product_section .option_container2 {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  right: 0;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: transparent;
+  z-index: 3;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  -webkit-transform: scale(0) rotate(0deg);
+  transform: scale(0) rotate(0deg);
+}
+
+.product_section .box:hover .option_container2 {
+  -webkit-transform: scale(1) rotate(360deg);
+  transform: scale(1) rotate(360deg);
+}
+.add_to_data {
+  color: #f7444e;
+  font-size: 36px;
+  font-weight: bold;
+  text-decoration: underline;
+  text-underline-offset: 20px;
+  margin: 5px 0;
+  text-decoration-style: dashed;
+}
