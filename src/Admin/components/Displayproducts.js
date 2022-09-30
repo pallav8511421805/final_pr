@@ -9,8 +9,6 @@ function Displayproducts(props) {
   const dispatch = useDispatch();
   const product = useSelector((state) => state.productroot);
   const data = product.productdata;
-  const cart = useSelector((state) => state.cartroot);
-  const cartdata = cart.cartdata;
   useEffect(() => {
     dispatch(getproduct_data());
   }, []);
