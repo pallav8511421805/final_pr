@@ -1338,3 +1338,14 @@ form input[type="submit"]:focus {
   margin: 5px 0;
   text-decoration-style: dashed;
 }
+.addqty {
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  width: 25px;
+  background-color: #f7444e;
+  border: 1px solid #f7444e;
+  height: 25px;
+  text-align: center;
+  line-height: 25px;
+}

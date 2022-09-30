@@ -51,13 +51,17 @@ function Addtocart(props) {
                 <div className="col-12">
                   <div className="box text-center">
                     <div className="row justify-context-between">
-                      <div className="col-4">
+                      <div className="col-4 align-self-center">
                         <img src={c.pname} width="50px" />
                       </div>
-                      <div className="col-4">
-                        <div>{c.qty}</div>
+                      <div className="col-4 align-self-center">
+                        <div className="row justify-content-center">
+                          <div className="addqty mx-1">+</div>
+                          <div className="mx-3">{c.qty}</div>
+                          <div className="addqty mx-1">-</div>
+                        </div>
                       </div>
-                      <div className="col-4">
+                      <div className="col-4 align-self-center">
                         <div>${c.price}</div>
                       </div>
                     </div>
