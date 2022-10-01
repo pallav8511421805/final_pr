@@ -24,3 +24,6 @@ export const Load_category = "Load_category";
 export const Error_category = "Error_category";
 
 export const Add_cart = "Add_cart";
+
+export const In_qty = "In_qty";
+export const De_qty = "De_qty";
