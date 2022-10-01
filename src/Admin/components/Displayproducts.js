@@ -10,8 +10,8 @@ function Displayproducts(props) {
   const product = useSelector((state) => state.productroot);
   const data = product.productdata;
 
-  const qty = useSelector((state) => state.qtyroot);
-  const c = qty.counte;
+  // const qty = useSelector((state) => state.qtyroot);
+  // const c = qty.counte;
   useEffect(() => {
     dispatch(getproduct_data());
   }, []);
@@ -19,7 +19,7 @@ function Displayproducts(props) {
   const handleadd = (id) => {
     const values = {
       id: id,
-      qty: c,
+      qty: 1,
     };
     dispatch(addcartaction(values));
   };
