@@ -9,6 +9,10 @@ function Displaycategory(props) {
   useEffect(() => {
     dispatch(getdata());
   }, []);
+
+  const handlecat = () => {
+    alert("hiiii");
+  };
   return (
     <>
       <section className="product_section layout_padding">
@@ -22,7 +26,7 @@ function Displaycategory(props) {
           <div className="row">
             {data.map((d, i) => {
               return (
-                <div className="box m-2">
+                <div className="box m-2" onClick={() => handlecat()}>
                   <div className="img-box">
                     <img src={d.cname} alt />
                   </div>
