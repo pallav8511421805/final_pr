@@ -11,18 +11,14 @@ function Addtocart(props) {
   product.productdata.map((p) => {
     cart.cartdata.map((c) => {
       if (p.id === c.id) {
-        const q = {
-          qty: c.qty,
-        };
         const data = {
           ...p,
-          ...q,
+          qty: c.qty,
         };
         CartData.push(data);
       }
     });
   });
-  console.log(CartData);
   useEffect(() => {
     dispatch(getproduct_data());
   }, []);
