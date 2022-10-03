@@ -12,7 +12,7 @@ export const cartreducer = (state = intval, action) => {
       if (itemInCart) {
         itemInCart.qty++;
       } else {
-        state.cart.push({ ...action.payload, qty: 1 });
+        state.cart.push(action.payload);
       }
       return {
         ...state,

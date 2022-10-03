@@ -22,6 +22,7 @@ function Addtocart(props) {
       }
     });
   });
+  console.log(CartData);
   useEffect(() => {
     dispatch(getproduct_data());
   }, []);
