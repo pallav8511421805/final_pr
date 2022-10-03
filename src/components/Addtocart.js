@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Deletecartaction } from "../redux/actions/cart.action";
 import { getproduct_data } from "../redux/actions/product.actions";
 
 function Addtocart(props) {
@@ -19,6 +20,11 @@ function Addtocart(props) {
       }
     });
   });
+
+  const Deletecart = (id) => {
+    dispatch(Deletecartaction(id));
+  };
+
   useEffect(() => {
     dispatch(getproduct_data());
   }, []);
@@ -65,7 +71,10 @@ function Addtocart(props) {
                       </div>
                       <div className="col-3 align-self-center">
                         <div className="row justify-content-center">
-                          <div className="deleteqty">
+                          <div
+                            className="deleteqty"
+                            onClick={() => Deletecart(c.id)}
+                          >
                             <i class="fa fa-trash-o" aria-hidden="true"></i>
                           </div>
                         </div>

@@ -6,19 +6,24 @@ const intval = {
 export const cartreducer = (state = intval, action) => {
   switch (action.type) {
     case Actiontypes.Add_cart:
-      const itemInCart = state.cart.find(
+      const itemInCart = state.cartdata.find(
         (item) => item.id === action.payload.id
       );
       if (itemInCart) {
         itemInCart.qty++;
       } else {
-        state.cart.push(action.payload);
+        state.cartdata.push(action.payload);
       }
       return {
         ...state,
-        // cartdata: state.cartdata.concat(action.payload),
       };
       break;
+
+    case Actiontypes.Delete_cart:
+      return {
+        ...state,
+        cartdata: state.cartdata.filter((d) => d.id !== action.payload),
+      };
 
     default:
       return state;
