@@ -1371,3 +1371,7 @@ form input[type="submit"]:focus {
   background-color: transparent;
   color: #f7444e;
 }
+
+.addqty:focus {
+  outline: 0;
+}

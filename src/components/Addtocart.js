@@ -133,7 +133,7 @@ function Addtocart(props) {
             <div>Total amount</div>
             <div>${finelprice}</div>
           </div>
-          <p>You will save ${discount} on this order</p>
+          <p>You will save ${discount} on this order.</p>
         </div>
       </section>
     </>
