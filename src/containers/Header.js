@@ -95,7 +95,13 @@ function Header(props) {
                 </li>
                 <li className="nav-item">
                   <NavLink className="nav-link" to="/addto">
-                    <i className="fa fa-shopping-cart" aria-hidden="true"></i>
+                    <div className="qtydata1">
+                      <i
+                        className="fa fa-shopping-cart align-self-center m-1"
+                        aria-hidden="true"
+                      ></i>
+                      <div className="qtydata align-self-center m-1">1</div>
+                    </div>
                   </NavLink>
                 </li>
                 <form className="form-inline">

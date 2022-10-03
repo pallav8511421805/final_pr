@@ -1412,3 +1412,16 @@ form input[type="submit"]:focus {
   color: #f7444e;
   font-weight: bold;
 }
+.qtydata1 {
+  display: flex;
+}
+.qtydata {
+  width: 25px;
+  height: 25px;
+  background-color: #f7444e;
+  color: white;
+  border-radius: 50px;
+  font-size: 14px;
+  text-align: center;
+  line-height: 25px;
+}
