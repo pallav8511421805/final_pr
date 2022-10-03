@@ -484,20 +484,10 @@ a:focus {
   color: #ffffff;
 }
 
-.product_section .options .option1:hover {
-  background-color: transparent;
-  color: #f7444e;
-}
-
 .product_section .options .option2 {
   background-color: #000000;
   border: 1px solid #000000;
   color: #ffffff;
-}
-
-.product_section .options .option2:hover {
-  background-color: transparent;
-  color: #000000;
 }
 
 .product_section .btn-box {
