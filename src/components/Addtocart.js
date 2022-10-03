@@ -30,7 +30,7 @@ function Addtocart(props) {
     totelamount = totelamount + totel;
   });
 
-  const discount = Math.round(totelamount * 0.01);
+  const discount = Math.round(totelamount * 0.1);
   const finelprice = totelamount - discount;
 
   const Deletecart = (id) => {
