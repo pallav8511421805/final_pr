@@ -16,7 +16,7 @@ export const cartreducer = (state = intval, action) => {
               qty: c.qty + 1,
             };
           } else {
-            return state;
+            return c;
           }
         }),
       };
@@ -31,7 +31,7 @@ export const cartreducer = (state = intval, action) => {
               qty: c.qty - 1,
             };
           } else {
-            return state;
+            return c;
           }
         }),
       };
