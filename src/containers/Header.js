@@ -7,12 +7,19 @@ import { Logoutaction } from "../redux/actions/auth.action";
 function Header(props) {
   const auth = useSelector((state) => state.auth);
   const dispatch = useDispatch();
-  const carticon = [];
+
   const cartdata = useSelector((state) => state.cartroot);
   const cart = cartdata.cartdata;
+
+  const carticon = [];
   cart.map((d) => {
     carticon.push(d.qty);
   });
+  let sum = 0;
+  for (let i = 0; i < carticon.length; i++) {
+    sum += carticon[i];
+  }
+
   return (
     <>
       <header className="header_section">
@@ -106,7 +113,7 @@ function Header(props) {
                         className="fa fa-shopping-cart align-self-center m-1"
                         aria-hidden="true"
                       ></i>
-                      <div className="qtydata align-self-center m-1">1</div>
+                      <div className="qtydata align-self-center m-1">{sum}</div>
                     </div>
                   </NavLink>
                 </li>
