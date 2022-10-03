@@ -7,6 +7,12 @@ import { Logoutaction } from "../redux/actions/auth.action";
 function Header(props) {
   const auth = useSelector((state) => state.auth);
   const dispatch = useDispatch();
+  const carticon = [];
+  const cartdata = useSelector((state) => state.cartroot);
+  const cart = cartdata.cartdata;
+  cart.map((d) => {
+    carticon.push(d.qty);
+  });
   return (
     <>
       <header className="header_section">
