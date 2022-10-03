@@ -481,13 +481,13 @@ a:focus {
 .product_section .options .option1 {
   background-color: #f7444e;
   border: 1px solid #f7444e;
-  color: #ffffff;
+  color: #ffffff !important;
 }
 
 .product_section .options .option2 {
   background-color: #000000;
   border: 1px solid #000000;
-  color: #ffffff;
+  color: #ffffff !important;
 }
 
 .product_section .btn-box {
