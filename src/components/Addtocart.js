@@ -50,7 +50,7 @@ function Addtocart(props) {
   }, []);
   return (
     <>
-      <section className="product_section layout_padding">
+      {/* <section className="product_section layout_padding">
         <div className="container">
           <div className="row">
             <div className="col-12">
@@ -134,6 +134,69 @@ function Addtocart(props) {
             <div>${finelprice}</div>
           </div>
           <p>You will save ${discount} on this order.</p>
+        </div>
+      </section> */}
+
+      <section>
+        <div className="container">
+          <div className="row justify-content-between">
+            <div className="col-12 col-md-6 col-lg-6 col-xl-6">
+              <div className="w-100">
+                <table className="addtotable">
+                  <tr className="row justify-content-between trcolor">
+                    <th>Products</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                    <th>Remove item</th>
+                  </tr>
+                  <tbody>
+                    {CartData.map((d) => {
+                      return (
+                        <tr className="row justify-content-between trcolor1">
+                          <td className="align-self-center">
+                            <img src={d.pname} width="25px" />
+                          </td>
+                          <td className="align-self-center">
+                            {" "}
+                            <div className="row justify-content-center">
+                              <button
+                                className="addqty mx-1"
+                                onClick={() => qtypluscart(d.id)}
+                              >
+                                +
+                              </button>
+                              <div className="mx-3">{d.qty}</div>
+                              <button
+                                className="addqty mx-1"
+                                onClick={() => qtyminuscart(d.id)}
+                                disabled={d.qty === 1 && true}
+                              >
+                                -
+                              </button>
+                            </div>
+                          </td>
+                          <td className="align-self-center">
+                            <div>${d.qty * d.price}</div>
+                          </td>
+                          <td className="align-self-center">
+                            {" "}
+                            <div className="row justify-content-center">
+                              <div
+                                className="deleteqty"
+                                onClick={() => Deletecart(d.id)}
+                              >
+                                <i class="fa fa-trash-o" aria-hidden="true"></i>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                      );
+                    })}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </>
