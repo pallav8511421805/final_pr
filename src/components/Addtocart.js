@@ -50,93 +50,6 @@ function Addtocart(props) {
   }, []);
   return (
     <>
-      {/* <section className="product_section layout_padding">
-        <div className="container">
-          <div className="row">
-            <div className="col-12">
-              <div className="text-center">
-                <div className="row justify-context-between">
-                  <div className="col-3">
-                    <div className="add_to_data">Product</div>
-                  </div>
-                  <div className="col-3">
-                    <div className="add_to_data">Quantity</div>
-                  </div>
-                  <div className="col-3">
-                    <div className="add_to_data">Total</div>
-                  </div>
-                  <div className="col-3">
-                    <div className="add_to_data">Remove item</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            {CartData.map((c) => {
-              return (
-                <div className="col-12">
-                  <div className="box text-center">
-                    <div className="row justify-context-between">
-                      <div className="col-3 align-self-center">
-                        <img src={c.pname} width="50px" />
-                      </div>
-                      <div className="col-3 align-self-center">
-                        <div className="row justify-content-center">
-                          <button
-                            className="addqty mx-1"
-                            onClick={() => qtypluscart(c.id)}
-                          >
-                            +
-                          </button>
-                          <div className="mx-3">{c.qty}</div>
-                          <button
-                            className="addqty mx-1"
-                            onClick={() => qtyminuscart(c.id)}
-                            disabled={c.qty === 1 && true}
-                          >
-                            -
-                          </button>
-                        </div>
-                      </div>
-                      <div className="col-3 align-self-center">
-                        <div>${c.qty * c.price}</div>
-                      </div>
-                      <div className="col-3 align-self-center">
-                        <div className="row justify-content-center">
-                          <div
-                            className="deleteqty"
-                            onClick={() => Deletecart(c.id)}
-                          >
-                            <i class="fa fa-trash-o" aria-hidden="true"></i>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      <section>
-        <div className="container">
-          <div className="d-flex justify-content-between">
-            <div>price({cart.cartdata.length} item)</div>
-            <div>${totelamount}</div>
-          </div>
-          <div className="d-flex justify-content-between">
-            <div>discount(10%)</div>
-            <div>-{discount}</div>
-          </div>
-          <div className="d-flex justify-content-between">
-            <div>Total amount</div>
-            <div>${finelprice}</div>
-          </div>
-          <p>You will save ${discount} on this order.</p>
-        </div>
-      </section> */}
-
       <section>
         <div className="container">
           <div className="row justify-content-between">
@@ -191,9 +104,35 @@ function Addtocart(props) {
                     })}
                     <tr className="row justify-content-center trcolor2">
                       <td>
-                        <div className="text-center placeorder">
-                          Place order
-                        </div>
+                        <div className="placeorder">Place order</div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div className="col-12 col-md-5 col-lg-5 col-xl-5">
+              <div className="w-100">
+                <table className="addtotable">
+                  <tr className="row justify-content-center trcolor">
+                    <th>TOTEL AMOUNT</th>
+                  </tr>
+                  <tbody>
+                    <tr className="row justify-content-between trcolor1">
+                      <td>Price ( {cart.cartdata.length} item )</td>
+                      <td>${totelamount}</td>
+                    </tr>
+                    <tr className="row justify-content-between trcolor1">
+                      <td>Discount ( 10% )</td>
+                      <td>-${discount}</td>
+                    </tr>
+                    <tr className="row justify-content-between trcolor1 border_tr">
+                      <td>Total price</td>
+                      <td>${finelprice}</td>
+                    </tr>
+                    <tr className="row justify-content-center trcolor2">
+                      <td>
+                        <p>You will save ${discount} on this order.</p>
                       </td>
                     </tr>
                   </tbody>

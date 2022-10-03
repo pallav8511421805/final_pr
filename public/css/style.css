@@ -1406,3 +1406,9 @@ form input[type="submit"]:focus {
   background-color: transparent;
   border: 1px solid #f7444e;
 }
+.border_tr {
+  border-top: 2px solid #f7444e;
+  border-bottom: 2px solid #f7444e;
+  color: #f7444e;
+  font-weight: bold;
+}
