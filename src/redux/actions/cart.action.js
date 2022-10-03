@@ -6,3 +6,11 @@ export const addcartaction = (val) => (dispatch) => {
 export const Deletecartaction = (id) => (dispatch) => {
   dispatch({ type: Actiontypes.Delete_cart, payload: id });
 };
+
+export const incrementqty = (id) => (dispatch) => {
+  dispatch({ type: Actiontypes.In_qty, payload: id });
+};
+
+export const decrementqty = (id) => (dispatch) => {
+  dispatch({ type: Actiontypes.De_qty, payload: id });
+};

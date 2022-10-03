@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Deletecartaction } from "../redux/actions/cart.action";
+import { decrementqty, incrementqty } from "../redux/actions/cart.action";
 import { getproduct_data } from "../redux/actions/product.actions";
 
 function Addtocart(props) {
@@ -23,6 +24,14 @@ function Addtocart(props) {
 
   const Deletecart = (id) => {
     dispatch(Deletecartaction(id));
+  };
+
+  const qtypluscart = (id) => {
+    dispatch(incrementqty(id));
+  };
+
+  const qtyminuscart = (id) => {
+    dispatch(decrementqty(id));
   };
 
   useEffect(() => {
@@ -61,9 +70,19 @@ function Addtocart(props) {
                       </div>
                       <div className="col-3 align-self-center">
                         <div className="row justify-content-center">
-                          <div className="addqty mx-1">+</div>
+                          <div
+                            className="addqty mx-1"
+                            onClick={qtypluscart(c.id)}
+                          >
+                            +
+                          </div>
                           <div className="mx-3">{c.qty}</div>
-                          <div className="addqty mx-1">-</div>
+                          <div
+                            className="addqty mx-1"
+                            onClick={qtyminuscart(c.id)}
+                          >
+                            -
+                          </div>
                         </div>
                       </div>
                       <div className="col-3 align-self-center">
