@@ -70,20 +70,20 @@ function Addtocart(props) {
                       </div>
                       <div className="col-3 align-self-center">
                         <div className="row justify-content-center">
-                          <div
+                          <button
                             className="addqty mx-1"
                             onClick={() => qtypluscart(c.id)}
                           >
                             +
-                          </div>
+                          </button>
                           <div className="mx-3">{c.qty}</div>
-                          <div
+                          <button
                             className="addqty mx-1"
                             onClick={() => qtyminuscart(c.id)}
                             disabled={c.qty === 1 && true}
                           >
                             -
-                          </div>
+                          </button>
                         </div>
                       </div>
                       <div className="col-3 align-self-center">
