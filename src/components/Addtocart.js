@@ -22,6 +22,17 @@ function Addtocart(props) {
     });
   });
 
+  let totel = 0;
+  let totelamount = 0;
+
+  CartData.map((d) => {
+    totel = d.qty * parseInt(d.price);
+    totelamount = totelamount + totel;
+  });
+
+  const discount = Math.round(totelamount * 0.01);
+  const finelprice = totelamount - discount;
+
   const Deletecart = (id) => {
     dispatch(Deletecartaction(id));
   };
@@ -87,7 +98,7 @@ function Addtocart(props) {
                         </div>
                       </div>
                       <div className="col-3 align-self-center">
-                        <div>${c.price}</div>
+                        <div>${c.qty * c.price}</div>
                       </div>
                       <div className="col-3 align-self-center">
                         <div className="row justify-content-center">
@@ -105,6 +116,24 @@ function Addtocart(props) {
               );
             })}
           </div>
+        </div>
+      </section>
+
+      <section>
+        <div className="container">
+          <div className="d-flex justify-content-between">
+            <div>price({cart.cartdata.length} item)</div>
+            <div>${totelamount}</div>
+          </div>
+          <div className="d-flex justify-content-between">
+            <div>discount(10%)</div>
+            <div>-{discount}</div>
+          </div>
+          <div className="d-flex justify-content-between">
+            <div>Total amount</div>
+            <div>${finelprice}</div>
+          </div>
+          <p>You will save ${discount} on this order</p>
         </div>
       </section>
     </>
