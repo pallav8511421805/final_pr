@@ -32,28 +32,27 @@ function Displayproducts(props) {
           return (
             <div className="col-sm-6 col-md-4 col-lg-4">
               <div className="box">
-                <div className="option_container"></div>
+                <div class="option_container">
+                  <div class="options">
+                    <a onClick={() => handleview(d.id)} class="option1">
+                      View
+                    </a>
+                    <a
+                      onClick={() => {
+                        handleadd(d.id);
+                      }}
+                      class="option2"
+                    >
+                      + Add to cart
+                    </a>
+                  </div>
+                </div>
                 <div className="img-box">
                   <img src={d.pname} alt />
                 </div>
                 <div className="detail-box">
                   <h5>{d.name}</h5>
                   <h6>${d.price}</h6>
-                </div>
-              </div>
-              <div className="options">
-                <div className="row justify-content-between py-2">
-                  <a className="option1" onClick={() => handleview(d.id)}>
-                    View
-                  </a>
-                  <a
-                    className="add_to_cart"
-                    onClick={() => {
-                      handleadd(d.id);
-                    }}
-                  >
-                    + Add to cart
-                  </a>
                 </div>
               </div>
             </div>
