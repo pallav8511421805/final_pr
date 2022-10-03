@@ -1385,3 +1385,24 @@ form input[type="submit"]:focus {
 .trcolor1 {
   background-color: rgba(255, 196, 199, 0.2);
 }
+
+.trcolor2 {
+  background-color: rgba(255, 196, 199, 0.2);
+  border-radius: 0 0 10px 10px;
+}
+.placeorder {
+  color: white;
+  background-color: #f7444e;
+  width: 120px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  border-radius: 25px;
+  transition: all 0.5s;
+  border: 1px solid #f7444e;
+}
+.placeorder:hover {
+  color: #f7444e;
+  background-color: transparent;
+  border: 1px solid #f7444e;
+}

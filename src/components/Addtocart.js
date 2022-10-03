@@ -189,9 +189,11 @@ function Addtocart(props) {
                         </tr>
                       );
                     })}
-                    <tr className="row justify-content-between trcolor1">
+                    <tr className="row justify-content-center trcolor2">
                       <td>
-                        <div className="text-center">Place order</div>
+                        <div className="text-center placeorder">
+                          Place order
+                        </div>
                       </td>
                     </tr>
                   </tbody>
