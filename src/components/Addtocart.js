@@ -179,19 +179,21 @@ function Addtocart(props) {
                             <div>${d.qty * d.price}</div>
                           </td>
                           <td className="align-self-center">
-                            {" "}
-                            <div className="row justify-content-center">
-                              <div
-                                className="deleteqty"
-                                onClick={() => Deletecart(d.id)}
-                              >
-                                <i class="fa fa-trash-o" aria-hidden="true"></i>
-                              </div>
+                            <div
+                              className="deleteqty"
+                              onClick={() => Deletecart(d.id)}
+                            >
+                              <i class="fa fa-trash-o" aria-hidden="true"></i>
                             </div>
                           </td>
                         </tr>
                       );
                     })}
+                    <tr className="row justify-content-between trcolor1">
+                      <td>
+                        <div className="text-center">Place order</div>
+                      </td>
+                    </tr>
                   </tbody>
                 </table>
               </div>
