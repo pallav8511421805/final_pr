@@ -1426,3 +1426,27 @@ form input[type="submit"]:focus {
   text-align: center;
   line-height: 25px;
 }
+.placeorderdata {
+  color: #f7444e;
+  font-weight: 500;
+  font-size: 24px;
+  font-family: "Montserrat", sans-serif !important;
+  text-transform: uppercase;
+}
+
+.placeorder1 {
+  color: white;
+  background-color: #f7444e;
+  width: 150px !important;
+  height: 40px !important;
+  padding: 10px 20px;
+  text-align: center;
+  border-radius: 25px;
+  transition: all 0.5s;
+  border: 1px solid #f7444e;
+}
+.placeorder1:hover {
+  color: #f7444e;
+  background-color: transparent;
+  border: 1px solid #f7444e;
+}
