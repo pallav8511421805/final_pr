@@ -1,13 +1,16 @@
 import React from "react";
 import * as yup from "yup";
 import { Form, Formik, useFormik } from "formik";
+import { useDispatch } from "react-redux";
+import { Addorderaction } from "../redux/actions/order.action";
 
 function Placeorder(props) {
   const orderdata = props.location.state;
   const data = orderdata.cart;
-
+  const dispatch = useDispatch();
   const handledataadd = (val) => {
     const order = { ...data, ...val };
+    dispatch(Addorderaction(order));
   };
 
   let schema = yup.object().shape({
