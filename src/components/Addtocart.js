@@ -107,8 +107,10 @@ function Addtocart(props) {
                       <td>
                         <NavLink
                           className="placeorder"
-                          to={"/placeorder"}
-                          exact
+                          to={{
+                            pathname: "/placeorder",
+                            state: { cartdata: CartData },
+                          }}
                         >
                           Place order
                         </NavLink>
