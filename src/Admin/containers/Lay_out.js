@@ -110,6 +110,11 @@ export default function Lay_out({ children }) {
       to: "/products",
       icon: ShoppingBagIcon,
     },
+    {
+      label: "Order",
+      to: "/orders",
+      icon: ShoppingBagIcon,
+    },
   ];
 
   return (

@@ -19,6 +19,7 @@ import Product from "./Admin/components/Product";
 import Productdetails from "./components/Productdetails";
 import Chackout from "./components/Chackout";
 import Placeorder from "./components/Placeorder";
+import Orderdata from "./Admin/components/Orderdata";
 // import Page404 from "./components/Page404";
 function App() {
   let { store, persistor } = configstore();
@@ -43,6 +44,7 @@ function App() {
               <Lay_out>
                 <Route path={"/Category"} exact component={Category} />
                 <Route path={"/products"} exact component={Product} />
+                <Route path={"/orders"} exact component={Orderdata} />
               </Lay_out>
             </Switch>
             <Footer />
