@@ -26,9 +26,10 @@ function Placeorder(props) {
 
   const formik = useFormik({
     initialValues: {
-      firstName: "",
-      lastName: "",
+      name: "",
+      phone: "",
       email: "",
+      address: "",
     },
     validationSchema: schema,
     onSubmit: (values) => {
