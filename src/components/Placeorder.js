@@ -46,7 +46,7 @@ function Placeorder(props) {
           <div className="col-12 col-lg-6 ">
             <div className="w-100 my-3">
               <h1 className="placeorderdata">Add your data</h1>
-              <Formik values={formik}>
+              <Formik value={formik}>
                 <Form onSubmit={handleSubmit}>
                   <input
                     name="name"
