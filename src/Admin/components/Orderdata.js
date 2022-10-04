@@ -19,13 +19,30 @@ function Orderdata(props) {
       d_fname: d.fname,
       d_phone: d.phone,
     };
+    console.log(orderdata);
     dispaly_table.push(orderdata);
   });
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(Getorderaction());
   }, []);
-  const columns = [{ field: "fname", headerName: "User Name", width: 130 }];
+  const columns = [
+    { field: "d_fname", headerName: "User Name", width: 130 },
+    { field: "d_email", headerName: "Email", width: 130 },
+    { field: "d_phone", headerName: "Mobile", width: 130 },
+    { field: "d_address", headerName: "Address", width: 130 },
+    { field: "qty", headerName: "Qty", width: 130 },
+    {
+      field: "pname",
+      headerName: "product image",
+      width: 130,
+      renderCell: (params) => (
+        <>
+          <img src={params.row.pname} width={50} height={50} />
+        </>
+      ),
+    },
+  ];
   return (
     <div style={{ height: 400, width: "80%", margin: "auto" }}>
       <DataGrid
