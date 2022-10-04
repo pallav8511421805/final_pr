@@ -11,6 +11,7 @@ function Placeorder(props) {
   const handledataadd = (val) => {
     const order = { ...data, ...val };
     dispatch(Addorderaction(order));
+    formik.resetForm();
   };
 
   let schema = yup.object().shape({
