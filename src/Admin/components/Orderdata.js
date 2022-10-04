@@ -9,7 +9,25 @@ function Orderdata(props) {
   useEffect(() => {
     dispatch(Getorderaction());
   }, []);
-  const columns = [{ field: "fname", headerName: "User Name", width: 130 }];
+  const columns = [
+    { field: "fname", headerName: "User Name", width: 130 },
+    { field: "address", headerName: "Address", width: 130 },
+    { field: "email", headerName: "Email", width: 130 },
+    { field: "phone", headerName: "Mobile number", width: 130 },
+    {
+      field: "pname",
+      headerName: "Product image",
+      width: 130,
+      renderCell: (params) => (
+        <>
+          <img src={params.row.pname} width={50} height={50} />
+        </>
+      ),
+    },
+    { field: "name", headerName: "Product name", width: 130 },
+    { field: `price`, headerName: "Product price ($)", width: 130 },
+    { field: `qty`, headerName: "Product qty", width: 130 },
+  ];
   return (
     <div style={{ height: 400, width: "80%", margin: "auto" }}>
       <DataGrid
