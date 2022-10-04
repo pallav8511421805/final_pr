@@ -10,10 +10,7 @@ function Placeorder(props) {
   const dispatch = useDispatch();
 
   const handledataadd = (val) => {
-    let order;
-    data.map((c) => {
-      order = { ...c, ...val };
-    });
+    let order = { ...data, ...val };
     dispatch(Addorderaction(order));
     formik.resetForm();
   };
