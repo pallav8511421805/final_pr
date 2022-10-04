@@ -28,3 +28,6 @@ export const Delete_cart = "Delete_cart";
 
 export const In_qty = "In_qty";
 export const De_qty = "De_qty";
+
+export const Addorder = "Addorder";
+export const Getorder = "Getorder";

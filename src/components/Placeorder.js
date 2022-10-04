@@ -6,6 +6,10 @@ function Placeorder(props) {
   const orderdata = props.location.state;
   console.log(orderdata.cart);
 
+  const handledataadd = (val) => {
+    console.log(val);
+  };
+
   let schema = yup.object().shape({
     name: yup.string().required("Please enter your name."),
     phone: yup.number().required("Please enter your mobile number."),
@@ -24,7 +28,7 @@ function Placeorder(props) {
     },
     validationSchema: schema,
     onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2));
+      handledataadd(values);
     },
   });
 
@@ -54,6 +58,9 @@ function Placeorder(props) {
                     onBlur={handleBlur}
                     onChange={handleChange}
                   />
+                  {errors.email && touched.email ? (
+                    <p className="errorp">{errors.email}</p>
+                  ) : null}
                   <input
                     name="phone"
                     maxLength={10}
@@ -61,12 +68,18 @@ function Placeorder(props) {
                     onBlur={handleBlur}
                     onChange={handleChange}
                   />
+                  {errors.phone || touched.phone ? (
+                    <p className="errorp">{errors.phone}</p>
+                  ) : null}
                   <input
                     name="address"
                     placeholder="Please enter your address"
                     onBlur={handleBlur}
                     onChange={handleChange}
                   />
+                  {errors.address || touched.address ? (
+                    <p className="errorp">{errors.address}</p>
+                  ) : null}
                   <button type="submit" className="placeorder1">
                     Submit
                   </button>
