@@ -4,10 +4,10 @@ import { Form, Formik, useFormik } from "formik";
 
 function Placeorder(props) {
   const orderdata = props.location.state;
-  console.log(orderdata.cart);
+  const data = orderdata.cart;
 
   const handledataadd = (val) => {
-    console.log(val);
+    const order = { ...data, ...val };
   };
 
   let schema = yup.object().shape({
