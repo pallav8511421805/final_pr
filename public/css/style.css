@@ -1450,3 +1450,9 @@ form input[type="submit"]:focus {
   background-color: transparent;
   border: 1px solid #f7444e;
 }
+.errorp {
+  color: #f7444e;
+  font-size: 18px;
+  text-align: center;
+  font-family: "Montserrat", sans-serif !important;
+}
