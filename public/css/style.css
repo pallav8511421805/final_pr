@@ -1393,8 +1393,9 @@ form input[type="submit"]:focus {
 .placeorder {
   color: white;
   background-color: #f7444e;
-  width: 120px;
-  height: 40px;
+  width: 150px !important;
+  height: 40px !important;
+  padding: 10px 20px;
   line-height: 40px;
   text-align: center;
   border-radius: 25px;
