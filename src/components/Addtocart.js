@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { NavLink } from "react-router-dom";
 import { Deletecartaction } from "../redux/actions/cart.action";
 import { decrementqty, incrementqty } from "../redux/actions/cart.action";
 import { getproduct_data } from "../redux/actions/product.actions";
@@ -104,7 +105,13 @@ function Addtocart(props) {
                     })}
                     <tr className="row justify-content-center trcolor2">
                       <td>
-                        <div className="placeorder">Place order</div>
+                        <NavLink
+                          className="placeorder"
+                          to={"/placeorder"}
+                          exact
+                        >
+                          Place order
+                        </NavLink>
                       </td>
                     </tr>
                   </tbody>
