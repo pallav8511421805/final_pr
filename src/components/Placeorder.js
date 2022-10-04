@@ -1,6 +1,9 @@
 import React from "react";
+import { useSelector } from "react-redux";
 
 function Placeorder(props) {
+  const cartdata = useSelector((state) => state.cartdata);
+  const cart = cartdata.cartdata;
   return (
     <section>
       <div className="container">
