@@ -14,6 +14,5 @@ export const Addorderaction = (data) => async (dispatch) => {
   const docRef = await addDoc(collection(db, "Order"), {
     ...data,
   });
-  console.log("Document written with ID: ", docRef.id);
   dispatch({ type: Actiontypes.Addorder, payload: { ...data, id: docRef.id } });
 };
