@@ -12,5 +12,5 @@ export const Rootreducer = combineReducers({
   categoryroot: categoryreducer,
   productroot: productreducer,
   cartroot: cartreducer,
-  order: orderreducer,
+  orderroot: orderreducer,
 });

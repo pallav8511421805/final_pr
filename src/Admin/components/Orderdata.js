@@ -1,7 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { DataGrid } from "@mui/x-data-grid";
+import { useDispatch } from "react-redux";
 
 function Orderdata(props) {
+  const orderdata = useSelector((state) => state.order);
+  const dispaly_order = orderdata.orderdata;
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch();
+  }, []);
   const columns = [
     { field: "id", headerName: "ID", width: 70 },
     { field: "firstName", headerName: "First name", width: 130 },
