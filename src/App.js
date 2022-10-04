@@ -42,9 +42,9 @@ function App() {
               <Route path={"/placeorder"} exact component={Placeorder} />
               {/* <Route component={Page404} /> */}
               <Lay_out>
-                <Route path={"/Category"} exact component={Category} />
-                <Route path={"/products"} exact component={Product} />
-                <Route path={"/orders"} exact component={Orderdata} />
+                <Route path={"/Categoryadmin"} exact component={Category} />
+                <Route path={"/productsadmin"} exact component={Product} />
+                <Route path={"/ordersadmin"} exact component={Orderdata} />
               </Lay_out>
             </Switch>
             <Footer />

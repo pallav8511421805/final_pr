@@ -102,17 +102,17 @@ export default function Lay_out({ children }) {
   const product_list = [
     {
       label: "Category",
-      to: "/Category",
+      to: "/Categoryadmin",
       icon: CategoryIcon,
     },
     {
       label: "Products",
-      to: "/products",
+      to: "/productsadmin",
       icon: ShoppingBagIcon,
     },
     {
       label: "Order",
-      to: "/orders",
+      to: "/ordersadmin",
       icon: ShoppingBagIcon,
     },
   ];
