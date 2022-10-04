@@ -15,7 +15,7 @@ function Placeorder(props) {
   };
 
   let schema = yup.object().shape({
-    name: yup.string().required("Please enter your name."),
+    fname: yup.string().required("Please enter your name."),
     phone: yup.number().required("Please enter your mobile number."),
     address: yup.string().required("Please enter your address."),
     email: yup
@@ -26,7 +26,7 @@ function Placeorder(props) {
 
   const formik = useFormik({
     initialValues: {
-      name: "",
+      fname: "",
       phone: "",
       email: "",
       address: "",
@@ -49,13 +49,13 @@ function Placeorder(props) {
               <Formik value={formik}>
                 <Form onSubmit={handleSubmit}>
                   <input
-                    name="name"
+                    name="fname"
                     placeholder="Please enter your name"
                     onBlur={handleBlur}
                     onChange={handleChange}
                   />
-                  {errors.name || touched.name ? (
-                    <p className="errorp">{errors.name}</p>
+                  {errors.fname || touched.fname ? (
+                    <p className="errorp">{errors.fname}</p>
                   ) : null}
                   <input
                     name="email"
