@@ -8,8 +8,12 @@ function Placeorder(props) {
   const orderdata = props.location.state;
   const data = orderdata.cart;
   const dispatch = useDispatch();
+
   const handledataadd = (val) => {
-    const order = { ...data, ...val };
+    let order;
+    data.map((c) => {
+      order = { ...c, ...val };
+    });
     dispatch(Addorderaction(order));
     formik.resetForm();
   };
