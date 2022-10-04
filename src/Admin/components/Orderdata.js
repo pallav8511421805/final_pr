@@ -9,11 +9,7 @@ function Orderdata(props) {
   useEffect(() => {
     dispatch(Getorderaction());
   }, []);
-  const columns = [
-    { field: "name", headerName: "", width: 70 },
-    { field: "firstName", headerName: "First name", width: 130 },
-    { field: "lastName", headerName: "Last name", width: 130 },
-  ];
+  const columns = [{ field: "fname", headerName: "User Name", width: 130 }];
   return (
     <div style={{ height: 400, width: "80%", margin: "auto" }}>
       <DataGrid
@@ -21,7 +17,6 @@ function Orderdata(props) {
         columns={columns}
         pageSize={5}
         rowsPerPageOptions={[5]}
-        checkboxSelection
       />
     </div>
   );
