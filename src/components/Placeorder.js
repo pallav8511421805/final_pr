@@ -73,7 +73,7 @@ function Placeorder(props) {
                     onBlur={handleBlur}
                     onChange={handleChange}
                   />
-                  {errors.phone || touched.phone ? (
+                  {errors.phone && touched.phone ? (
                     <p className="errorp">{errors.phone}</p>
                   ) : null}
                   <input
@@ -82,7 +82,7 @@ function Placeorder(props) {
                     onBlur={handleBlur}
                     onChange={handleChange}
                   />
-                  {errors.address || touched.address ? (
+                  {errors.address && touched.address ? (
                     <p className="errorp">{errors.address}</p>
                   ) : null}
                   <button type="submit" className="placeorder1">
