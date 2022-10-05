@@ -55,10 +55,23 @@ export const cartreducer = (state = intval, action) => {
       break;
 
     case Actiontypes.Delete_cart:
+      const itembuy = state.cartdata.find(
+        (item) => item.id === action.payload.id
+      );
+      if (itembuy) {
+        itembuy.qty++;
+      } else {
+        state.cartdata.push(action.payload);
+      }
       return {
         ...state,
-        cartdata: state.cartdata.filter((d) => d.id !== action.payload),
       };
+      break;
+    case Actiontypes.Buycart:
+      return {
+        cartdata: state.cartdata.concat(action.payload),
+      };
+      break;
 
     default:
       return state;
