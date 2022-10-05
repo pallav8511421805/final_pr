@@ -1152,7 +1152,7 @@ form input[type="submit"]:focus {
   padding: 10px 5px;
   color: #000000 !important;
   text-decoration: underline !important;
-  text-decoration-color: #f7444e !important;
+  text-decoration-color: #000000 !important;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
