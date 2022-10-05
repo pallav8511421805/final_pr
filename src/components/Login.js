@@ -263,11 +263,9 @@ function Login(props) {
         <section>
           {usertype === "Log in" && reset === false ? (
             <div className="d-flex justify-content-center my-3">
-              <button className="product_login" onClick={() => handlegoogle()}>
-                <i>
-                  <img src="images/search.png" />
-                </i>
-                Sign in with google
+              <button className="product_login2" onClick={() => handlegoogle()}>
+                <img src="images/search.png" width={20} />
+                <span className="px-2">Sign in with google</span>
               </button>
             </div>
           ) : null}

@@ -1147,12 +1147,26 @@ form input[type="submit"]:focus {
   background-color: transparent;
   color: #f7444e !important;
 }
+.product_login2:hover {
+  background-color: transparent;
+  color: #000000 !important;
+}
 .product_login1 {
   display: inline-block;
   padding: 10px 5px;
   color: #000000 !important;
   text-decoration: underline !important;
   text-decoration-color: #000000 !important;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.product_login2 {
+  display: inline-block;
+  padding: 10px 40px;
+  background-color: #000000;
+  border-radius: 25px;
+  border: 1px solid #000000;
+  color: #ffffff !important;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
