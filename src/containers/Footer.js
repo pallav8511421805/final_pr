@@ -11,7 +11,7 @@ function Footer(props) {
                 <div className="full">
                   <div className="logo_footer">
                     <a>
-                      <img width={210} src="images/logo.png" alt="#" />
+                      <img src="images/logo.png" alt="#" />
                     </a>
                   </div>
                   <div className="information_f">
