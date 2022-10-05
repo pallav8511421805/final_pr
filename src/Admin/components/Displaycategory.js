@@ -28,18 +28,23 @@ function Displaycategory(props) {
           <div className="row">
             {data.map((d, i) => {
               return (
-                <div className="col-12 col-md-6 col-lg-4 col-xl-3">
-                  <div className="w-100" onClick={() => handlefilterdata(d.id)}>
-                    <div className="box">
-                      <div className="img-box">
-                        <img src={d.cname} alt />
-                      </div>
-                      <div className="detail-box justify-content-center">
-                        <h5>{d.name}</h5>
+                <a>
+                  <div className="col-12 col-md-6 col-lg-4 col-xl-3">
+                    <div
+                      className="w-100"
+                      onClick={() => handlefilterdata(d.id)}
+                    >
+                      <div className="box">
+                        <div className="img-box">
+                          <img src={d.cname} alt />
+                        </div>
+                        <div className="detail-box justify-content-center">
+                          <h5>{d.name}</h5>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
+                </a>
               );
             })}
           </div>
