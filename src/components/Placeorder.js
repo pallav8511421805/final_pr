@@ -3,6 +3,7 @@ import * as yup from "yup";
 import { Form, Formik, useFormik } from "formik";
 import { useDispatch } from "react-redux";
 import { Addorderaction } from "../redux/actions/order.action";
+import { NavLink } from "react-router-dom";
 
 function Placeorder(props) {
   const orderdata = props.location.state;
@@ -91,9 +92,14 @@ function Placeorder(props) {
                   {errors.address && touched.address ? (
                     <p className="errorp">{errors.address}</p>
                   ) : null}
-                  <button type="submit" className="placeorder1">
+                  <NavLink
+                    to="/check"
+                    exact
+                    type="submit"
+                    className="placeorder1"
+                  >
                     Submit
-                  </button>
+                  </NavLink>
                 </Form>
               </Formik>
             </div>
