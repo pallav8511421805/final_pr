@@ -1,11 +1,17 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
 import { getdata } from "../../redux/actions/category.action";
 
 function Displaycategory(props) {
   const dispatch = useDispatch();
   const categorydata = useSelector((state) => state.categoryroot);
   const data = categorydata.category;
+  const history = useHistory();
+  const handlefilterdata = (id) => {
+    console.log(id);
+    history.push("/filter");
+  };
   useEffect(() => {
     dispatch(getdata());
   }, []);
@@ -23,7 +29,7 @@ function Displaycategory(props) {
             {data.map((d, i) => {
               return (
                 <div className="col-12 col-md-6 col-lg-4 col-xl-3">
-                  <div className="w-100">
+                  <div className="w-100" onClick={() => handlefilterdata(d.id)}>
                     <div className="box">
                       <div className="img-box">
                         <img src={d.cname} alt />

@@ -20,6 +20,7 @@ import Productdetails from "./components/Productdetails";
 import Chackout from "./components/Chackout";
 import Placeorder from "./components/Placeorder";
 import Orderdata from "./Admin/components/Orderdata";
+import Filterproducts from "./components/Filterproducts";
 // import Page404 from "./components/Page404";
 function App() {
   return (
@@ -39,6 +40,7 @@ function App() {
               <Route path="/addto" exact component={Addtocart} />
               <Route path="/check" exact component={Chackout} />
               <Route path={"/placeorder"} exact component={Placeorder} />
+              <Route path={"/filter"} exact component={Filterproducts} />
               {/* <Route component={Page404} /> */}
               <Lay_out>
                 <Route path={"/Categoryadmin"} exact component={Category} />
