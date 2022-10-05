@@ -424,6 +424,10 @@ a:focus {
   transform: scale(1.1);
 }
 
+.product_section .box:hover .option_container {
+  top: 100%;
+}
+
 .arrival_section {
   background-color: #d4ced0;
 }
@@ -443,6 +447,7 @@ a:focus {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  opacity: 0;
   background-color: rgba(255, 255, 255, 0.2);
   z-index: 3;
   -webkit-transition: all 0.2s;
@@ -1486,13 +1491,13 @@ form input[type="submit"]:focus {
 }
 .logodesign {
   color: #000000;
-  font-size: 65px;
+  font-size: 60px;
   font-weight: bold;
   font-family: "Montserrat", sans-serif !important;
 }
 .logodesign1 {
   color: #f7444e !important;
-  font-size: 65px !important;
+  font-size: 60px !important;
   font-family: "Montserrat", sans-serif !important;
   font-weight: bold;
 }
