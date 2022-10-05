@@ -394,9 +394,6 @@ function Home(props) {
               </h2>
             </div>
             <Displayproducts />
-            <div className="btn-box">
-              <a href>View All products</a>
-            </div>
           </div>
         </section>
         {/* end product section */}
