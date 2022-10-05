@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
 import { setalertaction } from "../redux/actions/alert.action";
 import { addcartaction, buycartaction } from "../redux/actions/cart.action";
 import { getproduct_data } from "../redux/actions/product.actions";
@@ -7,6 +8,7 @@ function Productdetails(props) {
   const dispatch = useDispatch();
   const product = useSelector((state) => state.productroot);
   const data = product.productdata;
+  const history = useHistory();
   const handleadd = (id) => {
     const values = {
       id: id,
@@ -24,6 +26,7 @@ function Productdetails(props) {
     };
     dispatch(buycartaction(values));
     dispatch(setalertaction({ text: "you buy this product.", color: "info" }));
+    history.push("/placeorder");
   };
   useEffect(() => {
     dispatch(getproduct_data());
