@@ -234,7 +234,7 @@ function Category(props) {
               </Formik>
             </Dialog>
           </div>
-          <div style={{ height: 400, width: "30%", margin: "15px auto" }}>
+          <div style={{ height: 400, width: "80%", margin: "15px auto" }}>
             <DataGrid
               rows={get_categorydata.category}
               columns={columns}

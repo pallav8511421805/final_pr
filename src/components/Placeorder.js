@@ -52,7 +52,7 @@ function Placeorder(props) {
         <div className="row justify-content-center">
           <div className="col-12 col-lg-6 ">
             <div className="w-100 my-3">
-              <h1 className="placeorderdata">Add your data</h1>
+              <h1 className="placeorderdata">delivery address</h1>
               <Formik value={formik}>
                 <Form onSubmit={handleSubmit}>
                   <input
