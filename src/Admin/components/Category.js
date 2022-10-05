@@ -198,7 +198,7 @@ function Category(props) {
                       onChange={handleChange}
                     />
                     {errors.name && touched.name ? (
-                      <p style={{ color: "#1976d2" }}>{errors.name}</p>
+                      <p style={{ color: "red" }}>{errors.name}</p>
                     ) : null}
                     <h6 className="my-2">Product image</h6>
                     <>
@@ -217,7 +217,7 @@ function Category(props) {
                           </label>
                         </div>
                         {errors.cname && touched.cname ? (
-                          <p style={{ color: "#1976d2" }}>{errors.cname}</p>
+                          <p style={{ color: "red" }}>{errors.cname}</p>
                         ) : null}
                       </>
                     </>

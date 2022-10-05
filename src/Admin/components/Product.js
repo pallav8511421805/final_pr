@@ -218,7 +218,7 @@ function Product(props) {
                       onChange={handleChange}
                     />
                     {errors.name && touched.name ? (
-                      <p style={{ color: "#1976d2" }}>{errors.name}</p>
+                      <p style={{ color: "red" }}>{errors.name}</p>
                     ) : null}
                     <TextField
                       value={values.description}
@@ -231,7 +231,7 @@ function Product(props) {
                       onChange={handleChange}
                     />
                     {errors.description && touched.description ? (
-                      <p style={{ color: "#1976d2" }}>{errors.description}</p>
+                      <p style={{ color: "red" }}>{errors.description}</p>
                     ) : null}
                     <TextField
                       value={values.price}
@@ -244,7 +244,7 @@ function Product(props) {
                       onChange={handleChange}
                     />
                     {errors.price && touched.price ? (
-                      <p style={{ color: "#1976d2" }}>{errors.price}</p>
+                      <p style={{ color: "red" }}>{errors.price}</p>
                     ) : null}
                     <h6 className="my-2">Category select</h6>
                     <select
@@ -260,7 +260,7 @@ function Product(props) {
                       })}
                     </select>
                     {errors.cselect && touched.cselect ? (
-                      <p style={{ color: "#1976d2" }}>{errors.cselect}</p>
+                      <p style={{ color: "red" }}>{errors.cselect}</p>
                     ) : null}
                     <h6 className="my-2">Product image</h6>
                     <>
@@ -278,7 +278,7 @@ function Product(props) {
                         </label>
                       </div>
                       {errors.pname && touched.pname ? (
-                        <p style={{ color: "#1976d2" }}>{errors.pname}</p>
+                        <p style={{ color: "red" }}>{errors.pname}</p>
                       ) : null}
                     </>
                   </DialogContent>
