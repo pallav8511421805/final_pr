@@ -22,12 +22,16 @@ function Displaycategory(props) {
           <div className="row">
             {data.map((d, i) => {
               return (
-                <div className="box m-2">
-                  <div className="img-box">
-                    <img src={d.cname} alt />
-                  </div>
-                  <div className="detail-box">
-                    <h5>{d.name}</h5>
+                <div className="col-12 col-md-6 col-lg-4 col-xl-3">
+                  <div className="w-100">
+                    <div className="box">
+                      <div className="img-box">
+                        <img src={d.cname} alt />
+                      </div>
+                      <div className="detail-box justify-content-center">
+                        <h5>{d.name}</h5>
+                      </div>
+                    </div>
                   </div>
                 </div>
               );
