@@ -264,7 +264,9 @@ function Login(props) {
           {usertype === "Log in" && reset === false ? (
             <div className="d-flex justify-content-center my-3">
               <button className="product_login" onClick={() => handlegoogle()}>
-                <i class="fa fa-google my-1 mx-2" aria-hidden="true"></i>
+                <i>
+                  <img src="images/search.png" />
+                </i>
                 Sign in with google
               </button>
             </div>
