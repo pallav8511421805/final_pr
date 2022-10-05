@@ -109,17 +109,7 @@ function Addtocart(props) {
                       );
                     })}
                     <tr className="row justify-content-center trcolor2">
-                      <td>
-                        <NavLink
-                          className="placeorder"
-                          to={{
-                            pathname: "/placeorder",
-                            state: { cart: CartData },
-                          }}
-                        >
-                          Place order
-                        </NavLink>
-                      </td>
+                      <td></td>
                     </tr>
                   </tbody>
                 </table>
@@ -153,6 +143,22 @@ function Addtocart(props) {
                 </table>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="my-5">
+        <div className="container">
+          <div className="row justify-content-end">
+            <NavLink
+              className="placeorder"
+              to={{
+                pathname: "/placeorder",
+                state: { cart: CartData },
+              }}
+            >
+              Place order
+            </NavLink>
           </div>
         </div>
       </section>
