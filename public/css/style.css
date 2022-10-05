@@ -1507,7 +1507,7 @@ form input[type="submit"]:focus {
   border: solid #fff 10px;
 }
 .check_icon {
-  color: rgba(9, 186, 9, 0.712);
+  color: green;
   font-size: 70px;
 }
 .cheack_box h1 span {
