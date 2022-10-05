@@ -40,6 +40,7 @@ function Productdetails(props) {
     };
     dispatch(buycartaction(values));
     dispatch(setalertaction({ text: "you buy this product.", color: "info" }));
+    history.push("/placeorder", { cart: CartData });
   };
   useEffect(() => {
     dispatch(getproduct_data());
