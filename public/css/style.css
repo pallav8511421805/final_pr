@@ -425,7 +425,7 @@ a:focus {
 }
 
 .product_section .box:hover .option_container {
-  top: 100%;
+  opacity: 1;
 }
 
 .arrival_section {
