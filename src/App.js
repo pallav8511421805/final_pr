@@ -14,7 +14,7 @@ import { SnackbarProvider } from "notistack";
 import { PersistGate } from "redux-persist/integration/react";
 import Lay_out from "./Admin/containers/Lay_out";
 import Category from "./Admin/components/Category";
-import { configstore } from "./redux/store";
+import { store, persistor } from "./redux/store";
 import Product from "./Admin/components/Product";
 import Productdetails from "./components/Productdetails";
 import Chackout from "./components/Chackout";
@@ -22,7 +22,6 @@ import Placeorder from "./components/Placeorder";
 import Orderdata from "./Admin/components/Orderdata";
 // import Page404 from "./components/Page404";
 function App() {
-  let { store, persistor } = configstore();
   return (
     <>
       <SnackbarProvider maxSnack={3}>

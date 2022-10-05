@@ -16,9 +16,7 @@ const persistedReducer = persistReducer(persistConfig, Rootreducer);
 const sagaMiddleware = createSagaMiddleware();
 
 const Middlewares = [sagaMiddleware, thunk];
-export const configstore = () => {
-  let store = createStore(persistedReducer, applyMiddleware(...Middlewares));
-  let persistor = persistStore(store);
-  sagaMiddleware.run(rootSaga);
-  return { store, persistor };
-};
+let store = createStore(persistedReducer, applyMiddleware(...Middlewares));
+let persistor = persistStore(store);
+sagaMiddleware.run(rootSaga);
+export { store, persistor };
