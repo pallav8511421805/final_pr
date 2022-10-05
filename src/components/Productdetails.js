@@ -20,19 +20,24 @@ function Productdetails(props) {
   const fdata = data.filter((d) => d.id === id.id);
   return (
     <>
-      <section className="inner_page_head">
-        <div className="container_fuild">
-          <div className="row">
-            <div className="col-md-12">
-              <div className="full">
-                <h3>Product Details</h3>
+      {fdata.map((d) => {
+        return (
+          <>
+            <section className="inner_page_head">
+              <div className="container_fuild">
+                <div className="row">
+                  <div className="col-md-12">
+                    <div className="full">
+                      <h3>{d.name}</h3>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section>
+            </section>
+          </>
+        );
+      })}
+      <section className="my-5">
         <div className="container">
           <div className="row justify-content-between">
             {fdata.map((d) => {
@@ -47,7 +52,6 @@ function Productdetails(props) {
                   </div>
                   <div className="col-sm-6 col-md-4 col-lg-6 align-self-center">
                     <div className="m-3">
-                      <h5 className="h1tagpd my-3">{d.name}</h5>
                       <div className="h1tagpd1">{`PRICE : $${d.price}`}</div>
                       <div className="my-3">
                         <div className="h1tagpd1">Product Ratings</div>
