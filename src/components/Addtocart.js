@@ -70,13 +70,14 @@ function Addtocart(props) {
                           <td className="align-self-center">
                             <div className="d-flex">
                               <img src={d.pname} width="25px" />
-                              <div>{d.name}</div>
+                              <div className="align-self-center mx-1">
+                                {d.name}
+                              </div>
                             </div>
                           </td>
                           <td className="align-self-center">
                             {" "}
                             <div className="row justify-content-center">
-                              <div className="mx-3">{d.qty}</div>
                               <button
                                 className="addqty mx-1"
                                 onClick={() => qtyminuscart(d.id)}
@@ -84,6 +85,7 @@ function Addtocart(props) {
                               >
                                 -
                               </button>
+                              <div className="mx-3">{d.qty}</div>
                               <button
                                 className="addqty mx-1"
                                 onClick={() => qtypluscart(d.id)}
