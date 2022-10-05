@@ -289,16 +289,16 @@ function Login(props) {
             <div className="d-flex justify-content-center">
               {reset ? null : usertype === "Log in" ? (
                 <p>
-                  Create a new account{" "}
+                  Create a new account ?{" "}
                   <span>
                     <a
-                      className="product_login"
+                      className="product_login1"
                       onClick={() => {
                         setusertype("Sign up");
                         setreset(false);
                       }}
                     >
-                      Log in
+                      Sign up
                     </a>
                   </span>
                 </p>
@@ -307,13 +307,13 @@ function Login(props) {
                   Already have an account?{" "}
                   <span>
                     <a
-                      className="product_login"
+                      className="product_login1"
                       onClick={() => {
                         setusertype("Log in");
                         setreset(false);
                       }}
                     >
-                      Sign up
+                      Log in
                     </a>
                   </span>
                 </p>
