@@ -13,7 +13,11 @@ function Placeorder(props) {
 
   let schema = yup.object().shape({
     fname: yup.string().required("Please enter your name."),
-    phone: yup.number().required("Please enter your mobile number."),
+    phone: yup
+      .number()
+      .min(10000, "Not valid mobile number.")
+      .max(99, "Not valid mobile number.")
+      .required("Please enter your mobile number."),
     address: yup.string().required("Please enter your address."),
     email: yup
       .string()
@@ -77,7 +81,6 @@ function Placeorder(props) {
                   ) : null}
                   <input
                     name="phone"
-                    maxLength={10}
                     placeholder="Please enter your mobile number"
                     onBlur={handleBlur}
                     onChange={handleChange}
