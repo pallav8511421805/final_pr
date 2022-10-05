@@ -52,7 +52,7 @@ function Filterproducts(props) {
       </div>
       <section className="product_section layout_padding">
         <div className="container">
-          <div className="row justify-content-between">
+          <div className="row">
             {fdata.map((d, i) => {
               return (
                 <div className="col-sm-6 col-md-4 col-lg-4">
