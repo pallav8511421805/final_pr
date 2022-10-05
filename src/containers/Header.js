@@ -46,47 +46,30 @@ function Header(props) {
               id="navbarSupportedContent"
             >
               <ul className="navbar-nav">
-                <li className="nav-item active">
+                <li className="nav-item">
                   <NavLink className="nav-link" to="/" exact>
                     Home
                   </NavLink>
                 </li>
-                <li className="nav-item dropdown">
-                  <a
-                    className="nav-link dropdown-toggle"
-                    href="#"
-                    data-toggle="dropdown"
-                    role="button"
-                    aria-haspopup="true"
-                    aria-expanded="true"
-                  >
-                    {" "}
-                    <span className="nav-label">
-                      Pages <span className="caret" />
-                    </span>
-                  </a>
-                  <ul className="dropdown-menu">
-                    <li>
-                      <NavLink to="/about" exact>
-                        About
-                      </NavLink>
-                    </li>
-                    <li>
-                      <NavLink to="/terminal" exact>
-                        Testimonial
-                      </NavLink>
-                    </li>
-                    <li>
-                      <NavLink to="/blog" exact>
-                        Blog
-                      </NavLink>
-                    </li>
-                    <li>
-                      <NavLink to="/product" exact>
-                        Products
-                      </NavLink>
-                    </li>
-                  </ul>
+                <li className="nav-item">
+                  <NavLink className="nav-link" to="/about" exact>
+                    About
+                  </NavLink>
+                </li>
+                <li className="nav-item">
+                  <NavLink className="nav-link" to="/terminal" exact>
+                    Testimonial
+                  </NavLink>
+                </li>
+                <li className="nav-item">
+                  <NavLink className="nav-link" to="/blog" exact>
+                    Blog
+                  </NavLink>
+                </li>
+                <li className="nav-item">
+                  <NavLink className="nav-link" to="/product" exact>
+                    Products
+                  </NavLink>
                 </li>
                 <li className="nav-item">
                   {auth.user === null ? (
@@ -114,14 +97,6 @@ function Header(props) {
                     </div>
                   </NavLink>
                 </li>
-                <form className="form-inline">
-                  <button
-                    className="btn  my-2 my-sm-0 nav_search-btn"
-                    type="submit"
-                  >
-                    <i className="fa fa-search" aria-hidden="true" />
-                  </button>
-                </form>
               </ul>
             </div>
           </nav>
