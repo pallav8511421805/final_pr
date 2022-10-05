@@ -8,8 +8,8 @@ function Displaycategory(props) {
   const categorydata = useSelector((state) => state.categoryroot);
   const data = categorydata.category;
   const history = useHistory();
-  const handlefilterdata = (id) => {
-    history.push("/filter", { id: id });
+  const handlefilterdata = (val) => {
+    history.push("/filter", { id: val[0], name: val[1] });
   };
   useEffect(() => {
     dispatch(getdata());
@@ -31,7 +31,7 @@ function Displaycategory(props) {
                   <div
                     className="w-100"
                     style={{ cursor: "pointer" }}
-                    onClick={() => handlefilterdata(d.id)}
+                    onClick={() => handlefilterdata([d.id, d.name])}
                   >
                     <div className="box">
                       <div className="img-box">
