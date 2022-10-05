@@ -27,7 +27,7 @@ function Header(props) {
           <nav className="navbar navbar-expand-lg custom_nav-container ">
             <NavLink className="navbar-brand" exact to={"/"}>
               <div className="logodesign">
-                F<span className="logodesign1">a</span>mms
+                F<div className="logodesign1">a</div>mms
               </div>
             </NavLink>
             <button
