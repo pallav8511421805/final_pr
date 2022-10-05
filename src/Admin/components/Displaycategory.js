@@ -10,7 +10,7 @@ function Displaycategory(props) {
   const history = useHistory();
   const handlefilterdata = (id) => {
     console.log(id);
-    history.push("/filter");
+    history.push("/filter", { id: id });
   };
   useEffect(() => {
     dispatch(getdata());
@@ -28,23 +28,22 @@ function Displaycategory(props) {
           <div className="row">
             {data.map((d, i) => {
               return (
-                <a>
-                  <div className="col-12 col-md-6 col-lg-4 col-xl-3">
-                    <div
-                      className="w-100"
-                      onClick={() => handlefilterdata(d.id)}
-                    >
-                      <div className="box">
-                        <div className="img-box">
-                          <img src={d.cname} alt />
-                        </div>
-                        <div className="detail-box justify-content-center">
-                          <h5>{d.name}</h5>
-                        </div>
+                <div className="col-12 col-md-6 col-lg-4 col-xl-3">
+                  <div
+                    className="w-100"
+                    style={{ cursor: "pointer" }}
+                    onClick={() => handlefilterdata(d.id)}
+                  >
+                    <div className="box">
+                      <div className="img-box">
+                        <img src={d.cname} alt />
+                      </div>
+                      <div className="detail-box justify-content-center">
+                        <h5>{d.name}</h5>
                       </div>
                     </div>
                   </div>
-                </a>
+                </div>
               );
             })}
           </div>
