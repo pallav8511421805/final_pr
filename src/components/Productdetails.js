@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setalertaction } from "../redux/actions/alert.action";
-import { addcartaction } from "../redux/actions/cart.action";
+import { addcartaction, buycartaction } from "../redux/actions/cart.action";
 import { getproduct_data } from "../redux/actions/product.actions";
 function Productdetails(props) {
   const dispatch = useDispatch();
@@ -22,10 +22,8 @@ function Productdetails(props) {
       id: id,
       qty: 1,
     };
-    dispatch(addcartaction(values));
-    dispatch(
-      setalertaction({ text: "Product in add to cart.", color: "info" })
-    );
+    dispatch(buycartaction(values));
+    dispatch(setalertaction({ text: "you buy this product.", color: "info" }));
   };
   useEffect(() => {
     dispatch(getproduct_data());
