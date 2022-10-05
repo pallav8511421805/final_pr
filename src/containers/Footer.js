@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 function Footer(props) {
   return (
@@ -10,9 +11,11 @@ function Footer(props) {
               <div className="col-md-4">
                 <div className="full">
                   <div className="logo_footer">
-                    <a>
-                      <img src="images/logo.png" alt="#" />
-                    </a>
+                    <NavLink to={"/"} exact>
+                      <div className="logodesign">
+                        F<span className="logodesign1">a</span>mms
+                      </div>
+                    </NavLink>
                   </div>
                   <div className="information_f">
                     <p>

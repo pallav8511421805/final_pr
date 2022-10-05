@@ -26,7 +26,9 @@ function Header(props) {
         <div className="container">
           <nav className="navbar navbar-expand-lg custom_nav-container ">
             <NavLink className="navbar-brand" exact to={"/"}>
-              <img width={250} src="images/logo.png" alt="#" />
+              <div className="logodesign">
+                F<span className="logodesign1">a</span>mms
+              </div>
             </NavLink>
             <button
               className="navbar-toggler"
