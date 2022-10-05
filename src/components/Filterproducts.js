@@ -1,7 +1,9 @@
 import React from "react";
 
 function Filterproducts(props) {
-  return <div></div>;
+  const data = props.location.state;
+
+  return <div>{data}</div>;
 }
 
 export default Filterproducts;
