@@ -8,7 +8,7 @@ function Chackout(props) {
           <div className="col-12 col-md-6 cheack_box my-5">
             <div className="w-100">
               <h1>
-                <span>Thank you ,</span> Your order is placed, vist again
+                <span>Thank you, </span> Your order is placed, vist again
               </h1>
               <p className="my-2">
                 Lorem Ipsum is simply dummy text of the printing and typesetting
