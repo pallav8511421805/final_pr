@@ -4,6 +4,7 @@ const intval = {
   cartdata: [],
 };
 export const cartreducer = (state = intval, action) => {
+  console.log(action.payload);
   switch (action.type) {
     case Actiontypes.In_qty:
       return {
@@ -49,8 +50,16 @@ export const cartreducer = (state = intval, action) => {
       };
       break;
     case Actiontypes.Buycart:
+      const itembuy = state.cartdata.find(
+        (item) => item.id === action.payload.id
+      );
+      if (itembuy) {
+        itembuy.qty++;
+      } else {
+        state.cartdata.push(action.payload);
+      }
       return {
-        cartdata: state.cartdata.push(action.payload),
+        ...state,
       };
       break;
 
