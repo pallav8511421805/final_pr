@@ -68,17 +68,14 @@ function Addtocart(props) {
                       return (
                         <tr className="row justify-content-between trcolor1">
                           <td className="align-self-center">
-                            <img src={d.pname} width="25px" />
+                            <div className="d-flex">
+                              <img src={d.pname} width="25px" />
+                              <div>{d.name}</div>
+                            </div>
                           </td>
                           <td className="align-self-center">
                             {" "}
                             <div className="row justify-content-center">
-                              <button
-                                className="addqty mx-1"
-                                onClick={() => qtypluscart(d.id)}
-                              >
-                                +
-                              </button>
                               <div className="mx-3">{d.qty}</div>
                               <button
                                 className="addqty mx-1"
@@ -86,6 +83,12 @@ function Addtocart(props) {
                                 disabled={d.qty === 1 && true}
                               >
                                 -
+                              </button>
+                              <button
+                                className="addqty mx-1"
+                                onClick={() => qtypluscart(d.id)}
+                              >
+                                +
                               </button>
                             </div>
                           </td>
