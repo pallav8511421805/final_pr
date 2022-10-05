@@ -33,11 +33,6 @@ function Home(props) {
                           veniam, vel architecto veritatis delectus repellat
                           modi impedit sequi.
                         </p>
-                        <div className="btn-box">
-                          <a href className="btn1">
-                            Shop Now
-                          </a>
-                        </div>
                       </div>
                     </div>
                   </div>
@@ -60,11 +55,6 @@ function Home(props) {
                           veniam, vel architecto veritatis delectus repellat
                           modi impedit sequi.
                         </p>
-                        <div className="btn-box">
-                          <a href className="btn1">
-                            Shop Now
-                          </a>
-                        </div>
                       </div>
                     </div>
                   </div>
@@ -87,11 +77,6 @@ function Home(props) {
                           veniam, vel architecto veritatis delectus repellat
                           modi impedit sequi.
                         </p>
-                        <div className="btn-box">
-                          <a href className="btn1">
-                            Shop Now
-                          </a>
-                        </div>
                       </div>
                     </div>
                   </div>
@@ -393,7 +378,6 @@ function Home(props) {
                     nisi hic? Tenetur commodi, nisi rem vel, ea eaque ab ipsa,
                     autem similique ex unde!
                   </p>
-                  <a href>Shop Now</a>
                 </div>
               </div>
             </div>
