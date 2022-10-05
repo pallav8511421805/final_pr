@@ -79,32 +79,19 @@ function Login(props) {
     dispatch(signingoogle());
   };
   return (
-    // cheack_box
     <>
       <div>
-        <section className="inner_page_head">
-          <div className="container_fuild">
-            <div className="row">
-              <div className="col-md-12">
-                <div className="full">
-                  {reset ? (
-                    <h3>Forget password</h3>
-                  ) : usertype === "Log in" ? (
-                    <h3>Log in</h3>
-                  ) : (
-                    <h3>Sign up</h3>
-                  )}
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        {/* end inner page section */}
-        {/* why section */}
         <section className="why_section layout_padding">
           <div className="container">
             <div className="row">
-              <div className="col-lg-8 offset-lg-2">
+              <div className="col-12 col-lg-8 offset-lg-2 cheack_box">
+                {reset ? (
+                  <h3 className="text_h3 my-3">Forget password</h3>
+                ) : usertype === "Log in" ? (
+                  <h3 className="text_h3 my-3">Log in</h3>
+                ) : (
+                  <h3 className="text_h3 my-3">Sign up</h3>
+                )}
                 <div className="full">
                   <Formik values={formik}>
                     <Form onSubmit={handleSubmit} className="php-email-form">
@@ -249,8 +236,8 @@ function Login(props) {
                       </>
                       {reset ? (
                         <div className="text-center my-3">
-                          <button className="product_login">
-                            Change password
+                          <button className="product_login" type="submit">
+                            submit
                           </button>
                         </div>
                       ) : usertype === "Log in" ? (

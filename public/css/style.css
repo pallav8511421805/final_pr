@@ -1158,7 +1158,6 @@ form input[type="submit"]:focus {
 .errorclass {
   color: #f7444e;
   font-size: 16px;
-  font-weight: 600;
 }
 .logoutbtn {
   padding: 5px 20px;
@@ -1509,4 +1508,10 @@ form input[type="submit"]:focus {
   font-size: 60px !important;
   font-family: "Montserrat", sans-serif !important;
   font-weight: bold;
+}
+.text_h3 {
+  color: #f7444e;
+  font-size: 36px;
+  text-align: center;
+  margin: 10px 0;
 }
