@@ -2,6 +2,7 @@
 
 * {
   box-sizing: border-box;
+  outline: none !important;
 }
 
 body {
@@ -9,6 +10,7 @@ body {
   color: #0c0c0c;
   background-color: #ffffff;
   overflow-x: hidden;
+  text-transform: capitalize !important;
 }
 
 .layout_padding {
