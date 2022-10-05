@@ -1,10 +1,18 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { addcartaction } from "../redux/actions/cart.action";
 import { getproduct_data } from "../redux/actions/product.actions";
 function Productdetails(props) {
   const dispatch = useDispatch();
   const product = useSelector((state) => state.productroot);
   const data = product.productdata;
+  const handleadd = (id) => {
+    const values = {
+      id: id,
+      qty: 1,
+    };
+    dispatch(addcartaction(values));
+  };
   useEffect(() => {
     dispatch(getproduct_data());
   }, []);
@@ -41,7 +49,6 @@ function Productdetails(props) {
                     <div className="m-3">
                       <h5 className="h1tagpd my-3">{d.name}</h5>
                       <div className="h1tagpd1">{`PRICE : $${d.price}`}</div>
-
                       <div className="my-3">
                         <div className="h1tagpd1">Product Ratings</div>
                         <ul className="row m-0 p-0 pdull">
@@ -66,7 +73,17 @@ function Productdetails(props) {
                         <h6 className="h1tagpd1">Description : </h6>
                         <div>{d.description}</div>
                       </div>
-                      <a className="buybtn my-3">Buy Now</a>
+                      <div className="row">
+                        <a className="buybtn my-3 mx-1">Buy Now</a>
+                        <a
+                          onClick={() => {
+                            handleadd(d.id);
+                          }}
+                          className="buybtn my-3 mx-1"
+                        >
+                          + Add to cart
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </>

@@ -41,7 +41,7 @@ function Displayproducts(props) {
                       onClick={() => {
                         handleadd(d.id);
                       }}
-                      class="option2"
+                      className="option2"
                     >
                       + Add to cart
                     </a>
