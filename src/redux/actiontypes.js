@@ -25,6 +25,7 @@ export const Error_category = "Error_category";
 
 export const Add_cart = "Add_cart";
 export const Delete_cart = "Delete_cart";
+export const Buycart = "Buycart";
 
 export const In_qty = "In_qty";
 export const De_qty = "De_qty";

@@ -48,6 +48,11 @@ export const cartreducer = (state = intval, action) => {
         ...state,
       };
       break;
+    case Actiontypes.Buycart:
+      return {
+        cartdata: state.cartdata.push(action.payload),
+      };
+      break;
 
     case Actiontypes.Delete_cart:
       return {

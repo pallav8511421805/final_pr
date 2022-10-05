@@ -17,6 +17,16 @@ function Productdetails(props) {
       setalertaction({ text: "Product in add to cart.", color: "info" })
     );
   };
+  const handlebuy = (id) => {
+    const values = {
+      id: id,
+      qty: 1,
+    };
+    dispatch(addcartaction(values));
+    dispatch(
+      setalertaction({ text: "Product in add to cart.", color: "info" })
+    );
+  };
   useEffect(() => {
     dispatch(getproduct_data());
   }, []);
@@ -82,7 +92,14 @@ function Productdetails(props) {
                         <div>{d.description}</div>
                       </div>
                       <div className="row">
-                        <a className="buybtn my-3 mx-1">Buy Now</a>
+                        <a
+                          className="buybtn my-3 mx-1"
+                          onClick={() => {
+                            handlebuy(d.id);
+                          }}
+                        >
+                          Buy Now
+                        </a>
                         <a
                           onClick={() => {
                             handleadd(d.id);
