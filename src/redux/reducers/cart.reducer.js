@@ -50,7 +50,7 @@ export const cartreducer = (state = intval, action) => {
       break;
     case Actiontypes.Buycart:
       return {
-        cartdata: state.cartdata.concat(action.payload),
+        cartdata: state.cartdata.push(action.payload),
       };
       break;
 
