@@ -9,6 +9,20 @@ function Productdetails(props) {
   const product = useSelector((state) => state.productroot);
   const data = product.productdata;
   const history = useHistory();
+  const cart = useSelector((state) => state.cartroot);
+
+  let CartData = [];
+  product.productdata.map((p) => {
+    cart.cartdata.map((c) => {
+      if (p.id === c.id) {
+        const data = {
+          ...p,
+          qty: c.qty,
+        };
+        CartData.push(data);
+      }
+    });
+  });
   const handleadd = (id) => {
     const values = {
       id: id,
@@ -26,7 +40,6 @@ function Productdetails(props) {
     };
     dispatch(buycartaction(values));
     dispatch(setalertaction({ text: "you buy this product.", color: "info" }));
-    history.push("/placeorder");
   };
   useEffect(() => {
     dispatch(getproduct_data());
