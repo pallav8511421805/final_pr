@@ -1484,6 +1484,10 @@ form input[type="submit"]:focus {
   font-family: "Montserrat", sans-serif !important;
   border: solid #fff 10px;
 }
+.check_icon {
+  color: rgba(9, 186, 9, 0.712);
+  font-size: 70px;
+}
 .cheack_box h1 span {
   color: #f7444e;
   font-weight: 500;
