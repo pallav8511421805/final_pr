@@ -13,6 +13,11 @@ body {
   text-transform: capitalize !important;
 }
 
+a,
+button {
+  cursor: pointer !important;
+}
+
 .layout_padding {
   padding: 70px 0;
 }
