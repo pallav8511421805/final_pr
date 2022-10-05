@@ -430,18 +430,25 @@ a:focus {
 }
 
 .product_section .box:hover .option_container {
-  opacity: 1;
+  left: 100%;
 }
 
 .arrival_section {
   background-color: #d4ced0;
 }
 
+.product_section .box:hover .option_container {
+  opacity: 1;
+  visibility: visible;
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+}
+
 .product_section .option_container {
   position: absolute;
-  width: 100%;
   top: 0;
-  right: 0;
+  left: 0;
+  width: 100%;
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -452,11 +459,14 @@ a:focus {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  opacity: 0;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.6);
   z-index: 3;
+  opacity: 0;
+  visibility: hidden;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
+  -webkit-transform: translateY(100%);
+  transform: translateY(100%);
 }
 
 .product_section .options {
