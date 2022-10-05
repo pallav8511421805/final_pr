@@ -14,6 +14,12 @@ function Filterproducts(props) {
   useEffect(() => {
     dispatch(getproduct_data());
   }, []);
+  let fdata = [];
+  pdata.map((d) => {
+    if (d.cselect === data.id) {
+      fdata.push(d);
+    }
+  });
 
   const handleadd = (id) => {
     const values = {
@@ -44,38 +50,42 @@ function Filterproducts(props) {
           </div>
         </section>
       </div>
-      <div className="row">
-        {data.map((d, i) => {
-          return (
-            <div className="col-sm-6 col-md-4 col-lg-4">
-              <div className="box">
-                <div class="option_container">
-                  <div class="options">
-                    <a onClick={() => handleview(d.id)} class="option1">
-                      View
-                    </a>
-                    <a
-                      onClick={() => {
-                        handleadd(d.id);
-                      }}
-                      className="option2"
-                    >
-                      + Add to cart
-                    </a>
+      <section className="product_section layout_padding">
+        <div className="container">
+          <div className="row justify-content-between">
+            {fdata.map((d, i) => {
+              return (
+                <div className="col-sm-6 col-md-4 col-lg-4">
+                  <div className="box">
+                    <div class="option_container">
+                      <div class="options">
+                        <a onClick={() => handleview(d.id)} class="option1">
+                          View
+                        </a>
+                        <a
+                          onClick={() => {
+                            handleadd(d.id);
+                          }}
+                          className="option2"
+                        >
+                          + Add to cart
+                        </a>
+                      </div>
+                    </div>
+                    <div className="img-box">
+                      <img src={d.pname} alt />
+                    </div>
+                    <div className="detail-box">
+                      <h5>{d.name}</h5>
+                      <h6>${d.price}</h6>
+                    </div>
                   </div>
                 </div>
-                <div className="img-box">
-                  <img src={d.pname} alt />
-                </div>
-                <div className="detail-box">
-                  <h5>{d.name}</h5>
-                  <h6>${d.price}</h6>
-                </div>
-              </div>
-            </div>
-          );
-        })}
-      </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
     </>
   );
 }
