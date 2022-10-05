@@ -56,9 +56,9 @@ function Placeorder(props) {
     <section>
       <div className="container">
         <div className="row justify-content-center">
-          <div className="col-12 col-lg-6 ">
+          <div className="col-12 col-lg-6 cheack_box my-5">
             <div className="w-100 my-3">
-              <h1 className="placeorderdata">delivery address</h1>
+              <h2 className="placeorderdata">delivery address</h2>
               <Formik value={formik}>
                 <Form onSubmit={handleSubmit}>
                   <input
