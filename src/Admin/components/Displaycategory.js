@@ -9,7 +9,6 @@ function Displaycategory(props) {
   const data = categorydata.category;
   const history = useHistory();
   const handlefilterdata = (id) => {
-    console.log(id);
     history.push("/filter", { id: id });
   };
   useEffect(() => {
