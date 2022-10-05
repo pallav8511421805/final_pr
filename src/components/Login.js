@@ -79,6 +79,7 @@ function Login(props) {
     dispatch(signingoogle());
   };
   return (
+    // cheack_box
     <>
       <div>
         <section className="inner_page_head">

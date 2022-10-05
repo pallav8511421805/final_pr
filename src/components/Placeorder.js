@@ -18,7 +18,10 @@ function Placeorder(props) {
       .min(100000000, "Not valid mobile number !.")
       .max(9999999999, "Not valid mobile number !.")
       .required("Please enter your mobile number."),
-    address: yup.string().required("Please enter your address."),
+    address: yup
+      .string()
+      .max(100, "Please enter address in 100 letters.")
+      .required("Please enter your address."),
     email: yup
       .string()
       .email("Please enter your valid email.")
@@ -65,6 +68,7 @@ function Placeorder(props) {
                     name="fname"
                     placeholder="Please enter your name"
                     onBlur={handleBlur}
+                    type="text"
                     onChange={handleChange}
                   />
                   {errors.fname && touched.fname ? (
@@ -88,12 +92,12 @@ function Placeorder(props) {
                   {errors.phone && touched.phone ? (
                     <p className="errorp">{errors.phone}</p>
                   ) : null}
-                  <input
+                  <textarea
                     name="address"
                     placeholder="Please enter your address"
                     onBlur={handleBlur}
                     onChange={handleChange}
-                  />
+                  ></textarea>
                   {errors.address && touched.address ? (
                     <p className="errorp">{errors.address}</p>
                   ) : null}
