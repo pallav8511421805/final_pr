@@ -12,9 +12,9 @@ function Footer(props) {
                 <div className="full">
                   <div className="logo_footer">
                     <NavLink to={"/"} exact>
-                      <div className="logodesign">
-                        F<div className="logodesign1">a</div>mms
-                      </div>
+                      <h1 className="logodesign">
+                        F<span className="logodesign1">a</span>mms
+                      </h1>
                     </NavLink>
                   </div>
                   <div className="information_f">
