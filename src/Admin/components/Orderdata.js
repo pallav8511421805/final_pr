@@ -44,8 +44,6 @@ function Orderdata(props) {
     <>
       {order.isload ? (
         <div className="text-center text-primary">Loading....</div>
-      ) : order.error != "" ? (
-        <div className="text-center text-primary">{order.error}</div>
       ) : (
         <>
           <section>
