@@ -16,3 +16,11 @@ export const Addorderaction = (data) => async (dispatch) => {
   });
   dispatch({ type: Actiontypes.Addorder, payload: { ...data, id: docRef.id } });
 };
+
+export const loaddata = () => (dispatch) => {
+  dispatch({ type: Actiontypes.Load_order });
+};
+
+export const errordata = (error) => (dispatch) => {
+  dispatch({ type: Actiontypes.Error_order, payload: error });
+};
