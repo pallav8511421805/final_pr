@@ -8,9 +8,22 @@ function Orderdata(props) {
     dispatch(Getorderaction());
   }, []);
 
-  let Cartorder = [];
-
   const order = useSelector((state) => state.orderroot);
+
+  let Cartorder = [];
+  let Cartorderdata = [];
+
+  let obj;
+
+  order.orderdata.map((d) => {
+    obj = {
+      address: d.address,
+      phone: d.phone,
+      email: d.email,
+      fname: d.fname,
+    };
+  });
+
   order.orderdata.map((d) => {
     d.cartorder.map((d) => {
       let obj = {
@@ -18,6 +31,14 @@ function Orderdata(props) {
       };
       Cartorder.push(obj);
     });
+  });
+
+  Cartorder.map((d) => {
+    let objdata = {
+      ...obj,
+      ...d,
+    };
+    Cartorderdata.push(objdata);
   });
   return (
     <>
@@ -44,25 +65,19 @@ function Orderdata(props) {
                     <th>Price</th>
                   </tr>
                   <tbody>
-                    {order.orderdata.map((d) => {
+                    {Cartorderdata.map((d) => {
                       return (
                         <tr className="text-center">
                           <td>{d.fname}</td>
                           <td>{d.email}</td>
                           <td>{d.phone}</td>
                           <td>{d.address}</td>
-                          {Cartorder.map((d) => {
-                            return (
-                              <>
-                                <td>
-                                  <img src={d.pname} width={50} />
-                                </td>
-                                <td>{d.name}</td>
-                                <td>{d.qty}</td>
-                                <td>{d.price}</td>
-                              </>
-                            );
-                          })}
+                          <td>
+                            <img src={d.pname} width={50} />
+                          </td>
+                          <td>{d.name}</td>
+                          <td>{d.qty}</td>
+                          <td>{d.price}</td>
                         </tr>
                       );
                     })}
