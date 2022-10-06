@@ -18,7 +18,6 @@ export const Getorderaction = () => (dispatch) => {
 };
 
 export const Addorderaction = (data) => (dispatch) => {
-  console.log(data);
   try {
     dispatch(loaddata());
     setTimeout(async function () {
