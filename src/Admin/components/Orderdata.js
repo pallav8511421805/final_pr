@@ -8,38 +8,8 @@ function Orderdata(props) {
     dispatch(Getorderaction());
   }, []);
 
-  let CartorderData = [];
-  let FinalorderData = [];
-  let addressdata;
-  let obj;
-
-  const handle_order = (data) => {
-    CartorderData.map((d) => {
-      obj = {
-        ...data,
-        ...d,
-      };
-      FinalorderData.push(obj);
-    });
-  };
-
   const order = useSelector((state) => state.orderroot);
-  order.orderdata.map((d) => {
-    d.cartorder.map((d) => {
-      CartorderData.push(d);
-    });
-  });
 
-  order.orderdata.map((d) => {
-    addressdata = {
-      A_name: d.fname,
-      A_address: d.address,
-      A_email: d.email,
-      A_phone: d.phone,
-    };
-    handle_order(addressdata);
-  });
-  console.log(FinalorderData);
   return (
     <>
       <section>
@@ -64,6 +34,32 @@ function Orderdata(props) {
                     <th>Quantity</th>
                     <th>Price</th>
                   </tr>
+                  <tbody>
+                    {order.orderdata.map((d) => {
+                      return (
+                        <tr className="text-center">
+                          <td>{d.fname}</td>
+                          <td>{d.email}</td>
+                          <td>{d.phone}</td>
+                          <td>{d.address}</td>
+                          {order.orderdata.map((x) => {
+                            x.cartorder.map((m) => {
+                              return (
+                                <>
+                                  <td>
+                                    <img src={m.pname} width={50} />
+                                  </td>
+                                  <td>{m.name}</td>
+                                  <td>{m.name}</td>
+                                  <td>{m.name}</td>
+                                </>
+                              );
+                            });
+                          })}
+                        </tr>
+                      );
+                    })}
+                  </tbody>
                 </table>
               </div>
             </div>
