@@ -43,7 +43,12 @@ function Orderdata(props) {
   return (
     <>
       {order.isload ? (
-        <div className="text-center text-primary">Loading....</div>
+        <div
+          className="text-center text-primary fw-bold"
+          style={{ fontSize: "24px" }}
+        >
+          Loading....
+        </div>
       ) : (
         <>
           <section>
