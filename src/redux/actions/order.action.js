@@ -3,14 +3,12 @@ import { addDoc, collection, getDocs } from "firebase/firestore";
 import { db } from "../../Firebase";
 
 export const Getorderaction = () => async (dispatch) => {
-  console.log("okkkkkkkkkkkkkkkkkkk");
   let data = [];
   const querySnapshot = await getDocs(collection(db, "Order"));
 
   querySnapshot.forEach((doc) => {
     data.push({ ...doc.data(), id: doc.id });
   });
-  console.log(data);
   dispatch({ type: Actiontypes.Getorder, payload: data });
 };
 
