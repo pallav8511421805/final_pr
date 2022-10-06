@@ -12,7 +12,10 @@ function Placeorder(props) {
   const history = useHistory();
 
   let schema = yup.object().shape({
-    fname: yup.string().required("Please enter your name."),
+    fname: yup
+      .string()
+      .matches("^[a-zA-Z ]*$", "Please enter valid name.")
+      .required("Please enter your name."),
     phone: yup
       .number()
       .min(100000000, "Not valid mobile number !.")

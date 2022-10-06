@@ -34,7 +34,10 @@ function Login(props) {
       email: "",
     };
     mainschema = yup.object().shape({
-      name: yup.string().required("Please enter your name."),
+      name: yup
+        .string()
+        .matches("^[a-zA-Z ]*$", "Please enter valid name.")
+        .required("Please enter your name."),
       email: yup
         .string()
         .email("Please enter your vaild email id.")
