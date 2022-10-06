@@ -5,7 +5,7 @@ function Orderdata(props) {
   const orderdata = useSelector((state) => state.orderroot);
   const dispaly_order = orderdata.orderdata;
   const dispatch = useDispatch();
-  // dispaly_order.cartorder
+  console.log(dispaly_order);
   useEffect(() => {
     dispatch(Getorderaction());
   }, []);
