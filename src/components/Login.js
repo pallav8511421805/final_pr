@@ -62,6 +62,7 @@ function Login(props) {
   const formik = useFormik({
     initialValues: initialVal,
     validationSchema: schema,
+    enableReinitialize: true,
     onSubmit: (values) => {
       if (usertype === "Log in" && !reset) {
         dispatch(signinaction(values));
