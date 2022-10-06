@@ -46,6 +46,7 @@ function Placeorder(props) {
       cartorder: [...data],
       ...val,
     };
+    console.log(obj);
     dispatch(Addorderaction(obj));
     formik.resetForm();
     history.push("/check");

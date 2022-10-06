@@ -5,10 +5,10 @@ export const Getorderaction = () => (dispatch) => {
   try {
     dispatch(loaddata());
     setTimeout(async function () {
-      let data = [];
+      let data;
       const querySnapshot = await getDocs(collection(db, "Order"));
       querySnapshot.forEach((doc) => {
-        data.push({ ...doc.data(), id: doc.id });
+        data = { ...doc.data(), id: doc.id };
       });
       dispatch({ type: Actiontypes.Getorder, payload: data });
     }, 2000);

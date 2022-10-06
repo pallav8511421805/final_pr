@@ -5,6 +5,7 @@ import { Getorderaction } from "../../redux/actions/order.action";
 function Orderdata(props) {
   const orderdata = useSelector((state) => state.orderroot);
   const dispaly_order = orderdata.orderdata;
+  console.log(dispaly_order);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(Getorderaction());
@@ -34,7 +35,7 @@ function Orderdata(props) {
         <div style={{ fontSize: 24, color: "#1976d2", textAlign: "center" }}>
           Loading...
         </div>
-      ) : orderdata.error != "" ? (
+      ) : orderdata.error !== "" ? (
         <div style={{ fontSize: 24 }}>{orderdata.error}</div>
       ) : (
         <>
