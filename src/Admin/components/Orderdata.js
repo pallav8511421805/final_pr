@@ -29,6 +29,12 @@ function Orderdata(props) {
     { field: `qty`, headerName: "Product qty", width: 130 },
   ];
   return (
+    // <div style={{ fontSize: 24, color: "#1976d2", textAlign: "center" }}>
+    //   Loading...
+    // </div>
+
+    // <div style={{ fontSize: 24 }}>{getdata_product.error}</div>
+
     <div style={{ height: 400, width: "80%", margin: "auto" }}>
       <DataGrid
         rows={dispaly_order}
