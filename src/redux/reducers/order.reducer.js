@@ -17,13 +17,13 @@ export const orderreducer = (state = initval, action) => {
         orderdata: state.orderdata.concat(action.payload),
       };
       break;
-    case Actiontypes.Load_Product:
+    case Actiontypes.Load_order:
       return {
         ...state,
         isload: true,
         error: "",
       };
-    case Actiontypes.Error_Product:
+    case Actiontypes.Error_order:
       return {
         ...state,
         isload: false,
