@@ -8,8 +8,17 @@ function Orderdata(props) {
     dispatch(Getorderaction());
   }, []);
 
-  const order = useSelector((state) => state.orderroot);
+  let Cartorder = [];
 
+  const order = useSelector((state) => state.orderroot);
+  order.orderdata.map((d) => {
+    d.cartorder.map((d) => {
+      let obj = {
+        ...d,
+      };
+      Cartorder.push(obj);
+    });
+  });
   return (
     <>
       <section>
@@ -42,19 +51,17 @@ function Orderdata(props) {
                           <td>{d.email}</td>
                           <td>{d.phone}</td>
                           <td>{d.address}</td>
-                          {order.orderdata.map((x) => {
-                            x.cartorder.map((m) => {
-                              return (
-                                <>
-                                  <td>
-                                    <img src={m.pname} width={50} />
-                                  </td>
-                                  <td>{m.name}</td>
-                                  <td>{m.name}</td>
-                                  <td>{m.name}</td>
-                                </>
-                              );
-                            });
+                          {Cartorder.map((d) => {
+                            return (
+                              <>
+                                <td>
+                                  <img src={d.pname} width={50} />
+                                </td>
+                                <td>{d.name}</td>
+                                <td>{d.qty}</td>
+                                <td>{d.price}</td>
+                              </>
+                            );
                           })}
                         </tr>
                       );
