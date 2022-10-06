@@ -11,17 +11,17 @@ function Orderdata(props) {
   const order = useSelector((state) => state.orderroot);
 
   let Cartorder = [];
-  let Cartorder1 = [];
   let Cartorderdata = [];
 
+  let obj;
+
   order.orderdata.map((d) => {
-    let obj = {
+    obj = {
       address: d.address,
       phone: d.phone,
       email: d.email,
       fname: d.fname,
     };
-    Cartorder1.push(obj);
   });
 
   order.orderdata.map((d) => {
@@ -33,15 +33,12 @@ function Orderdata(props) {
     });
   });
 
-  Cartorder1.map((d) => {
-    console.log(d);
-    Cartorder.map((x) => {
-      let objdata = {
-        ...d,
-        ...x,
-      };
-      Cartorderdata.push(objdata);
-    });
+  Cartorder.map((d) => {
+    let objdata = {
+      ...obj,
+      ...d,
+    };
+    Cartorderdata.push(objdata);
   });
   return (
     <>
