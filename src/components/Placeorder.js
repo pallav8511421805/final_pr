@@ -42,13 +42,11 @@ function Placeorder(props) {
   });
 
   const handledataadd = (val) => {
-    data.map((d) => {
-      const obj = {
-        ...d,
-        ...val,
-      };
-      dispatch(Addorderaction(obj));
-    });
+    const obj = {
+      cartorder: [...data],
+      ...val,
+    };
+    dispatch(Addorderaction(obj));
     formik.resetForm();
     history.push("/check");
   };
