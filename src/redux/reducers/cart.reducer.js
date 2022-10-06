@@ -4,7 +4,6 @@ const intval = {
   cartdata: [],
 };
 export const cartreducer = (state = intval, action) => {
-  console.log(action.payload);
   switch (action.type) {
     case Actiontypes.In_qty:
       return {
