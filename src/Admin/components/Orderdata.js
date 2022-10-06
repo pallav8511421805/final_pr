@@ -5,7 +5,6 @@ import { Getorderaction } from "../../redux/actions/order.action";
 function Orderdata(props) {
   const orderdata = useSelector((state) => state.orderroot);
   const dispaly_order = orderdata.orderdata;
-  console.log(dispaly_order);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(Getorderaction());
