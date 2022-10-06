@@ -8,15 +8,28 @@ function Orderdata(props) {
     dispatch(Getorderaction());
   }, []);
 
-  let Cartorder = [];
   let CartorderData = [];
+  let FinalorderData = [];
   let addressdata;
+  let obj;
+
+  const handle_order = (data) => {
+    CartorderData.map((d) => {
+      obj = {
+        ...data,
+        ...d,
+      };
+      FinalorderData.push(obj);
+    });
+  };
+
   const order = useSelector((state) => state.orderroot);
   order.orderdata.map((d) => {
     d.cartorder.map((d) => {
       CartorderData.push(d);
     });
   });
+
   order.orderdata.map((d) => {
     addressdata = {
       A_name: d.fname,
@@ -24,9 +37,9 @@ function Orderdata(props) {
       A_email: d.email,
       A_phone: d.phone,
     };
-    Cartorder.push(addressdata);
+    handle_order(addressdata);
   });
-  console.log(CartorderData);
+  console.log(FinalorderData);
   return (
     <>
       <section>
