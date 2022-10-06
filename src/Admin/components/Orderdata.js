@@ -14,12 +14,12 @@ function Orderdata(props) {
 
   return (
     <>
-      {getdata_product.isload ? (
+      {order.isload ? (
         <div style={{ fontSize: 24, color: "#1976d2", textAlign: "center" }}>
           Loading...
         </div>
-      ) : getdata_product.error != "" ? (
-        <div style={{ fontSize: 24 }}>{getdata_product.error}</div>
+      ) : order.error != "" ? (
+        <div style={{ fontSize: 24 }}>{order.error}</div>
       ) : (
         <>
           {/* <section>
