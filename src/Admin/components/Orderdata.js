@@ -14,7 +14,15 @@ function Orderdata(props) {
 
   return (
     <>
-      {/* <section>
+      {getdata_product.isload ? (
+        <div style={{ fontSize: 24, color: "#1976d2", textAlign: "center" }}>
+          Loading...
+        </div>
+      ) : getdata_product.error != "" ? (
+        <div style={{ fontSize: 24 }}>{getdata_product.error}</div>
+      ) : (
+        <>
+          {/* <section>
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-12 col-md-5 col-lg-10 col-xl-10">
@@ -61,6 +69,8 @@ function Orderdata(props) {
           </div>
         </div>
       </section> */}
+        </>
+      )}
     </>
   );
 }

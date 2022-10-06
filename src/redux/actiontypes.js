@@ -32,3 +32,5 @@ export const De_qty = "De_qty";
 
 export const Addorder = "Addorder";
 export const Getorder = "Getorder";
+export const Errororder = "Errororder";
+export const Loadorder = "Loadorder";
