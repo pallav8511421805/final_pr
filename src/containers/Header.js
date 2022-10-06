@@ -22,7 +22,7 @@ function Header(props) {
 
   return (
     <>
-      <header className="header_section">
+      <header className="header_section bg-header sticky z-index3">
         <div className="container">
           <nav className="navbar navbar-expand-lg custom_nav-container ">
             <NavLink className="navbar-brand" exact to={"/"}>

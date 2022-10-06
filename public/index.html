@@ -54,5 +54,15 @@
       <script src="%PUBLIC_URL%/js/bootstrap.js"></script>
       <!-- custom js -->
       <script src="%PUBLIC_URL%/js/custom.js"></script>
+
+      <script type="text/javascript">
+        $(window).scroll(function(){
+          var sticky = $('.sticky'),
+              scroll = $(window).scrollTop();
+        
+          if (scroll >=150) sticky.addClass('animate__animated animate__fadeInDown fixed');
+          else sticky.removeClass('animate__animated animate__fadeInDown fixed');
+        });
+        </script>
   </body>
 </html>
