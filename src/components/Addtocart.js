@@ -58,8 +58,8 @@ function Addtocart(props) {
               <div className="w-100">
                 <table className="addtotable">
                   <tr className="row justify-content-between trcolor">
-                    <th className="mx-2">Products</th>
-                    <th className="marginaddtocart">Quantity</th>
+                    <th>Products</th>
+                    <th>Quantity</th>
                     <th>Total</th>
                     <th>Remove item</th>
                   </tr>
