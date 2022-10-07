@@ -21,5 +21,5 @@ export const decrementqty = (id) => (dispatch) => {
 
 
 export const emptycart = () => (dispatch) => {
-  dispatch({ type: Actiontypes.Emptycart, payload: [] });
+  dispatch({ type: Actiontypes.Empty_cart, payload: [] });
 };

@@ -9,12 +9,10 @@ function Alert(props) {
   let Alert = useSelector((state) => state.alert);
   let dispatch = useDispatch();
 
-  console.log(Alert);
-
   useEffect(() => {
-    console.log("okokokok");
+  
     if (Alert.text !== "") {
-      console.log("666666666666666", Alert.text);
+    
       enqueueSnackbar(Alert.text, {
         variant: Alert.color,
         anchorOrigin: {
