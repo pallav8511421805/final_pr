@@ -4,7 +4,7 @@ import { Form, Formik, useFormik } from "formik";
 import { useDispatch } from "react-redux";
 import { Addorderaction } from "../redux/actions/order.action";
 import { NavLink, useHistory } from "react-router-dom";
-
+import {emptycart} from "../redux/actions/cart.action"
 function Placeorder(props) {
   const orderdata = props.location.state;
   const data = orderdata.cart;
@@ -52,6 +52,7 @@ function Placeorder(props) {
     dispatch(Addorderaction(obj));
     formik.resetForm();
     history.push("/check");
+    dispatch(emptycart())
   };
 
   let { errors, handleBlur, handleChange, handleSubmit, touched } = formik;
