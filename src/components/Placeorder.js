@@ -18,8 +18,8 @@ function Placeorder(props) {
       .required("Please enter your name."),
     phone: yup
       .number()
-      .min(100000000, "Not valid mobile number !.")
-      .max(9999999999, "Not valid mobile number !.")
+      .min(10, "Not valid mobile number !.")
+      .max(10, "Not valid mobile number !.")
       .required("Please enter your mobile number."),
     address: yup
       .string()
