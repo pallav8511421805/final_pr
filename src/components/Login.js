@@ -113,7 +113,7 @@ function Login(props) {
                                   onBlur={handleBlur}
                                   value={values.name}
                                 />
-                                {errors.name || touched.name ? (
+                                {errors.name && touched.name ? (
                                   <p className="text-center errorclass">
                                     {errors.name}
                                   </p>
