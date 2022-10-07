@@ -11,15 +11,15 @@ function Placeorder(props) {
   const dispatch = useDispatch();
   const history = useHistory();
 
+  const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
+
   let schema = yup.object().shape({
     fname: yup
       .string()
       .matches("^[a-zA-Z ]*$", "Please enter valid name.")
       .required("Please enter your name."),
     phone: yup
-      .number()
-      .min(10, "Not valid mobile number !.")
-      .max(10, "Not valid mobile number !.")
+      .string().matches(phoneRegExp, 'mobile number is not valid').max(10,'mobile number is not valid').min(10,'mobile number is not valid')
       .required("Please enter your mobile number."),
     address: yup
       .string()
