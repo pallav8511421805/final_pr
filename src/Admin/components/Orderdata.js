@@ -10,36 +10,12 @@ function Orderdata(props) {
 
   const order = useSelector((state) => state.orderroot);
 
-  let Cartorder = [];
-  let Cartorderdata = [];
-
-  let obj;
-
-  order.orderdata.map((d) => {
-    obj = {
-      address: d.address,
-      phone: d.phone,
-      email: d.email,
-      fname: d.fname,
-    };
-  });
-
   order.orderdata.map((d) => {
     d.cartorder.map((d) => {
-      let obj = {
-        ...d,
-      };
-      Cartorder.push(obj);
+      console.log(d);
     });
   });
 
-  Cartorder.map((d) => {
-    let objdata = {
-      ...obj,
-      ...d,
-    };
-    Cartorderdata.push(objdata);
-  });
   return (
     <>
       {order.isload ? (
@@ -79,7 +55,7 @@ function Orderdata(props) {
                         <th>Price</th>
                       </tr>
                       <tbody>
-                        {Cartorderdata.map((d) => {
+                        {order.orderdata.map((d) => {
                           return (
                             <tr
                               className="px-3 text-black text-center"
@@ -92,11 +68,33 @@ function Orderdata(props) {
                               <td>{d.phone}</td>
                               <td>{d.address}</td>
                               <td>
-                                <img src={d.pname} width={50} />
+                                {order.orderdata.map((d) => {
+                                  d.cartorder.map((d) => {
+                                    <img src={d.pname} width={50} />;
+                                  });
+                                })}
                               </td>
-                              <td>{d.name}</td>
-                              <td>{d.qty}</td>
-                              <td>{d.price}</td>
+                              <td>
+                                {order.orderdata.map((d) => {
+                                  d.cartorder.map((d) => {
+                                    return <div>{d.name}</div>;
+                                  });
+                                })}
+                              </td>
+                              <td>
+                                {order.orderdata.map((d) => {
+                                  d.cartorder.map((d) => {
+                                    return <div>{d.qty}</div>;
+                                  });
+                                })}
+                              </td>
+                              <td>
+                                {order.orderdata.map((d) => {
+                                  d.cartorder.map((d) => {
+                                    return <div>{d.price}</div>;
+                                  });
+                                })}
+                              </td>
                             </tr>
                           );
                         })}
