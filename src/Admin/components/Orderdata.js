@@ -63,15 +63,16 @@ function Orderdata(props) {
                                 {d.cartorder.map((x) => {
                                   return (
                                     <>
-                                    <div className="row">
+                                    
+                                      <div style={{border:'1px solid black'}}>
                                       <img src={x.pname} width={50} className="align-self-center"/>
                                       <div className="align-self-center">
                                       <div className="mx-1">Name : {x.name}</div>
                                       <div className="mx-1">Qty : {x.qty}</div>
                                       <div className="mx-1">Price : {x.price}</div>
                                       </div>
-                                      <br/>
-                                    </div>
+                                      </div>
+                                    
                                     </>
                                   );
                                 })}
