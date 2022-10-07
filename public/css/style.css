@@ -1554,3 +1554,6 @@ form input[type="submit"]:focus {
 }
 .sticky {
 }
+.marginaddtocart{
+  margin:0 25px !important;
+}
