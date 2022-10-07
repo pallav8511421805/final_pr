@@ -18,3 +18,8 @@ export const incrementqty = (id) => (dispatch) => {
 export const decrementqty = (id) => (dispatch) => {
   dispatch({ type: Actiontypes.De_qty, payload: id });
 };
+
+
+export const emptycart = () => (dispatch) => {
+  dispatch({ type: Actiontypes.Emptycart, payload: [] });
+};

@@ -29,6 +29,7 @@ export const Buycart = "Buycart";
 
 export const In_qty = "In_qty";
 export const De_qty = "De_qty";
+export const Empty_cart = "Empty_cart";
 
 export const Addorder = "Addorder";
 export const Getorder = "Getorder";

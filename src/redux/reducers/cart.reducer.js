@@ -67,6 +67,13 @@ export const cartreducer = (state = intval, action) => {
         ...state,
         cartdata: state.cartdata.filter((d) => d.id !== action.payload),
       };
+      break;
+      case Actiontypes.Empty_cart:
+        return {
+          ...state,
+          cartdata: action.payload,
+        };
+      
 
     default:
       return state;
