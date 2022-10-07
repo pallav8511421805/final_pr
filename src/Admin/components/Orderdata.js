@@ -61,10 +61,38 @@ function Orderdata(props) {
                               <td>{d.email}</td>
                               <td>{d.phone}</td>
                               <td>{d.address}</td>
-                              <td>hjz</td>
-                              <td>cjc</td>
-                              <td>jjxjj</td>
-                              <td>jjx</td>
+                              <td>
+                                {d.cartorder.map((x) => {
+                                  return <img src={x.pname} width={50} />;
+                                })}
+                              </td>
+                              <td>
+                                {d.cartorder.map((x) => {
+                                  return (
+                                    <div className="border-1 border-primry">
+                                      {x.name}
+                                    </div>
+                                  );
+                                })}
+                              </td>
+                              <td>
+                                {d.cartorder.map((x) => {
+                                  return (
+                                    <div className="border-1 border-primry">
+                                      {x.qty}
+                                    </div>
+                                  );
+                                })}
+                              </td>
+                              <td>
+                                {d.cartorder.map((x) => {
+                                  return (
+                                    <div className="border-1 border-primry">
+                                      {x.price}
+                                    </div>
+                                  );
+                                })}
+                              </td>
                             </tr>
                           );
                         })}
