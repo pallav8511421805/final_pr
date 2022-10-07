@@ -5,7 +5,7 @@ function Chackout(props) {
     <section>
       <div className="container">
         <div className="row justify-content-center">
-          <div className="col-12 col-md-6 cheack_box my-5">
+          <div className="col-12 col-md-6 cheack_box my-5" style={{margin:'100px 0'}}>
             <div className="w-100">
               <div className="d-flex justify-content-center">
                 <div className="my-2 check_icon">
