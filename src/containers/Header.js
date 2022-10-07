@@ -52,6 +52,11 @@ function Header(props) {
                   </NavLink>
                 </li>
                 <li className="nav-item">
+                  <NavLink className="nav-link" to="/product" exact>
+                    Products
+                  </NavLink>
+                </li>
+                <li className="nav-item">
                   <NavLink className="nav-link" to="/about" exact>
                     About
                   </NavLink>
@@ -66,11 +71,7 @@ function Header(props) {
                     Blog
                   </NavLink>
                 </li>
-                <li className="nav-item">
-                  <NavLink className="nav-link" to="/product" exact>
-                    Products
-                  </NavLink>
-                </li>
+                
                 <li className="nav-item">
                   {auth.user === null ? (
                     <NavLink className="nav-link" to="/login">

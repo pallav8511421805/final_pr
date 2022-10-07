@@ -58,7 +58,7 @@ function Addtocart(props) {
               <div className="w-100">
                 <table className="addtotable">
                   <tr className="row justify-content-between trcolor">
-                    <th>Products</th>
+                    <th className="mx-2">Products</th>
                     <th>Quantity</th>
                     <th>Total</th>
                     <th>Remove item</th>
@@ -77,7 +77,7 @@ function Addtocart(props) {
                           </td>
                           <td className="align-self-center">
                             {" "}
-                            <div className="row justify-content-center">
+                            <div className="row">
                               <button
                                 className="addqty mx-1"
                                 onClick={() => qtyminuscart(d.id)}
