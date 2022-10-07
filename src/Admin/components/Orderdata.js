@@ -10,12 +10,6 @@ function Orderdata(props) {
 
   const order = useSelector((state) => state.orderroot);
 
-  order.orderdata.map((d) => {
-    d.cartorder.map((d) => {
-      console.log(d);
-    });
-  });
-
   return (
     <>
       {order.isload ? (
@@ -42,7 +36,7 @@ function Orderdata(props) {
                       <tr
                         className="px-3 text-black text-center"
                         style={{
-                          border: "1px solid black",
+                          borderBottom: "1px solid black",
                         }}
                       >
                         <th>User name</th>
@@ -60,41 +54,17 @@ function Orderdata(props) {
                             <tr
                               className="px-3 text-black text-center"
                               style={{
-                                border: "1px solid black",
+                                borderBottom: "1px solid black",
                               }}
                             >
                               <td>{d.fname}</td>
                               <td>{d.email}</td>
                               <td>{d.phone}</td>
                               <td>{d.address}</td>
-                              <td>
-                                {order.orderdata.map((d) => {
-                                  d.cartorder.map((d) => {
-                                    <img src={d.pname} width={50} />;
-                                  });
-                                })}
-                              </td>
-                              <td>
-                                {order.orderdata.map((d) => {
-                                  d.cartorder.map((d) => {
-                                    return <div>{d.name}</div>;
-                                  });
-                                })}
-                              </td>
-                              <td>
-                                {order.orderdata.map((d) => {
-                                  d.cartorder.map((d) => {
-                                    return <div>{d.qty}</div>;
-                                  });
-                                })}
-                              </td>
-                              <td>
-                                {order.orderdata.map((d) => {
-                                  d.cartorder.map((d) => {
-                                    return <div>{d.price}</div>;
-                                  });
-                                })}
-                              </td>
+                              <td>hjz</td>
+                              <td>cjc</td>
+                              <td>jjxjj</td>
+                              <td>jjx</td>
                             </tr>
                           );
                         })}
