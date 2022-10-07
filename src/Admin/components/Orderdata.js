@@ -44,9 +44,6 @@ function Orderdata(props) {
                         <th>Phone</th>
                         <th>Address</th>
                         <th>Product</th>
-                        <th>Product name</th>
-                        <th>Quantity</th>
-                        <th>Price</th>
                       </tr>
                       <tbody>
                         {order.orderdata.map((d) => {
@@ -61,21 +58,23 @@ function Orderdata(props) {
                               <td>{d.email}</td>
                               <td>{d.phone}</td>
                               <td>{d.address}</td>
-                              <td>
+                              {/* <td>
                                 {d.cartorder.map((x) => {
                                   return <img src={x.pname} width={50} />;
                                 })}
-                              </td>
+                              </td> */}
                               <td>
                                 {d.cartorder.map((x) => {
                                   return (
-                                    <div className="border-1 border-primry">
-                                      {x.name}
-                                    </div>
+                                    <>
+                                      <img src={x.pname} width={50} />
+                                      Name: {x.name}, Quantity: {x.qty}
+                                      <br />
+                                    </>
                                   );
                                 })}
                               </td>
-                              <td>
+                              {/* <td>
                                 {d.cartorder.map((x) => {
                                   return (
                                     <div className="border-1 border-primry">
@@ -92,7 +91,7 @@ function Orderdata(props) {
                                     </div>
                                   );
                                 })}
-                              </td>
+                              </td> */}
                             </tr>
                           );
                         })}

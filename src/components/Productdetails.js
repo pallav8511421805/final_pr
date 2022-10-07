@@ -107,22 +107,22 @@ function Productdetails(props) {
                         <div>{d.description}</div>
                       </div>
                       <div className="row">
-                        <a
+                        <button
                           className="buybtn my-3 mx-1"
                           onClick={() => {
                             handlebuy(d.id);
                           }}
                         >
                           Buy Now
-                        </a>
-                        <a
+                        </button>
+                        <button
                           onClick={() => {
                             handleadd(d.id);
                           }}
                           className="buybtn my-3 mx-1"
                         >
                           + Add to cart
-                        </a>
+                        </button>
                       </div>
                     </div>
                   </div>
