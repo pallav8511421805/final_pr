@@ -67,93 +67,83 @@ function Addtocart(props) {
           <div className="row justify-content-between">
             <div className="col-12 col-md-6 col-lg-6 col-xl-6">
               <div className="w-100">
+
                 <table className="addtotable">
-                  <tr className="row justify-content-between trcolor">
-                    <th>Products</th>
+                <thead>
+                  <tr>
+                  <th>Products</th>
                     <th>Quantity</th>
                     <th>Total</th>
                     <th>Remove item</th>
                   </tr>
-                  <tbody>
+                </thead>
+                <tbody>
+                  
                     {CartData.map((d) => {
-                      return (
-                        <tr className="row justify-content-between trcolor1">
-                          <td className="align-self-center">
-                            <div className="d-flex">
-                              <img src={d.pname} width="25px" />
-                              <div className="align-self-center mx-1">
-                                {d.name}
-                              </div>
-                            </div>
-                          </td>
-                          <td className="align-self-center d-flex justify-content-center">
-                            {" "}
-                            <div className="row">
-                              <button
-                                className="addqty"
-                                onClick={() => qtyminuscart(d.id)}
-                                disabled={d.qty === 1 && true}
-                              >
-                                -
-                              </button>
-                              <div className="mx-3">{d.qty}</div>
-                              <button
-                                className="addqty"
-                                onClick={() => qtypluscart(d.id)}
-                              >
-                                +
-                              </button>
-                            </div>
-                          </td>
-                          <td className="align-self-center">
-                            <div>${d.qty * d.price}</div>
-                          </td>
-                          <td className="align-self-center">
-                            <div
-                              className="deleteqty"
-                              onClick={() => Deletecart(d.id)}
-                            >
-                              <i class="fa fa-trash-o" aria-hidden="true"></i>
-                            </div>
-                          </td>
-                        </tr>
-                      );
-                    })}
-                    <tr className="row justify-content-center trcolor2">
-                      <td></td>
+                    return(
+                    <>
+                    <tr>
+                    <td><img src={d.pname} width="25px" /></td>
+                    <td>
+                    <button className="addqty mx-3" onClick={() => qtyminuscart(d.id)} disabled={d.qty === 1 && true} >
+                    -
+                    </button>
+                    {d.qty}
+                    <button className="addqty mx-3" onClick={() => qtypluscart(d.id)} >
+                    +
+                    </button>
+                    </td>
+                    <td>${d.price}</td>
+                    <td>
+                      <div className="d-flex justify-content-center">
+                      <div className="deleteqty" onClick={() => Deletecart(d.id)}>
+                      <i class="fa fa-trash-o" aria-hidden="true"></i>
+                    </div>
+                      </div>
+                    </td>
                     </tr>
-                  </tbody>
+                    </>
+                    )
+                    })
+                    }
+                </tbody>
                 </table>
               </div>
             </div>
             <div className="col-12 col-md-5 col-lg-5 col-xl-5">
               <div className="w-100">
-                <table className="addtotable">
-                  <tr className="row justify-content-center trcolor">
-                    <th>TOTEL AMOUNT</th>
+              <table className="addtotable">
+                <thead>
+                  <tr>
+                  <th>PRICE & DISCOUNT</th>
+                  <th>TOTEL</th>
                   </tr>
-                  <tbody>
-                    <tr className="row justify-content-between trcolor1">
-                      <td>Price ( {cart.cartdata.length} item )</td>
-                      <td>${totelamount}</td>
-                    </tr>
-                    <tr className="row justify-content-between trcolor1">
-                      <td>Discount ( 10% )</td>
-                      <td>-${discount}</td>
-                    </tr>
-                    <tr className="row justify-content-between trcolor1 border_tr">
-                      <td>Total price</td>
-                      <td>${finelprice}</td>
-                    </tr>
-                    <tr className="row justify-content-center trcolor2">
-                      <td>
-                        <p>You will save ${discount} on this order.</p>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
+                </thead>
+                <tbody>
+                  <tr>
+                  <td>Price ( {cart.cartdata.length} item )</td>
+                  <td>${totelamount}</td>
+                  </tr>
+                  <tr>
+                  <td>Discount ( 10% )</td>
+                  <td>-${discount}</td>
+                  </tr>
+                  <tr>
+                  <td>Total price</td>
+                  <td>${finelprice}</td>
+                  </tr>
+                  <tr>
+                  <td>
+                    <p>You will save on this order.</p>
+                  </td>
+                  <td>
+                  ${discount}
+                  </td>
+                  </tr>
+                </tbody>
+              </table>
               </div>
-            </div>
+              </div>
           </div>
         </div>
       </section>
