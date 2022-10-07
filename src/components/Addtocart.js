@@ -1,14 +1,15 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { NavLink } from "react-router-dom";
+import { NavLink, useHistory } from "react-router-dom";
 import { Deletecartaction } from "../redux/actions/cart.action";
 import { decrementqty, incrementqty } from "../redux/actions/cart.action";
 import { getproduct_data } from "../redux/actions/product.actions";
-
+import {setalertaction} from "../redux/actions/alert.action";
 function Addtocart(props) {
   const cart = useSelector((state) => state.cartroot);
   const dispatch = useDispatch();
   const product = useSelector((state) => state.productroot);
+  const history = useHistory()
 
   let CartData = [];
   product.productdata.map((p) => {
@@ -46,6 +47,16 @@ function Addtocart(props) {
     dispatch(decrementqty(id));
   };
 
+  const placeorder = () => {
+    if(CartData.length === 0){
+      dispatch(
+        setalertaction({ text: "Please buy any product.", color: "error" })
+      );
+    } else {
+      history.push("/placeorder",{ cart: CartData })
+    }
+  };
+
   useEffect(() => {
     dispatch(getproduct_data());
   }, []);
@@ -75,11 +86,11 @@ function Addtocart(props) {
                               </div>
                             </div>
                           </td>
-                          <td className="align-self-center">
+                          <td className="align-self-center d-flex justify-content-center">
                             {" "}
                             <div className="row">
                               <button
-                                className="addqty mx-1"
+                                className="addqty"
                                 onClick={() => qtyminuscart(d.id)}
                                 disabled={d.qty === 1 && true}
                               >
@@ -87,7 +98,7 @@ function Addtocart(props) {
                               </button>
                               <div className="mx-3">{d.qty}</div>
                               <button
-                                className="addqty mx-1"
+                                className="addqty"
                                 onClick={() => qtypluscart(d.id)}
                               >
                                 +
@@ -150,15 +161,12 @@ function Addtocart(props) {
       <section className="my-5">
         <div className="container">
           <div className="row justify-content-end">
-            <NavLink
+            <button
               className="placeorder"
-              to={{
-                pathname: "/placeorder",
-                state: { cart: CartData },
-              }}
-            >
+             onClick={()=>placeorder()} 
+          >
               Place order
-            </NavLink>
+            </button>
           </div>
         </div>
       </section>
