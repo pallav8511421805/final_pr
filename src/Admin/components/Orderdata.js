@@ -24,36 +24,22 @@ function Orderdata(props) {
           <section>
             <div className="container">
               <div className="row justify-content-center">
-                <div className="col-12 col-md-5 col-lg-10 col-xl-10">
+                <div className="col-12">
                   <div className="w-100">
-                    <table
-                      style={{
-                        width: "100%",
-                        color: "black",
-                        border: "1px solid black",
-                      }}
-                    >
-                      <tr
-                        className="px-3 text-black text-center"
-                        style={{
-                          borderBottom: "1px solid black",
-                        }}
-                      >
+                  <table className="addtotable">
+                <thead>
+                  <tr>
                         <th>User name</th>
                         <th>Email</th>
                         <th>Phone</th>
                         <th>Address</th>
                         <th>Product</th>
-                      </tr>
-                      <tbody>
-                        {order.orderdata.map((d) => {
+                  </tr>
+                </thead>
+                <tbody>
+                {order.orderdata.map((d) => {
                           return (
-                            <tr
-                              className="px-3 text-black text-center"
-                              style={{
-                                borderBottom: "1px solid black",
-                              }}
-                            >
+                            <tr>
                               <td>{d.fname}</td>
                               <td>{d.email}</td>
                               <td>{d.phone}</td>
@@ -64,7 +50,7 @@ function Orderdata(props) {
                                   return (
                                     <>
                                     
-                                      <div style={{border:'1px solid black'}}>
+                                      <div style={{border:'1px solid white'}}>
                                       <img src={x.pname} width={50} className="align-self-center"/>
                                       <div className="align-self-center">
                                       <div className="mx-1">Name : {x.name}</div>
@@ -80,8 +66,9 @@ function Orderdata(props) {
                             </tr>
                           );
                         })}
-                      </tbody>
-                    </table>
+                  
+                </tbody>
+              </table>
                   </div>
                 </div>
               </div>
