@@ -83,7 +83,7 @@ function Addtocart(props) {
                     return(
                     <>
                     <tr>
-                    <td><img src={d.pname} width="25px" /></td>
+                    <td><img src={d.pname} width="25px" />{ "  " + d.name}</td>
                     <td>
                     <button className="addqty mx-3" onClick={() => qtyminuscart(d.id)} disabled={d.qty === 1 && true} >
                     -
