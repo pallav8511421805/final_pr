@@ -6,7 +6,6 @@ import { Switch, Route } from "react-router-dom";
 import About from "./components/About";
 import Terminal from "./components/Terminal";
 import Products from "./components/Product";
-import Blog from "./components/Blog";
 import Login from "./components/Login";
 import Addtocart from "./components/Addtocart";
 import { Provider } from "react-redux";
@@ -35,7 +34,6 @@ function App() {
               <Route path="/about" exact component={About} />
               <Route path="/terminal" exact component={Terminal} />
               <Route path="/product" exact component={Products} />
-              <Route path="/blog" exact component={Blog} />
               <Route path="/login" exact component={Login} />
               <Route path="/addto" exact component={Addtocart} />
               <Route path="/check" exact component={Chackout} />

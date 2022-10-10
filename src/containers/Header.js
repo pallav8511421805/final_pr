@@ -66,11 +66,7 @@ function Header(props) {
                     Testimonial
                   </NavLink>
                 </li>
-                <li className="nav-item">
-                  <NavLink className="nav-link" to="/blog" exact>
-                    Blog
-                  </NavLink>
-                </li>
+                
                 
                 <li className="nav-item">
                   {auth.user === null ? (

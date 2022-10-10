@@ -51,9 +51,7 @@ function Footer(props) {
                             <li>
                               <a href="#">Testimonial</a>
                             </li>
-                            <li>
-                              <a href="#">Blog</a>
-                            </li>
+                            
                             <li>
                               <a href="#">Contact</a>
                             </li>
