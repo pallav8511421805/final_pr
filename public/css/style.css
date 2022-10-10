@@ -1392,6 +1392,7 @@ form input[type="submit"]:focus {
   height: 50px;
   border-radius: 100px;
   text-align: center;
+  cursor: pointer;
   line-height: 50px;
 }
 .deleteqty:hover {
