@@ -22,7 +22,7 @@ function Home(props) {
                     <div className="col-md-7 col-lg-6 ">
                       <div className="detail-box">
                         <h1>
-                          <span>Sale 20% Off</span>
+                          <span>Sale 10% Off</span>
                           <br />
                           On watches
                         </h1>
@@ -44,7 +44,7 @@ function Home(props) {
                     <div className="col-md-7 col-lg-6 ">
                       <div className="detail-box">
                         <h1>
-                          <span>Sale 20% Off</span>
+                          <span>Sale 10% Off</span>
                           <br />
                           On watches
                         </h1>
@@ -66,7 +66,7 @@ function Home(props) {
                     <div className="col-md-7 col-lg-6 ">
                       <div className="detail-box">
                         <h1>
-                          <span>Sale 20% Off</span>
+                          <span>Sale 10% Off</span>
                           <br />
                           On watches
                         </h1>
