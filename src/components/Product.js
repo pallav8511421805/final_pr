@@ -9,7 +9,7 @@ function Products(props) {
             <div className="row">
               <div className="col-md-12">
                 <div className="full">
-                  <h3>Product Grid</h3>
+                  <h3>Our products</h3>
                 </div>
               </div>
             </div>
@@ -19,11 +19,6 @@ function Products(props) {
         {/* product section */}
         <section className="product_section layout_padding">
           <div className="container">
-            <div className="heading_container heading_center">
-              <h2>
-                Our <span>products</span>
-              </h2>
-            </div>
             <Displayproducts />
           </div>
         </section>
