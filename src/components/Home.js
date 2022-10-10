@@ -24,7 +24,7 @@ function Home(props) {
                         <h1>
                           <span>Sale 20% Off</span>
                           <br />
-                          On Everything
+                          On watches
                         </h1>
                         <p>
                           Explicabo esse amet tempora quibusdam laudantium,
@@ -46,7 +46,7 @@ function Home(props) {
                         <h1>
                           <span>Sale 20% Off</span>
                           <br />
-                          On Everything
+                          On watches
                         </h1>
                         <p>
                           Explicabo esse amet tempora quibusdam laudantium,
@@ -68,7 +68,7 @@ function Home(props) {
                         <h1>
                           <span>Sale 20% Off</span>
                           <br />
-                          On Everything
+                          On watches
                         </h1>
                         <p>
                           Explicabo esse amet tempora quibusdam laudantium,
