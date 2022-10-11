@@ -1,5 +1,5 @@
 import React from 'react';
-import { Router, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import Category from '../Admin/components/Category';
 import Orderdata from '../Admin/components/Orderdata';
 import Product from '../Admin/components/Product';
@@ -17,10 +17,8 @@ import Publicroute from './Publicroute';
 import Page404 from '../components/Page404';
 import Privateroute from "../Routing/Privateroute";
 import Clientroute from "../Routing/Clientroute";
-import { switchhistory } from '../History/history';
 function Approute(props) {
     return (
-      <Router history={switchhistory}>
         <Switch>
         <Publicroute path="/productdetail" exact component={Productdetails} />
         <Publicroute path="/" exact component={Home} />
@@ -28,7 +26,7 @@ function Approute(props) {
         <Publicroute path="/terminal" exact component={Terminal} />
         <Clientroute path="/product" exact component={Products} />
         <Publicroute path="/login" restricted={true} exact component={Login} />
-        <Clientroute path="/addto" exact component={Addtocart} />
+        <Publicroute path="/addto" exact component={Addtocart} />
         <Clientroute path="/check" exact component={Chackout} />
         <Clientroute path={"/placeorder"} exact component={Placeorder} />
         <Publicroute path={"/filter"} exact component={Filterproducts} />
@@ -39,7 +37,6 @@ function Approute(props) {
           <Privateroute path={"/ordersadmin"} exact component={Orderdata} />
         
       </Switch>
-      </Router>
     );
 }
 
