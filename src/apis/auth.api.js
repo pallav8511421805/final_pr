@@ -60,7 +60,7 @@ export const signInapi = (values) => {
             emailVerified:true
           })
           const userget = await getDoc(userref)
-          console.log({id : userget.id,...userget.data()})
+          console.log("login",{id : userget.id,...userget.data()})
           resolve({ payload: {id : userget.id,...userget.data()} });
         } else {
           reject({ payload: "Please verify your email." });
@@ -111,7 +111,6 @@ export const signingoogleapi = () => {
 };
 
 export const forgetapi = (values) => {
-  console.log(values);
   return new Promise((resolve, reject) => {
     sendPasswordResetEmail(auth, values.email)
       .then(() => {
