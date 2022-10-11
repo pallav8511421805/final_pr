@@ -1,6 +1,7 @@
 import React from 'react';
 
-function Publicroute(props) {
+function Publicroute({component:Component,...rest}) {
+    const auth = useSelector(state => state.auth)
     return (
         <div>
             
