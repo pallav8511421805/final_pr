@@ -33,6 +33,7 @@ export const signUpapi = (values) => {
               role:"user",
               emailVerified : user.emailVerified,
             })
+          
           }
         });
       })
