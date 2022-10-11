@@ -8,7 +8,8 @@ import {
   signInWithPopup,
   sendPasswordResetEmail,
 } from "firebase/auth";
-import { auth } from "../Firebase";
+import { doc, getDoc, setDoc, updateDoc } from "firebase/firestore"; 
+import { auth, db } from "../Firebase";
 
 export const signUpapi = (values) => {
   return new Promise((resolve, reject) => {
@@ -22,11 +23,16 @@ export const signUpapi = (values) => {
         });
       })
       .then((user) => {
-        onAuthStateChanged(auth, (user) => {
+        onAuthStateChanged(auth, async (user) => {
           if (user.emailVerified) {
             resolve({ payload: "successfully." });
           } else {
             resolve({ payload: "Please check your email." });
+            await setDoc(doc(db,"Users",user.uid),{
+              email : values.email,
+              role:"user",
+              emailVerified : user.emailVerified,
+            })
           }
         });
       })
@@ -45,10 +51,16 @@ export const signUpapi = (values) => {
 export const signInapi = (values) => {
   return new Promise((resolve, reject) => {
     signInWithEmailAndPassword(auth, values.email, values.password)
-      .then((userCredential) => {
+      .then(async (userCredential) => {
         const user = userCredential.user;
         if (user.emailVerified) {
-          resolve({ payload: user });
+          const userref = doc(db,"Users",user.uid)
+          await updateDoc(userref,{
+            emailVerified:true
+          })
+          const userget = await getDoc(userref)
+          
+          resolve({ payload: {id : userget.id,...userget.data()} });
         } else {
           reject({ payload: "Please verify your email." });
         }
