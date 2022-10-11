@@ -60,7 +60,6 @@ export const signInapi = (values) => {
             emailVerified:true
           })
           const userget = await getDoc(userref)
-          console.log("login",{id : userget.id,...userget.data()})
           resolve({ payload: {id : userget.id,...userget.data()} });
         } else {
           reject({ payload: "Please verify your email." });
