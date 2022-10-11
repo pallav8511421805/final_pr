@@ -21,7 +21,7 @@ function* signUp(action) {
 function* signIn(action) {
   try {
     const user = yield call(signInapi, action.payload);
-    yield put(signedinaction());
+    yield put(signedinaction(user.payload));
     yield put(
       setalertaction({ text: "Login successfully.", color: "success" })
     );
