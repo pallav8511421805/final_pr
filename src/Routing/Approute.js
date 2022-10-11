@@ -30,11 +30,11 @@ function Approute(props) {
         <Clientroute path="/check" exact component={Chackout} />
         <Clientroute path={"/placeorder"} exact component={Placeorder} />
         <Publicroute path={"/filter"} exact component={Filterproducts} />
-        <Publicroute path={'*'} component={Page404} />
+        <Publicroute component={Page404} />
         
-          <Privateroute path={"/Categoryadmin"} exact component={Category} />
-          <Privateroute path={"/productsadmin"} exact component={Product} />
-          <Privateroute path={"/ordersadmin"} exact component={Orderdata} />
+          <Privateroute path={"/Adminc"} exact component={Category} />
+          <Privateroute path={"/Adminp"} exact component={Product} />
+          <Privateroute path={"/Admino"} exact component={Orderdata} />
         
       </Switch>
     );
