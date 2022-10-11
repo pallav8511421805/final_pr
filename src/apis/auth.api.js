@@ -23,16 +23,16 @@ export const signUpapi = (values) => {
         });
       })
       .then((user) => {
-        onAuthStateChanged(auth, async (user) => {
+        onAuthStateChanged(auth, (user) => {
           if (user.emailVerified) {
             resolve({ payload: "successfully." });
           } else {
             resolve({ payload: "Please check your email." });
-            await setDoc(doc(db,"Users",user.uid),{
-              email : values.email,
-              role:"user",
-              emailVerified : user.emailVerified,
-            })
+            // await setDoc(doc(db,"Users",user.uid),{
+            //   email : values.email,
+            //   role:"user",
+            //   emailVerified : user.emailVerified,
+            // })
           
           }
         });
@@ -55,13 +55,13 @@ export const signInapi = (values) => {
       .then(async (userCredential) => {
         const user = userCredential.user;
         if (user.emailVerified) {
-          const userref = doc(db,"Users",user.uid)
-          await updateDoc(userref,{
-            emailVerified:true
-          })
-          const userget = await getDoc(userref)
-          
-          resolve({ payload: {id : userget.id,...userget.data()} });
+          // const userref = doc(db,"Users",user.uid)
+          // await updateDoc(userref,{
+          //   emailVerified:true
+          // })
+          // const userget = await getDoc(userref)
+          // console.log(id : userget.id,...userget.data())
+          resolve({ payload: user });
         } else {
           reject({ payload: "Please verify your email." });
         }

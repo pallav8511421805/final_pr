@@ -72,6 +72,7 @@ function Addtocart(props) {
                 <thead>
                   <tr>
                   <th>Products</th>
+                  <th>Product name</th>
                     <th>Quantity</th>
                     <th>Total</th>
                     <th>Remove item</th>
@@ -83,9 +84,10 @@ function Addtocart(props) {
                     return(
                     <>
                     <tr>
-                    <td><div className="d-flex justify-content-start">
-                    <img src={d.pname} width="25px" />{ "  " + d.name}
-                      </div></td>
+                    <td>
+                    <img src={d.pname} width="25px" />
+                      </td>
+                      <td>{d.name}</td>
                     <td>
                     <div className="d-flex">
                     <button className="addqty mx-3" onClick={() => qtyminuscart(d.id)} disabled={d.qty === 1 && true} >
