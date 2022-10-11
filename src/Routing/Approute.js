@@ -14,7 +14,9 @@ import Products from '../components/Product';
 import Productdetails from '../components/Productdetails';
 import Terminal from '../components/Terminal';
 import Publicroute from './Publicroute';
-
+import Page404 from '../components/Page404';
+import Privateroute from "../Routing/Privateroute";
+import Clientroute from "../Routing/Clientroute";
 function Approute(props) {
     return (
         <Switch>
@@ -22,17 +24,17 @@ function Approute(props) {
         <Publicroute path="/" exact component={Home} />
         <Publicroute path="/about" exact component={About} />
         <Publicroute path="/terminal" exact component={Terminal} />
-        <Publicroute path="/product" exact component={Products} />
+        <Clientroute path="/product" exact component={Products} />
         <Publicroute path="/login" restricted={true} exact component={Login} />
-        <Publicroute path="/addto" exact component={Addtocart} />
-        <Publicroute path="/check" exact component={Chackout} />
-        <Publicroute path={"/placeorder"} exact component={Placeorder} />
+        <Clientroute path="/addto" exact component={Addtocart} />
+        <Clientroute path="/check" exact component={Chackout} />
+        <Clientroute path={"/placeorder"} exact component={Placeorder} />
         <Publicroute path={"/filter"} exact component={Filterproducts} />
-        {/* <Route component={Page404} /> */}
+        <Route path={'*'} component={Page404} />
         
-          <Route path={"/Categoryadmin"} exact component={Category} />
-          <Route path={"/productsadmin"} exact component={Product} />
-          <Route path={"/ordersadmin"} exact component={Orderdata} />
+          <Privateroute path={"/Categoryadmin"} exact component={Category} />
+          <Privateroute path={"/productsadmin"} exact component={Product} />
+          <Privateroute path={"/ordersadmin"} exact component={Orderdata} />
         
       </Switch>
     );
