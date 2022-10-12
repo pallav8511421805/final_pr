@@ -24,7 +24,7 @@ function Approute(props) {
         <Publicroute path="/" exact component={Home} />
         <Publicroute path="/about" exact component={About} />
         <Publicroute path="/terminal" exact component={Terminal} />
-        <Clientroute path="/product" exact component={Products} />
+        <Publicroute path="/product" exact component={Products} />
         <Publicroute path="/login" restricted={true} exact component={Login} />
         <Publicroute path="/addto" exact component={Addtocart} />
         <Clientroute path="/check" exact component={Chackout} />
